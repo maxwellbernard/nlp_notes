@@ -12,16 +12,41 @@ format:
         theme: default
         code-block-theme: default
         highlight-style: pygments
+        self-contained: true
 ---
 
 # Lecture 2
 
-## Section 1
+## Normalization
 
-This is a fresh start with a new Quarto document.
+Normalization is the process of converting a text into a standard form. This involves removing any characters that are not part of the standard English alphabet, converting all characters to lowercase, and removing any extra spaces.
+
+### Tokenization
+
+Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements. The tokens are the words, phrases, symbols, or other meaningful elements that are produced by the tokenization process.
+
+### Stemming
+
+Stemming is the process of reducing a word to its root or base form. For example, the word "running" would be reduced to "run" by a stemming algorithm.
+
+### Lemmatization
+
+Lemmatization is the process of reducing a word to its base or root form, known as a lemma. Lemmatization is more sophisticated than stemming because it uses a dictionary to map words to their base forms.
+
 
 ```{python}
 #| eval: false
 # Sample Python code
 print("Hello, world!")
 ```
+
+
+## Regular Expressions
+
+Regular expressions are a powerful tool for pattern matching and text processing. They allow you to search for patterns in text, extract specific information, and perform complex text transformations.
+
+### POS Tagging
+
+Part-of-speech (POS) tagging is the process of assigning a part of speech to each word in a text. The part of speech indicates the grammatical category of the word, such as noun, verb, adjective, etc.
+
+# Lecture 3
