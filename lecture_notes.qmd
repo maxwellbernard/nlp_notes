@@ -1,0 +1,15 @@
+---
+title: "Lecture Notes"
+author: "Maxwell Bernard"
+output-dir: docs
+format:
+    html:
+        toc: true
+---
+
+# NLP Lecture Notes
+
+```{python}
+# | eval: false
+print("Hello, World! this is a test")
+```
