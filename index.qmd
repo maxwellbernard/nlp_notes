@@ -9,6 +9,9 @@ format:
         toc-expand: true
         code-block-line-numbers: true
         code-block-wrap: true
+        code-overflow: wrap
+        code-output-overflow: wrap
+        code-block-font-size: 0.7em
         theme: default
         code-block-theme: default
         highlight-style: pygments
@@ -17,18 +20,106 @@ format:
 
 # Lecture 2
 
+## Libraries
+
+|  | NLTK | spaCy |
+|---------|---------|---------
+| Methods | string processing library | object-oriented approach - it parases a text, returns document object whose words and sentences are objects themselvs | 
+| Tokenization | uses regular expression-based methods which are not always accurate | uses a rule-based approach to tokenization which is more accurate |
+| POS Tagging | provides wide range of POS taggers (ranging from rule-based to machine learning-based) | uses a deep learning-based POS tagger which is more accurate (also offers pre-trained models in multiple languages) |
+| Named Entity Recognition (NER) | provides multiple NER taggers (ranging from rule-based to machine learning-based) | uses a highy efficient deep learning-based NER tagger for detecting entities such as names, organizations, locations, etc. |
+| Performance | slower than spaCy | faster than NLTK (due to its optimized implementation in Cython) |
+
+**Textblob** is another popular library for NLP in Python. It is built on top of NLTK and provides a simple API for common NLP tasks such as tokenization, POS tagging, and sentiment analysis. It is **not good for large scale production use**
+
 ## Normalization
 
 Normalization is the process of converting a text into a standard form. This involves removing any characters that are not part of the standard English alphabet, converting all characters to lowercase, and removing any extra spaces.
 
-### Tokenization
+### Morphological Normalization
 
-Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements. The tokens are the words, phrases, symbols, or other meaningful elements that are produced by the tokenization process.
+- Morphological normalization is the process of reducing a word to its base or root form
+- This can involve **stemming** or **lemmatization**
+- **Roots** are the base forms of words eg. "run" is the root of "running", "ran", "runs"
+- **Affixes** are the prefixes and suffixes that are added to roots to create different forms of words eg. "ing", "ed", "s"
+  - **Prefixes** are added to the beginning of a word eg. "un" in "undo"
+  - **Suffixes** are added to the end of a word eg. "ly" in "quickly"
+- **Inflectional** affixes are added to a word to change its grammatical form eg. "s" for plural nouns, "ed" for past tense verbs eg. "dogs", "walked"
+
+## Tokenization
+
+- Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements.
+- The tokens are the words, sentences, characters, or subwords that are produced by the tokenization process.
+- Space based token is used to prepare the text for further processing such as stemming, lemmatization, and POS tagging.
+- **Type** is number of unique tokens in a text
+- **Token** is a single instance of a token in a text
+
+```{python}
+# | eval: false
+tokens = word_tokenize(text)
+total_tokens = len(tokens)
+total_types = len(set(tokens))
+```
+- **Corpus** is a collection of text documents
+
+##### Tokenization of raw text in Python
+- word.isalnum() - returns True if all characters in the word are alphanumeric
+
+```{python}
+# | echo: false
+# | output: false
+import nltk
+from nltk import word_tokenize
+from nltk.corpus import stopwords
+from nltk import FreqDist
+
+nltk.download("stopwords")
+from urllib import request
+import string
+```
+```{python}
+shakespeare_url = "https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt"
+crime_punishment_url = "http://www.gutenberg.org/files/2554/2554-0.txt"
+
+# Tokenize Raw Text
+
+shakespeare_text = request.urlopen(shakespeare_url).read().decode("utf8")
+crime_punishment_text = request.urlopen(crime_punishment_url).read().decode("utf8")
+
+shakespeare_tokenized = [word for word in word_tokenize(shakespeare_text.lower()) if word.isalnum()]
+crime_punishment_tokenized = [
+    word for word in word_tokenize(crime_punishment_text.lower()) if word.isalnum()
+]
+
+# FreqDist (from nltk) to produce a frequency distribution (listing top 20 most common words)
+
+shakespeare_freq = FreqDist(shakespeare_tokenized)
+crime_freq = FreqDist(crime_punishment_tokenized)
+
+shakespeare_common = shakespeare_freq.most_common(20)
+crime_common = crime_freq.most_common(20)
+
+print("Top 20 words in Shakespeare")
+print(shakespeare_common)
+
+print("\nTop 20 words in Crime and Punishment:")
+print(crime_common)
+```
+
 
 ### Stemming
 
-Stemming is the process of reducing a word to its root or base form. For example, the word "running" would be reduced to "run" by a stemming algorithm.
+- Stemming is the process of reducing a word to its root or base form. For example, the word "running" would be reduced to "run" by a stemming algorithm.
+- Stemmers remove word suffixes by running input word tokens against a pre-defined list of common suffixes.
+- Stemming is a heuristic process that does not always produce a valid root word, but it can be useful for text processing tasks such as search indexing and information retrieval.
+- **Porter Stemmer** is a popular (rule-based) stemming algorithm that is widely used in text processing applications.
+- **Snowball Stemmer** is an improved version of the Porter Stemmer that supports multiple languages.
 
+**Example of stemming in Python using NLTK**
+
+```{python}
+
+```
 ### Lemmatization
 
 Lemmatization is the process of reducing a word to its base or root form, known as a lemma. Lemmatization is more sophisticated than stemming because it uses a dictionary to map words to their base forms.
