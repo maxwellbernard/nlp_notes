@@ -1,17 +1,27 @@
 ---
-title: "Lecture Notes"
+title: "NLP Class Notes"
 author: "Maxwell Bernard"
 output-dir: docs
 format:
     html:
         toc: true
+        toc-depth: 3
+        toc-expand: true
+        code-block-line-numbers: true
+        code-block-wrap: true
+        theme: default
+        code-block-theme: default
+        highlight-style: pygments
 ---
 
-# NLP Lecture Notes
+# Lecture 2
+
+## Section 1
+
+This is a fresh start with a new Quarto document.
 
 ```{python}
-# | eval: false
-print("Hello, World! this is a test code block.")
-print("This is a test code block.")
-
+#| eval: false
+# Sample Python code
+print("Hello, world!")
 ```
