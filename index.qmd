@@ -12,4 +12,6 @@ format:
 ```{python}
 # | eval: false
 print("Hello, World! this is a test code block.")
+print("This is a test code block.")
+
 ```
