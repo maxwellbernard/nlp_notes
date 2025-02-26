@@ -3187,9 +3187,21 @@ vertical-align: -.125em;
 <section id="normalization" class="level2">
 <h2 class="anchored" data-anchor-id="normalization">Normalization</h2>
 <p>Normalization is the process of converting a text into a standard form. This involves removing any characters that are not part of the standard English alphabet, converting all characters to lowercase, and removing any extra spaces.</p>
-<p>Tasks involved in normalization include: - <strong>Tokenization</strong>: Breaking a text into words, phrases, symbols, or other meaningful elements. - <strong>Case Folding</strong>: Converting all characters to lowercase. - <strong>Removing Punctuation</strong>: Removing any non-alphanumeric characters. - <strong>Removing Stopwords</strong>: Removing common words that do not carry much meaning. - <strong>Stemming or Lemmatization</strong>: Reducing words to their base or root form. - <strong>Removing Extra Spaces</strong>: Removing any extra spaces between words. - <strong>Expanding Contractions</strong>: Expanding contractions such as “don’t” to “do not”. - <strong>Removing URLs and Emails</strong>: Removing URLs, email addresses, and other web-related content. - <strong>Removing HTML Tags</strong>: Removing HTML tags from web pages. - <strong>Removing Emojis and Special Characters</strong>: Removing emojis, emoticons, and other special characters.</p>
+<p>Tasks involved in normalization include</p>
+<ul>
+<li><strong>Tokenization</strong>: Breaking a text into words, phrases, symbols, or other meaningful elements.</li>
+<li><strong>Case Folding</strong>: Converting all characters to lowercase.</li>
+<li><strong>Removing Punctuation</strong>: Removing any non-alphanumeric characters.</li>
+<li><strong>Removing Stopwords</strong>: Removing common words that do not carry much meaning.</li>
+<li><strong>Stemming or Lemmatization</strong>: Reducing words to their base or root form.</li>
+<li><strong>Removing Extra Spaces</strong>: Removing any extra spaces between words.</li>
+<li><strong>Expanding Contractions</strong>: Expanding contractions such as “don’t” to “do not”.</li>
+<li><strong>Removing URLs and Emails</strong>: Removing URLs, email addresses, and other web-related content.</li>
+<li><strong>Removing HTML Tags</strong>: Removing HTML tags from web pages.</li>
+<li><strong>Removing Emojis and Special Characters</strong>: Removing emojis, emoticons, and other special characters.</li>
+</ul>
 <p><strong>Removal of Stopwords in Python using NLTK</strong></p>
-<div id="a4771f31" class="cell" data-execution_count="1">
+<div id="b470e35c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
@@ -3202,7 +3214,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p><strong>Removal of Stopwords in Python using spaCy</strong></p>
-<div id="0a3242af" class="cell" data-execution_count="2">
+<div id="f9ad91c3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>) <span class="co"># Load English language model</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
@@ -3236,7 +3248,7 @@ vertical-align: -.125em;
 <li><strong>Type</strong> is number of unique tokens in a text</li>
 <li><strong>Token</strong> is a single instance of a token in a text</li>
 </ul>
-<div id="76735ae4" class="cell" data-execution_count="3">
+<div id="d778adfa" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>total_tokens <span class="op">=</span> <span class="bu">len</span>(tokens)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>total_types <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(tokens))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3249,7 +3261,7 @@ vertical-align: -.125em;
 <ul>
 <li>word.isalnum() - returns True if all characters in the word are alphanumeric</li>
 </ul>
-<div id="98b23dda" class="cell" data-execution_count="5">
+<div id="061d4cf7" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>shakespeare_url <span class="op">=</span> <span class="st">&quot;https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt&quot;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>crime_punishment_url <span class="op">=</span> <span class="st">&quot;http://www.gutenberg.org/files/2554/2554-0.txt&quot;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3285,6 +3297,13 @@ Top 20 words in Crime and Punishment:
 </div>
 </div>
 </section>
+<section id="nltk-tokenizers" class="level5">
+<h5 class="anchored" data-anchor-id="nltk-tokenizers">NLTK Tokenizers</h5>
+<ul>
+<li><code>word_tokenize()</code>: Tokenizes a text into words using a regular expression-based tokenizer. A versatile tokenizer that handles contractions, abbreviations, and punctuation marks effectively. It is suitable for most general-purpose tokenization tasks.</li>
+<li><code>WordPunctTokenizer()</code>: Tokenizes a text into words using a regular expression that matches punctuation as separate tokens. A specialized tokenizer that separates words and punctuation explicitly. It is useful when you need to distinguish between alphabetic and non-alphabetic characters.</li>
+</ul>
+</section>
 </section>
 <section id="stemming" class="level3">
 <h3 class="anchored" data-anchor-id="stemming">Stemming</h3>
@@ -3295,8 +3314,9 @@ Top 20 words in Crime and Punishment:
 <li><strong>Porter Stemmer</strong> is a popular (rule-based) stemming algorithm that is widely used in text processing applications.</li>
 <li><strong>Snowball Stemmer</strong> is an improved version of the Porter Stemmer that supports multiple languages.</li>
 </ul>
-<p><strong>Example of stemming in Python using NLTK</strong></p>
-<div id="249a281f" class="cell" data-execution_count="6">
+<section id="example-of-stemming-in-python-using-nltk" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk">Example of stemming in Python using NLTK</h4>
+<div id="58559ebf" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem.snowball <span class="im">import</span> SnowballStemmer</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> TreebankWordTokenizer</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3324,6 +3344,7 @@ sky | sky
 </div>
 </div>
 </section>
+</section>
 <section id="lemmatization" class="level3">
 <h3 class="anchored" data-anchor-id="lemmatization">Lemmatization</h3>
 <ul>
@@ -3333,8 +3354,9 @@ sky | sky
 <li>Lemmatization is more accurate than stemming but can be slower and more computationally intensive.</li>
 <li><strong>WordNet Lemmatizer</strong> is a popular lemmatization algorithm that is available in NLTK.</li>
 </ul>
-<p><strong>Example of stemming in Python using NLTK</strong></p>
-<div id="1fd1c7a0" class="cell" data-execution_count="7">
+<section id="example-of-stemming-in-python-using-nltk-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk-1">Example of stemming in Python using NLTK</h4>
+<div id="46c916e3" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> TreebankWordTokenizer</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3401,6 +3423,7 @@ sky | sky
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 </section>
 <section id="regular-expressions" class="level2">
@@ -3558,7 +3581,7 @@ sky | sky
 </tbody>
 </table>
 <p><strong>Example of Regular Expressions in Python</strong></p>
-<div id="8ff338ef" class="cell" data-execution_count="8">
+<div id="f58cbe06" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> sent_tokenize  <span class="co"># Sentence Tokenization</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize  <span class="co"># Word Tokenization</span></span>
@@ -3767,7 +3790,7 @@ sky | sky
 </table>
 <section id="example-of-pos-tagging-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-pos-tagging-in-python-using-nltk">Example of POS Tagging in Python using NLTK</h4>
-<div id="6d52da6f" class="cell" data-execution_count="9">
+<div id="1e938b8c" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tag <span class="im">import</span> pos_tag</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog.&quot;</span></span>
@@ -3797,7 +3820,7 @@ dog | NN
 <li>This model is a small English model trained on written web text (blogs, news, comments), which includes vocabulary, vectors, syntax, and entities.</li>
 <li>The model is trained on the OntoNotes 5 corpus and supports POS tagging, dependency parsing, named entity recognition, and more.</li>
 </ul>
-<div id="42bcd854" class="cell" data-execution_count="10">
+<div id="3ac4ba17" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>
@@ -3843,7 +3866,7 @@ dog | NOUN
 <section id="example-of-named-entity-recognition-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-nltk">Example of Named Entity Recognition in Python using NLTK</h4>
 <p>In NLP, a tree structure is often used to represent the syntactic structure of a sentence. Each node in the tree represents a linguistic unit, such as a word or a phrase, and the edges represent the relationships between these units. The <code>Tree</code> class provides various methods for creating, traversing, and modifying these tree structures.</p>
-<div id="36b9b21c" class="cell" data-execution_count="11">
+<div id="873e82c8" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> ne_chunk, pos_tag, word_tokenize</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tree <span class="im">import</span> Tree</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3867,8 +3890,10 @@ GPE: California</code></pre>
 <li>Note: NLTK’s named entity recognizer has identified “Apple”, “Cupertino”, and “California” as geopolitical entities (GPE).</li>
 <li>The NER model uses context and patterns learned from training data to classify named entities, but it is not always perfect and can sometimes make mistakes, as seen with “Apple” in this case.</li>
 </ul>
-<p><strong>Example of Named Entity Recognition in Python using spaCy</strong></p>
-<div id="f6411a67" class="cell" data-execution_count="12">
+</section>
+<section id="example-of-named-entity-recognition-in-python-using-spacy" class="level4">
+<h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-spacy">Example of Named Entity Recognition in Python using spaCy</h4>
+<div id="46da19f4" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spacy <span class="im">import</span> displacy</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>

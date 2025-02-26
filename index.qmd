@@ -36,17 +36,18 @@ format:
 
 Normalization is the process of converting a text into a standard form. This involves removing any characters that are not part of the standard English alphabet, converting all characters to lowercase, and removing any extra spaces.
 
-- Tasks involved in normalization include:
-    - **Tokenization**: Breaking a text into words, phrases, symbols, or other meaningful elements.
-    - **Case Folding**: Converting all characters to lowercase.
-    - **Removing Punctuation**: Removing any non-alphanumeric characters.
-    - **Removing Stopwords**: Removing common words that do not carry much meaning.
-    - **Stemming or Lemmatization**: Reducing words to their base or root form.
-    - **Removing Extra Spaces**: Removing any extra spaces between words.
-    - **Expanding Contractions**: Expanding contractions such as "don't" to "do not".
-    - **Removing URLs and Emails**: Removing URLs, email addresses, and other web-related content.
-    - **Removing HTML Tags**: Removing HTML tags from web pages.
-    - **Removing Emojis and Special Characters**: Removing emojis, emoticons, and other special characters.
+Tasks involved in normalization include
+
+- **Tokenization**: Breaking a text into words, phrases, symbols, or other meaningful elements.
+- **Case Folding**: Converting all characters to lowercase.
+- **Removing Punctuation**: Removing any non-alphanumeric characters.
+- **Removing Stopwords**: Removing common words that do not carry much meaning.
+- **Stemming or Lemmatization**: Reducing words to their base or root form.
+- **Removing Extra Spaces**: Removing any extra spaces between words.
+- **Expanding Contractions**: Expanding contractions such as "don't" to "do not".
+- **Removing URLs and Emails**: Removing URLs, email addresses, and other web-related content.
+- **Removing HTML Tags**: Removing HTML tags from web pages.
+- **Removing Emojis and Special Characters**: Removing emojis, emoticons, and other special characters.
 
 **Removal of Stopwords in Python using NLTK**
 ```{python}
@@ -139,7 +140,10 @@ print("\nTop 20 words in Crime and Punishment:")
 print(crime_common)
 ```
 
-
+##### NLTK Tokenizers
+- `word_tokenize()`: Tokenizes a text into words using a regular expression-based tokenizer. A versatile tokenizer that handles contractions, abbreviations, and punctuation marks effectively. It is suitable for most general-purpose tokenization tasks.
+- `WordPunctTokenizer()`: Tokenizes a text into words using a regular expression that matches punctuation as separate tokens. A specialized tokenizer that separates words and punctuation explicitly. It is useful when you need to distinguish between alphabetic and non-alphabetic characters.
+  
 ### Stemming
 
 - Stemming is the process of reducing a word to its root or base form. For example, the word "running" would be reduced to "run" by a stemming algorithm.
