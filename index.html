@@ -3093,17 +3093,12 @@ vertical-align: -.125em;
   <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a></li>
   <li><a href="#normalization" id="toc-normalization" class="nav-link" data-scroll-target="#normalization">Normalization</a>
   <ul class="collapse">
-  <li><a href="#morphological-normalization" id="toc-morphological-normalization" class="nav-link" data-scroll-target="#morphological-normalization">Morphological Normalization</a></li>
-  </ul></li>
-  <li><a href="#tokenization" id="toc-tokenization" class="nav-link" data-scroll-target="#tokenization">Tokenization</a>
-  <ul class="collapse">
+  <li><a href="#tokenization" id="toc-tokenization" class="nav-link" data-scroll-target="#tokenization">Tokenization</a></li>
   <li><a href="#stemming" id="toc-stemming" class="nav-link" data-scroll-target="#stemming">Stemming</a></li>
   <li><a href="#lemmatization" id="toc-lemmatization" class="nav-link" data-scroll-target="#lemmatization">Lemmatization</a></li>
   </ul></li>
-  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular Expressions</a>
-  <ul class="collapse">
+  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular Expressions</a></li>
   <li><a href="#pos-tagging" id="toc-pos-tagging" class="nav-link" data-scroll-target="#pos-tagging">POS Tagging</a></li>
-  </ul></li>
   </ul></li>
   <li><a href="#lecture-3" id="toc-lecture-3" class="nav-link" data-scroll-target="#lecture-3">Lecture 3</a></li>
   </ul>
@@ -3186,8 +3181,8 @@ vertical-align: -.125em;
 <section id="normalization" class="level2">
 <h2 class="anchored" data-anchor-id="normalization">Normalization</h2>
 <p>Normalization is the process of converting a text into a standard form. This involves removing any characters that are not part of the standard English alphabet, converting all characters to lowercase, and removing any extra spaces.</p>
-<section id="morphological-normalization" class="level3">
-<h3 class="anchored" data-anchor-id="morphological-normalization">Morphological Normalization</h3>
+<section id="morphological-normalization" class="level4">
+<h4 class="anchored" data-anchor-id="morphological-normalization">Morphological Normalization</h4>
 <ul>
 <li>Morphological normalization is the process of reducing a word to its base or root form</li>
 <li>This can involve <strong>stemming</strong> or <strong>lemmatization</strong></li>
@@ -3200,9 +3195,8 @@ vertical-align: -.125em;
 <li><strong>Inflectional</strong> affixes are added to a word to change its grammatical form eg. “s” for plural nouns, “ed” for past tense verbs eg. “dogs”, “walked”</li>
 </ul>
 </section>
-</section>
-<section id="tokenization" class="level2">
-<h2 class="anchored" data-anchor-id="tokenization">Tokenization</h2>
+<section id="tokenization" class="level3">
+<h3 class="anchored" data-anchor-id="tokenization">Tokenization</h3>
 <ul>
 <li>Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements.</li>
 <li>The tokens are the words, sentences, characters, or subwords that are produced by the tokenization process.</li>
@@ -3210,7 +3204,7 @@ vertical-align: -.125em;
 <li><strong>Type</strong> is number of unique tokens in a text</li>
 <li><strong>Token</strong> is a single instance of a token in a text</li>
 </ul>
-<div id="9a205b4d" class="cell" data-execution_count="1">
+<div id="90182ad4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>total_tokens <span class="op">=</span> <span class="bu">len</span>(tokens)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>total_types <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(tokens))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3223,7 +3217,7 @@ vertical-align: -.125em;
 <ul>
 <li>word.isalnum() - returns True if all characters in the word are alphanumeric</li>
 </ul>
-<div id="c08bc226" class="cell" data-execution_count="3">
+<div id="efebd7b9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>shakespeare_url <span class="op">=</span> <span class="st">&quot;https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt&quot;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>crime_punishment_url <span class="op">=</span> <span class="st">&quot;http://www.gutenberg.org/files/2554/2554-0.txt&quot;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3259,6 +3253,7 @@ Top 20 words in Crime and Punishment:
 </div>
 </div>
 </section>
+</section>
 <section id="stemming" class="level3">
 <h3 class="anchored" data-anchor-id="stemming">Stemming</h3>
 <ul>
@@ -3273,7 +3268,7 @@ Top 20 words in Crime and Punishment:
 <section id="lemmatization" class="level3">
 <h3 class="anchored" data-anchor-id="lemmatization">Lemmatization</h3>
 <p>Lemmatization is the process of reducing a word to its base or root form, known as a lemma. Lemmatization is more sophisticated than stemming because it uses a dictionary to map words to their base forms.</p>
-<div id="9b203f61" class="cell" data-execution_count="4">
+<div id="625bec37" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample Python code</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hello, world!&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -3282,10 +3277,10 @@ Top 20 words in Crime and Punishment:
 <section id="regular-expressions" class="level2">
 <h2 class="anchored" data-anchor-id="regular-expressions">Regular Expressions</h2>
 <p>Regular expressions are a powerful tool for pattern matching and text processing. They allow you to search for patterns in text, extract specific information, and perform complex text transformations.</p>
-<section id="pos-tagging" class="level3">
-<h3 class="anchored" data-anchor-id="pos-tagging">POS Tagging</h3>
-<p>Part-of-speech (POS) tagging is the process of assigning a part of speech to each word in a text. The part of speech indicates the grammatical category of the word, such as noun, verb, adjective, etc.</p>
 </section>
+<section id="pos-tagging" class="level2">
+<h2 class="anchored" data-anchor-id="pos-tagging">POS Tagging</h2>
+<p>Part-of-speech (POS) tagging is the process of assigning a part of speech to each word in a text. The part of speech indicates the grammatical category of the word, such as noun, verb, adjective, etc.</p>
 </section>
 </section>
 <section id="lecture-3" class="level1">

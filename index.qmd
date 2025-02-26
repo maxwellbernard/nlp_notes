@@ -36,7 +36,7 @@ format:
 
 Normalization is the process of converting a text into a standard form. This involves removing any characters that are not part of the standard English alphabet, converting all characters to lowercase, and removing any extra spaces.
 
-### Morphological Normalization
+#### Morphological Normalization
 
 - Morphological normalization is the process of reducing a word to its base or root form
 - This can involve **stemming** or **lemmatization**
@@ -46,7 +46,7 @@ Normalization is the process of converting a text into a standard form. This inv
   - **Suffixes** are added to the end of a word eg. "ly" in "quickly"
 - **Inflectional** affixes are added to a word to change its grammatical form eg. "s" for plural nouns, "ed" for past tense verbs eg. "dogs", "walked"
 
-## Tokenization
+### Tokenization
 
 - Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements.
 - The tokens are the words, sentences, characters, or subwords that are produced by the tokenization process.
@@ -136,7 +136,7 @@ print("Hello, world!")
 
 Regular expressions are a powerful tool for pattern matching and text processing. They allow you to search for patterns in text, extract specific information, and perform complex text transformations.
 
-### POS Tagging
+## POS Tagging
 
 Part-of-speech (POS) tagging is the process of assigning a part of speech to each word in a text. The part of speech indicates the grammatical category of the word, such as noun, verb, adjective, etc.
 
