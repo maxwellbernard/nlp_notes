@@ -7,11 +7,11 @@ format:
         toc: true
         toc-depth: 3
         toc-expand: true
+        css: styles.css
         code-block-line-numbers: true
         code-block-wrap: true
         code-overflow: wrap
         code-output-overflow: wrap
-        code-block-font-size: 0.9em
         theme: default
         code-block-theme: default
         highlight-style: pygments
@@ -30,7 +30,8 @@ format:
 | Named Entity Recognition (NER) | provides multiple NER taggers (ranging from rule-based to machine learning-based) | uses a highly efficient deep learning-based NER tagger for detecting entities such as names, organizations, locations, etc. |
 | Performance | slower than spaCy | faster than NLTK (due to its optimized implementation in Cython) |
 
-**Textblob** is another popular library for NLP in Python. It is built on top of NLTK and provides a simple API for common NLP tasks such as tokenization, POS tagging, and sentiment analysis. It is **not good for large scale production use**
+- `Textblob` is another popular library for NLP in Python. It is built on top of NLTK and provides a simple API for common NLP tasks such as tokenization, POS tagging, and sentiment analysis. 
+  - It is **not good for large scale production use**
 
 ## Normalization
 
@@ -288,6 +289,8 @@ for sentence in sentences:
         - Requires manual effort to define rules and patterns for different languages and domains.
         - Limited to the rules and patterns defined by the developer, which may not cover all cases.
       - **Example**: Rule-based POS taggers in NLTK such as the `DefaultTagger` and `RegexpTagger` and `pos_tag` method.
+<br>
+<br>
 
   - **Statistical POS Tagging**:
   - Uses statistical models (such as Hidden Markov Models) to assign POS tags to words based on their context and probability.
@@ -319,6 +322,8 @@ for sentence in sentences:
 | MD | Modal | can, could, might |
 | NN | Noun, singular or mass | dog, cat, house |
       
+<br>
+<br>
 
 **Most Common POS Tags (SpaCy)**
 
@@ -410,4 +415,153 @@ displacy.render(doc, style="ent", jupyter=True) # style="ent" is used to display
 
 
 # Lecture 3
+
+## N-Gram (Probabilistic LM)
+This is model predicts the probability of a word given the previous n-1 words. It is based on the assumption that the probability of a word depends on the context provided by the previous n-1 words. N-grams are used in various NLP tasks such as speech recognition, machine translation, and text generation.
+
+- **Unigram**: A single word
+- **Bigram**: A pair of words
+- **Trigram**: A triplet of words ect...
+
+number of n-grams = (total number of words) - (n - 1)
+
+### Conditional Probability and Chain Rule
+
+- **Joint Probability**: The probability of two or more events occurring together. It is denoted as P(A, B) and is calculated as the probability of both events A and B occurring.
+  - **Joint Probability Formula**: $P(A \cap B) = P(A) \times P(B)$
+  - is equivalent to $P(A \cap B) = P(A) \times P(B)$
+<br>
+<br>
+
+- **Conditional Probability**: The probability of an event given that another event has occurred. It is denoted as P(A | B) which is the probability of event A occurring given that event B has occurred.
+- It is calculated as the probability of both events A and B occurring divided by the probability of event B occurring.
+  - **Conditional Probability Formula**: $P(A \mid B) = \frac{P(A, B)}{P(B)}$
+<br>
+<br>
+
+- **Chain Rule of Probability**: The probability of a sequence of events can be calculated by multiplying the conditional probabilities of each event given the previous events in the sequence.
+  - **Chain Rule Formula**:
+$$
+\small
+P(w_1, w_2, ..., w_n) = P(w_1) * P(w_2 \mid w_1) * P(w_3 \mid w_1, w_2) * ... * P(w_n \mid w_1, w_2, ..., w_{n-1})
+$$
+
+  - **Example**: The probability of the sequence "The quick brown fox" can be calculated using the chain rule as follows:
+$$
+\small
+\begin{aligned}
+P(\text{The quick brown fox}) &= P(\text{The}) \times P(\text{quick} \mid \text{The}) \\
+&\times P(\text{brown} \mid \text{The quick}) \\
+&\times P(\text{fox} \mid \text{The quick brown})
+\end{aligned}
+$$
+    - "What is the probability of the 10th word given the previous 9 words?"
+  - **Note**: The chain rule is used to calculate the probability of a sequence of words in an N-gram model.
+
+### Markov Assumption
+To make things manageable, N-gram models approximate the chain rule by making a simplifying assumption called the Markov assumption. This assumption states that the **probability of a word depends only on the previous n-1 words, not on all the previous words in the sequence.** This simplifies the calculation of the conditional probability of a word given the previous n-1 words.
+
+
+- **First-Order Markov Model**: The probability of a word depends only on the previous word.
+  - $$P(w_n | w_1, w_2, ..., w_{n-1}) = P(w_n | w_{n-1})$$
+  - "The probability of the 10th word depends only on the 9th word, not on the previous words."
+  - **Example**: $P(\text{fox} \mid \text{The quick brown}) = P(\text{fox} \mid \text{brown})$
+  - **Note**: The first-order Markov model is a special case of the N-gram model where n=2.
+<br>
+<br>
+
+- **Second-Order Markov Model**: The probability of a word depends only on the previous two words.
+  - $$P(w_n | w_1, w_2, ..., w_{n-1}) = P(w_n | w_{n-2}, w_{n-1})$$
+  - "The probability of the 10th word depends only on the 8th and 9th words, not on the previous words."
+  - **Example**: $P(\text{fox} \mid \text{The quick brown}) = P(\text{fox} \mid \text{quick brown})$
+  - **Note**: The second-order Markov model is a special case of the N-gram model where n=3.
+
+**N-Gram Probability Calculation**
+
+- Mathematically, for a sequence of words $w_1, w_2, ..., w_n$, the probability of the sequence can be calculated using the chain rule of probability:
+  - $$\small P(w_1, w_2, ..., w_n) = P(w_1) * P(w_2 \mid w_1) * P(w_3 \mid w_1, w_2) * ... * P(w_n \mid w_1, w_2, ..., w_{n-1})$$
+
+- The probability of a word given the previous n-1 words can be calculated using the formula:
+  - $P(w_n | w_1, w_2, ..., w_{n-1}) = \frac{P(w_1, w_2, ..., w_n)}{P(w_1, w_2, ..., w_{n-1})}$
+<br>
+
+- The probability of a sequence of words can be calculated by counting the occurrences of the n-gram in a corpus and dividing by the total number of n-grams in the corpus.
+<br>
+
+- **The Maximum Likelihood Estimation (MLE) of an N-gram** is calculated as:
+  - $P(w_n | w_1, w_2, ..., w_{n-1}) = \frac{\text{Count(n-gram)}}{\text{Count(of previous n-1 words)}}$
+<br>
+<br>
+  - Issue: The MLE can assign zero probability to unseen n-grams, leading to sparsity and poor generalization.
+  
+### Padding 
+Is a technique used to handle the boundary conditions in N-gram models where the context words are not available.
+- **Start-of-Sentence (BOS) Padding**: A special token that represents the beginning of a sentence. It is used to handle the first word in a sentence where the context words are not available.
+  - **Example**: `<s>` The quick brown fox jumps over the lazy dog. Note `<s>` is equivalent to `<start>`
+<br>
+<br>
+
+- **End-of-Sentence (EOS) Padding**: A special token that represents the end of a sentence. It is used to handle the last word in a sentence where the context words are not available.
+  - **Example**: The fox jumps over the lazy dog. `</s>`
+
+**Notes**: the choice of how many padding tokens to use depends on the order of the N-gram model. For a bigram model, you would use one padding token at the beginning of the sentence. For a trigram model, you would use two padding tokens at the beginning of the sentence. The padding tokens are not part of the vocabulary and are used only for modeling purposes.
+
+
+### Issue of Underflow
+- **Underflow**: A numerical issue that occurs when multiplying many small probabilities together, leading to a very small probability that may be rounded to zero.
+- **Solution**: Use ``log probabilities`` to avoid underflow by converting the product of probabilities to the sum of log probabilities.
+
+### Smoothing Techniques
+- This is a technique used to address the issue of zero probabilities in N-gram models. It assigns a small non-zero probability to unseen n-grams to improve the generalization of the model. You "test" these by comparing smoothed probabilities to unsmoothed ones.
+<br>
+<br>
+
+- **Laplace (Add-One) Smoothing**: A simple smoothing technique that adds one to the count of each n-gram to avoid zero probabilities.
+  - **Formula**: $P(w_n | w_1, w_2, ..., w_{n-1}) = \frac{(\text{Count(n-gram)} + 1)}{(\text{Count(of previous n-1 words)} + V)}$
+    - **V**: The vocabulary size, which is the total number of unique words in the corpus.
+    - **Example**: $$P(\text{fox} \mid \text{quick brown}) = \frac{\text{Count}(\text{quick brown fox}) + 1}{\text{Count}(\text{quick brown}) + V}$$
+
+- **Add-k Smoothing**: A generalization of Laplace smoothing that adds a `smaller constant k` to the count of each n-gram to avoid zero probabilities.
+  - **Formula**: $P(w_n | w_1, w_2, ..., w_{n-1}) = \frac{(\text{Count(n-gram)} + k)}{(\text{Count(of previous n-1 words)} + kV)}$
+    - **k**: A constant value that determines the amount of smoothing.
+    - **Example**: $$P(\text{fox} \mid \text{quick brown}) = \frac{\text{Count}(\text{quick brown fox}) + k}{\text{Count}(\text{quick brown}) + kV}$$
+    - **Test**: Tune k and compare probabilities for rare vs. frequent trigrams.
+
+- **Good-Turing Smoothing**: A more sophisticated smoothing technique that estimates the probability of unseen n-grams based on the frequency of seen n-grams.
+  - adjusts the counts of n-grams based on the frequency of n-grams with similar counts.
+  - **Test**: compute adjusted probabilities for low-frequency n-grams and validate against held-out data.
+
+- **Backoff and Interpolation**: A technique that combines n-gram models of different orders to improve the generalization of the model.
+  - **Backoff**: Uses lower-order n-grams when higher-order n-grams have zero probabilities.
+  - **Interpolation**: Combines probabilities from different n-gram models using linear interpolation.
+  - **Test**: Compare performance of backoff and interpolation on different datasets.
+
+- **Kneser-Ney Smoothing**: A state-of-the-art smoothing technique that estimates the probability of unseen n-grams based on the frequency of n-grams in the context of the n-gram.
+  - It considers how often a word appears in a novel context, rather than just how often it appears overall.
+  - **Test**: Compare Kneser-Ney smoothing to other smoothing techniques on large datasets.
+
+
+### Perplexity
+- **Perplexity**: A measure of how well a language model predicts a given text. It is the inverse probability of the test set, normalized by the number of words.
+- Evaluation Metric: "How well the model predicts the next word in a sequence."
+
+  - **Perplexity Formula**: $PP(W) = P(w_1, w_2, ..., w_N)^{-\frac{1}{N}}$
+    - **N**: The number of words in the test set.
+    - **Example**: If the perplexity of a language model is 100, it means that the model is as confused as if it had to choose uniformly among 100 words for each word in the test set.
+  - <span style="color:green">Lower </span>Perplexity: <span style="color:green">better</span> language model that predicts the test set more accurately.
+  - <span style="color:red">Higher </span>Perplexity: <span style="color:red">worse</span> language model that predicts the test set less accurately.
+
+**Example of N-Gram Model in Python**
+
+```{python}
+from nltk import ngrams
+
+text = "The brown fox jumps over the dog."
+words = text.split()
+trigrams = list(ngrams(words, 3))
+
+print("Trigrams:")
+for trigram in trigrams:
+    print(trigram)
+```
 
