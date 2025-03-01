@@ -1,0 +1,31 @@
+/* Style for highlighted text */
+mark {
+    background-color: #ffff8d;
+}
+
+/* Layout and page margins */
+body {
+    margin: 0px;
+    line-height: 1.6;
+}
+
+/* Style for block code output */
+pre {
+    background-color: #e1f2fa9d;
+    /* Light blue background */
+    padding: 10px;
+    /* Padding inside the block */
+    border-radius: 10px;
+    /* Rounded corners */
+    /* Light border color */
+    font-size: 0.8em;
+    /* Font size */
+    overflow-x: auto;
+    /* Enable horizontal scrolling for long lines */
+}
+
+/* Make code blocks text smaller */
+pre code {
+    font-size: 0.7em;
+    /* Adjust this value to make the text smaller or larger */
+}
