@@ -3288,6 +3288,22 @@ font-size: 0.7em;
   <li><a href="#example-of-sentence-generation-with-trigram-lm" id="toc-example-of-sentence-generation-with-trigram-lm" class="nav-link" data-scroll-target="#example-of-sentence-generation-with-trigram-lm">Example of Sentence Generation with Trigram LM</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#lecture-4" id="toc-lecture-4" class="nav-link" data-scroll-target="#lecture-4">Lecture 4</a>
+  <ul class="collapse">
+  <li><a href="#text-classification" id="toc-text-classification" class="nav-link" data-scroll-target="#text-classification">Text Classification</a></li>
+  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes Theorem</a></li>
+  <li><a href="#evaluation-metrics" id="toc-evaluation-metrics" class="nav-link" data-scroll-target="#evaluation-metrics">Evaluation Metrics</a></li>
+  </ul></li>
+  <li><a href="#lecture-5" id="toc-lecture-5" class="nav-link" data-scroll-target="#lecture-5">Lecture 5</a>
+  <ul class="collapse">
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">Logistic Regression</a>
+  <ul class="collapse">
+  <li><a href="#training-logistic-regression" id="toc-training-logistic-regression" class="nav-link" data-scroll-target="#training-logistic-regression">Training Logistic Regression</a></li>
+  <li><a href="#bag-of-words-vs.-tf-idf" id="toc-bag-of-words-vs.-tf-idf" class="nav-link" data-scroll-target="#bag-of-words-vs.-tf-idf">Bag of Words vs. TF-IDF</a></li>
+  <li><a href="#lr-model-assumptions" id="toc-lr-model-assumptions" class="nav-link" data-scroll-target="#lr-model-assumptions">LR Model Assumptions</a></li>
+  <li><a href="#lr-limitations" id="toc-lr-limitations" class="nav-link" data-scroll-target="#lr-limitations">LR Limitations</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -3387,7 +3403,7 @@ font-size: 0.7em;
 <li><strong>Removing Emojis and Special Characters</strong>: Removing emojis, emoticons, and other special characters.</li>
 </ul>
 <p><strong>Removal of Stopwords in Python using NLTK</strong></p>
-<div id="e7a28e27" class="cell" data-execution_count="2">
+<div id="0d63d1e3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&quot;english&quot;</span>))</span>
@@ -3398,7 +3414,7 @@ font-size: 0.7em;
 </div>
 </div>
 <p><strong>Removal of Stopwords in Python using spaCy</strong></p>
-<div id="7b98d231" class="cell" data-execution_count="3">
+<div id="3974f0ba" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>) <span class="co"># Load English language model</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
@@ -3431,7 +3447,7 @@ font-size: 0.7em;
 <li><strong>Type</strong> is number of unique tokens in a text</li>
 <li><strong>Token</strong> is a single instance of a token in a text</li>
 </ul>
-<div id="3cdfc6ab" class="cell" data-execution_count="4">
+<div id="b328f392" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>total_tokens <span class="op">=</span> <span class="bu">len</span>(tokens)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>total_types <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(tokens))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3444,7 +3460,7 @@ font-size: 0.7em;
 <ul>
 <li>word.isalnum() - returns True if all characters in the word are alphanumeric</li>
 </ul>
-<div id="0e150235" class="cell" data-execution_count="5">
+<div id="299ae5b4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>shakespeare_url <span class="op">=</span> <span class="st">&quot;https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt&quot;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>crime_punishment_url <span class="op">=</span> <span class="st">&quot;http://www.gutenberg.org/files/2554/2554-0.txt&quot;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3492,7 +3508,7 @@ font-size: 0.7em;
 </ul>
 <section id="example-of-stemming-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk">Example of stemming in Python using NLTK</h4>
-<div id="3222df74" class="cell" data-execution_count="6">
+<div id="5af53305" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sbs <span class="op">=</span> SnowballStemmer(<span class="st">&quot;english&quot;</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">&quot;The stars twinkled in the dark, illuminating the night sky.&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>method <span class="op">=</span> TreebankWordTokenizer()</span>
@@ -3529,7 +3545,7 @@ sky | sky
 </ul>
 <section id="example-of-stemming-in-python-using-nltk-1" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk-1">Example of stemming in Python using NLTK</h4>
-<div id="c98021a6" class="cell" data-execution_count="7">
+<div id="9324182d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sbs <span class="op">=</span> SnowballStemmer(<span class="st">&quot;english&quot;</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">&quot;The stars twinkled in the dark, illuminating the night sky.&quot;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>method <span class="op">=</span> TreebankWordTokenizer()</span>
@@ -3751,7 +3767,7 @@ sky | sky
 </tbody>
 </table>
 <p><strong>Example of Regular Expressions in Python</strong></p>
-<div id="82e04824" class="cell" data-execution_count="8">
+<div id="feeab5ea" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog. The dog barks at the fox.&quot;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
@@ -3957,7 +3973,7 @@ sky | sky
 </table>
 <section id="example-of-pos-tagging-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-pos-tagging-in-python-using-nltk">Example of POS Tagging in Python using NLTK</h4>
-<div id="8e26fc54" class="cell" data-execution_count="9">
+<div id="7ee0c028" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog.&quot;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>tags <span class="op">=</span> pos_tag(words)</span>
@@ -3985,7 +4001,7 @@ dog | NN
 <li>This model is a small English model trained on written web text (blogs, news, comments), which includes vocabulary, vectors, syntax, and entities.</li>
 <li>The model is trained on the OntoNotes 5 corpus and supports POS tagging, dependency parsing, named entity recognition, and more.</li>
 </ul>
-<div id="383fe9c7" class="cell" data-execution_count="10">
+<div id="d99f46d7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sample_text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog.&quot;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> model(sample_text)</span>
@@ -4029,7 +4045,7 @@ dog | NOUN
 <section id="example-of-named-entity-recognition-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-nltk">Example of Named Entity Recognition in Python using NLTK</h4>
 <p>In NLP, a tree structure is often used to represent the syntactic structure of a sentence. Each node in the tree represents a linguistic unit, such as a word or a phrase, and the edges represent the relationships between these units. The <code>Tree</code> class provides various methods for creating, traversing, and modifying these tree structures.</p>
-<div id="f9977d45" class="cell" data-execution_count="11">
+<div id="0799786f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Apple is a technology company based in Cupertino, California.&quot;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>tags <span class="op">=</span> pos_tag(words)</span>
@@ -4053,7 +4069,7 @@ GPE: California</code></pre>
 </section>
 <section id="example-of-named-entity-recognition-in-python-using-spacy" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-spacy">Example of Named Entity Recognition in Python using spaCy</h4>
-<div id="f3ea141c" class="cell" data-execution_count="12">
+<div id="1cda49de" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sample_text <span class="op">=</span> <span class="st">&quot;Apple is a technology company based in Cupertino, California.&quot;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> model(sample_text)</span>
@@ -4093,7 +4109,7 @@ GPE: California</code></pre>
 </ul>
 <p>number of n-grams = (total number of words) - (n - 1)</p>
 <p><strong>Generating different n-grams for a text</strong>:</p>
-<div id="3d54b683" class="cell" data-execution_count="13">
+<div id="2d7aa220" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Italy is famous for its cuisine.&quot;</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_ngrams(text, n):</span>
@@ -4185,7 +4201,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </ul>
 <p><strong>Notes</strong>: the choice of how many padding tokens to use depends on the order of the N-gram model. For a bigram model, you would use one padding token at the beginning of the sentence. For a trigram model, you would use two padding tokens at the beginning of the sentence. The padding tokens are not part of the vocabulary and are used only for modeling purposes.</p>
 <p><strong>Padding Example in Python</strong></p>
-<div id="e43a221b" class="cell" data-execution_count="14">
+<div id="fd3aa11c" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;I like NLP. NLP is fun. NLP in python is fun.&quot;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4288,7 +4304,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </ul></li>
 </ul>
 <p><strong>STEP 1: tokenize text and add padding tokens</strong></p>
-<div id="3f9d58c1" class="cell" data-execution_count="15">
+<div id="95aaf8b7" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;I like NLP. NLP is fun. NLP in python is fun. I like coding in python. NLP is cool.&quot;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>padded_sentences <span class="op">=</span> []</span>
@@ -4310,7 +4326,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </div>
 </div>
 <p><strong>STEP 2: Generate trigrams (and bigrams for MLE calculation)</strong></p>
-<div id="efcf1002" class="cell" data-execution_count="16">
+<div id="76929ec5" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>trigrams <span class="op">=</span> []</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sent <span class="kw">in</span> padded_sentences:</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    sent_trigrams <span class="op">=</span> <span class="bu">list</span>(ngrams(sent, <span class="dv">3</span>))</span>
@@ -4356,7 +4372,7 @@ Trigrams:
 </div>
 </div>
 <p><strong>STEP 3: Count unique trigrams and bigrams</strong></p>
-<div id="4f5a4a09" class="cell" data-execution_count="17">
+<div id="f18131fb" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>trigram_counts <span class="op">=</span> Counter(trigrams)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>bigrams_counts <span class="op">=</span> Counter(bigrams)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>unique_bigrams <span class="op">=</span> <span class="bu">len</span>(bigrams_counts)</span>
@@ -4399,7 +4415,7 @@ Unique Bigrams: 17
 </div>
 </div>
 <p><strong>STEP 4: Calculate trigram probabilities (MLE)</strong></p>
-<div id="14734abd" class="cell" data-execution_count="18">
+<div id="27c05585" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tri_mle <span class="op">=</span> {}</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (w1, w2, w3), count <span class="kw">in</span> trigram_counts.items():</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    tri_mle[(w1, w2, w3)] <span class="op">=</span> <span class="bu">round</span>(count <span class="op">/</span> bigrams_counts[(w1, w2)], <span class="dv">3</span>)</span>
@@ -4439,7 +4455,7 @@ Trigram MLE:
 </div>
 </div>
 <p><strong>(Calculating MLE with Laplace Smoothing)</strong></p>
-<div id="d76b30fc" class="cell" data-execution_count="19">
+<div id="4974502a" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> <span class="bu">len</span>(trigram_counts)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Laplace smoothing constant</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>tri_mle_laplace <span class="op">=</span> {}</span>
@@ -4482,7 +4498,7 @@ Trigram MLE with Laplace Smoothing:
 </div>
 </div>
 <p><strong>STEP 5: Calculate Perplexity</strong></p>
-<div id="9a761bbb" class="cell" data-execution_count="20">
+<div id="995bbc47" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>test_trigrams <span class="op">=</span> trigrams  <span class="co"># Reusing the training trigrams for simplicity</span></span>
@@ -4519,13 +4535,13 @@ Perplexity: 1.288</code></pre>
 </section>
 <section id="example-of-trigram-lm-with-nltk-abc-corpus" class="level3">
 <h3 class="anchored" data-anchor-id="example-of-trigram-lm-with-nltk-abc-corpus">Example of Trigram LM with NLTK ABC Corpus</h3>
-<div id="9bc32124" class="cell" data-execution_count="21">
+<div id="d511e8a5" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="bu">list</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class &#39;type&#39;&gt;</code></pre>
 </div>
 </div>
-<div id="6d9c6af5" class="cell" data-execution_count="22">
+<div id="cd6d0181" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.util <span class="im">import</span> trigrams, bigrams</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4594,13 +4610,13 @@ Unique Trigrams: 45447
 Unique Bigrams: 30474
 Predicted next word after &#39;the prime&#39;: minister
 Probability of the next word occurring: 0.02978
-Execution time: 0.34494 seconds</code></pre>
+Execution time: 0.17939 seconds</code></pre>
 </div>
 </div>
 </section>
 <section id="example-of-sentence-generation-with-trigram-lm" class="level3">
 <h3 class="anchored" data-anchor-id="example-of-sentence-generation-with-trigram-lm">Example of Sentence Generation with Trigram LM</h3>
-<div id="87466254" class="cell" data-execution_count="23">
+<div id="dc04475f" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
@@ -4626,10 +4642,369 @@ Execution time: 0.34494 seconds</code></pre>
 <span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
 <span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Execution time: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">:.5f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Generated sentence: export system is
-Execution time: 0.00165 seconds</code></pre>
+<pre><code>Generated sentence: life in the
+Execution time: 0.00048 seconds</code></pre>
 </div>
 </div>
+</section>
+</section>
+</section>
+<section id="lecture-4" class="level1">
+<h1>Lecture 4</h1>
+<section id="text-classification" class="level2">
+<h2 class="anchored" data-anchor-id="text-classification">Text Classification</h2>
+<ul>
+<li>Text classification is the process of assigning predefined categories or labels to text documents based on their content.</li>
+<li>It is a supervised learning task where a model is trained on labeled data to learn the relationship between the text and its corresponding labels.</li>
+<li>Text classification is used in various applications such as spam detection, sentiment analysis, topic categorization, and more.</li>
+<li>The goal of text classification is to build a model that can accurately predict the category of unseen text documents based on their content.</li>
+<li>The process of text classification involves several steps, including data preprocessing, feature extraction, model training, and evaluation.</li>
+<li>The choice of features and the classification algorithm can significantly impact the performance of the model.</li>
+</ul>
+<p>There are three main types of text classification techniques: - <strong>Supervised Learning</strong>: The model is trained on labeled data, where each document is associated with a predefined category. The model learns to map the input features to the corresponding labels. - Naive Bayes, Logistic Regression - <strong>Unsupervised Learning</strong>: The model is trained on unlabeled data, where the goal is to discover hidden patterns or clusters in the data. The model learns to group similar documents together without any predefined labels. - Latent Dirichlet Allocation (LDA), K-means clustering - <strong>Deep Learning</strong>: The model is trained on large amounts of data using deep neural networks. Deep learning models can automatically learn complex features and representations from the data, making them suitable for text classification tasks. - Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), Transformers (BERT, GPT-3)</p>
+</section>
+<section id="bayes-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="bayes-theorem">Bayes Theorem</h2>
+<ul>
+<li>Bayes theorem is a fundamental concept in probability theory that describes the relationship between conditional probabilities. It is used to update the probability of a hypothesis based on new evidence.</li>
+<li>The equation is given by: <span class="math display">\[P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}\]</span></li>
+<li>Where:
+<ul>
+<li>P(H|E): The probability of hypothesis H given evidence E (posterior probability).</li>
+<li>P(E|H): The probability of evidence E given hypothesis H (likelihood).</li>
+<li>P(H): The prior probability of hypothesis H.</li>
+<li>P(E): The total probability of evidence E.</li>
+</ul></li>
+<li><strong>Naive Assumption</strong>: The naive assumption in Naive Bayes classifiers is that the features are conditionally independent given the class label. This simplifies the computation of the posterior probability.</li>
+<li>The naive assumption allows us to calculate the joint probability of the features given the class label as the product of the individual probabilities of each feature.</li>
+<li>An exmple of the naive assumption is:</li>
+<li><span class="math display">\[P(X_1, X_2, ..., X_n \mid C) = P(X_1 \mid C) \cdot P(X_2 \mid C) \cdot ... \cdot P(X_n \mid C)\]</span></li>
+<li>Where:
+<ul>
+<li>P(X1, X2, …, Xn | C): The joint probability of features X1, X2, …, Xn given class C.</li>
+<li>P(Xi | C): The probability of feature Xi given class C.</li>
+</ul></li>
+<li>The naive assumption is a simplification that allows Naive Bayes classifiers to work well in practice, even when the features are not truly independent.</li>
+</ul>
+<p>Types of Naive Bayes Classifiers: - <strong>Gaussian Naive Bayes</strong>: Assumes that the features follow a Gaussian (normal) distribution. It is suitable for continuous features. - <strong>Multinomial Naive Bayes</strong>: Assumes that the features are counts or frequencies. It is suitable for discrete features, such as word counts in text classification. - <strong>Bernoulli Naive Bayes</strong>: Assumes that the features are binary (0 or 1). It is suitable for binary features, such as presence or absence of words in text classification.</p>
+<p>Implementing Naive Bayes - <strong>Step 1</strong>: Load the dataset, clean and preprocess the text data. - <strong>Step 2</strong>: Split the dataset into training and testing sets. - <strong>Step 3</strong>: Extract features from the text data using techniques such as Bag of Words (BoW) - <strong>Step 4</strong>: Train the Naive Bayes classifier on the training set. - <strong>Step 5</strong>: Evaluate the classifier on the testing set using metrics such as accuracy, precision, recall, and F1-score.</p>
+<div id="62c5be16" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> MultinomialNB</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_20newsgroups</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&quot;english&quot;</span>))</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> PorterStemmer</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>stemmer <span class="op">=</span> PorterStemmer()</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> download</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> pos_tag</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> ne_chunk</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tree <span class="im">import</span> Tree</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>newsgroups <span class="op">=</span> fetch_20newsgroups(</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>    subset<span class="op">=</span><span class="st">&quot;all&quot;</span>, categories<span class="op">=</span>[<span class="st">&quot;alt.atheism&quot;</span>, <span class="st">&quot;sci.space&quot;</span>], remove<span class="op">=</span>(<span class="st">&quot;headers&quot;</span>, <span class="st">&quot;footers&quot;</span>, <span class="st">&quot;quotes&quot;</span>)</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&quot;text&quot;</span>: newsgroups.data, <span class="st">&quot;label&quot;</span>: newsgroups.target})</span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess the text data</span></span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocess_text(text):</span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tokenize the text</span></span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> word_tokenize(text)</span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove stop words</span></span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> tokens <span class="cf">if</span> word.lower() <span class="kw">not</span> <span class="kw">in</span> stop_words]</span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Stem the words</span></span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [stemmer.stem(word) <span class="cf">for</span> word <span class="kw">in</span> tokens]</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot; &quot;</span>.join(tokens)</span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&quot;text&quot;</span>] <span class="op">=</span> df[<span class="st">&quot;text&quot;</span>].<span class="bu">apply</span>(preprocess_text)</span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the dataset into training and testing sets</span></span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&quot;text&quot;</span>], df[<span class="st">&quot;label&quot;</span>], test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span></span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pipeline with CountVectorizer and MultinomialNB</span></span>
+<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> make_pipeline(CountVectorizer(), MultinomialNB())</span>
+<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the Naive Bayes classifier</span></span>
+<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a>pipeline.fit(X_train, y_train)</span>
+<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-51"><a href="#cb41-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
+<span id="cb41-52"><a href="#cb41-52" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> pipeline.predict(X_test)</span>
+<span id="cb41-53"><a href="#cb41-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-54"><a href="#cb41-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the classifier</span></span>
+<span id="cb41-55"><a href="#cb41-55" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb41-56"><a href="#cb41-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb41-57"><a href="#cb41-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-58"><a href="#cb41-58" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Classification Report:&quot;</span>)</span>
+<span id="cb41-59"><a href="#cb41-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred, target_names<span class="op">=</span>newsgroups.target_names))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Accuracy: 0.9358
+Classification Report:
+              precision    recall  f1-score   support
+
+ alt.atheism       0.90      0.96      0.93       157
+   sci.space       0.96      0.92      0.94       201
+
+    accuracy                           0.94       358
+   macro avg       0.93      0.94      0.94       358
+weighted avg       0.94      0.94      0.94       358
+</code></pre>
+</div>
+</div>
+</section>
+<section id="evaluation-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-metrics">Evaluation Metrics</h2>
+<ul>
+<li><strong>Accuracy</strong>: The proportion of correctly classified instances out of the total instances.
+<ul>
+<li>Formula: <span class="math inline">\(Accuracy = \frac{TP + TN}{TP + TN + FP + FN}\)</span></li>
+<li>Where:
+<ul>
+<li>TP: True Positives</li>
+<li>TN: True Negatives</li>
+<li>FP: False Positives</li>
+<li>FN: False Negatives</li>
+</ul></li>
+</ul></li>
+<li><strong>Precision</strong>: The proportion of true positive predictions out of all positive predictions.
+<ul>
+<li>Formula: <span class="math inline">\(Precision = \frac{TP}{TP + FP}\)</span></li>
+<li>Indicates how many of the predicted positive instances are actually positive.</li>
+<li>High precision means fewer false positives.</li>
+</ul></li>
+<li><strong>Recall</strong>: The proportion of true positive predictions out of all actual positive instances.
+<ul>
+<li>Formula: <span class="math inline">\(Recall = \frac{TP}{TP + FN}\)</span></li>
+<li>Indicates how many of the actual positive instances were correctly predicted.</li>
+<li>High recall means fewer false negatives.</li>
+<li>Also known as Sensitivity or True Positive Rate.</li>
+<li>High precision and low recall means the model is conservative in making positive predictions.</li>
+</ul></li>
+<li><strong>F1-Score</strong>: The harmonic mean of precision and recall. It is a single metric that balances both precision and recall.
+<ul>
+<li>Formula: <span class="math inline">\(F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}\)</span></li>
+<li>A high F1-score indicates a good balance between precision and recall.</li>
+<li>Useful when the class distribution is imbalanced, because accuracy can be misleading.</li>
+<li><strong>Classification Report</strong>: A summary of precision, recall, and F1-score for each class in a multi-class classification problem.</li>
+</ul></li>
+</ul>
+<p>Disadvatages of Naive Bayes:</p>
+<ul>
+<li><strong>Independence Assumption</strong>: The naive assumption of feature independence may not hold in real-world data, leading to suboptimal performance.</li>
+<li><strong>Zero Probability Problem</strong>: If a feature value is not present in the training data for a particular class, the model will assign a probability of zero to that class, which can be problematic.</li>
+<li><strong>Probability Estimation Bias</strong>: Naive Bayes may produce biased probability estimates, especially for rare events or classes with limited training data.</li>
+<li><strong>Feature Revelance</strong>: Naive Bayes may not perform well when features are highly correlated or when the feature space is large and sparse.</li>
+<li><strong>Limited Expressiveness</strong>: Naive Bayes is a linear classifier and may not capture complex relationships between features and classes.</li>
+</ul>
+<p>If you are using a Naive Bayes classifier for a dataset where 95% of the tweets are from positive class. Can you suggest any method to handle this imbalance, and briefly explain how it helps improve model performance?</p>
+<p><strong>Answer:</strong> To handle class imbalance in a dataset where 95% of the tweets are from the positive class, you can use the following methods:</p>
+<ol type="1">
+<li><strong>Resampling Techniques</strong>:
+<ul>
+<li><strong>Oversampling</strong>: Increase the number of instances in the minority class (negative class) by duplicating existing instances or generating synthetic samples (e.g., using SMOTE).</li>
+<li><strong>Undersampling</strong>: Decrease the number of instances in the majority class (positive class) by randomly removing instances.</li>
+<li><strong>Combination</strong>: Use a combination of oversampling and undersampling to balance the classes.</li>
+<li><strong>How it helps</strong>: Resampling techniques help to create a more balanced dataset, which allows the model to learn better from both classes and reduces the bias towards the majority class. This can lead to improved performance in terms of precision, recall, and F1-score for the minority class.</li>
+</ul></li>
+<li><strong>Class Weights</strong>: Assign higher weights to the minority class during model training. This can be done by using the <code>class_weight</code> parameter in scikit-learn classifiers.
+<ul>
+<li><strong>How it helps</strong>: By assigning higher weights to the minority class, the model is penalized more for misclassifying instances from that class, which encourages it to focus on learning from the minority class.</li>
+</ul></li>
+<li><strong>Ensemble Methods</strong>: Use ensemble methods such as Random Forest or Gradient Boosting, which can handle class imbalance better than individual classifiers.
+<ul>
+<li><strong>How it helps</strong>: Ensemble methods combine the predictions of multiple classifiers, which can improve overall performance and robustness against class imbalance.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="lecture-5" class="level1">
+<h1>Lecture 5</h1>
+<section id="logistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="logistic-regression">Logistic Regression</h2>
+<ul>
+<li>Logistic regression is a statistical method used for binary classification problems. It models the relationship between a binary dependent variable and one or more independent variables by estimating the probability of the dependent variable being in a particular class.</li>
+<li>It is a type of regression analysis that uses the logistic function to model the probability of a binary outcome.</li>
+<li>Logistic regression is widely used in various fields, including social sciences, healthcare, marketing, and finance, for tasks such as predicting customer churn, disease diagnosis, and credit risk assessment.</li>
+<li>Logistic regression is a linear model that uses the logistic function to map the linear combination of input features to a probability value between 0 and 1.</li>
+<li>The logistic function is defined as:
+<ul>
+<li><span class="math display">\[f(x) = \frac{1}{1 + e^{-x}}\]</span></li>
+<li>Where:
+<ul>
+<li>x: The linear combination of input features and their corresponding weights.</li>
+<li>e: The base of the natural logarithm (approximately 2.71828).</li>
+<li>f(x): The output probability value between 0 and 1.</li>
+<li>This is known as the sigmoid function.</li>
+</ul></li>
+</ul></li>
+<li>The logistic regression model can be represented as:</li>
+<li><span class="math display">\[P(Y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_nX_n)}}\]</span></li>
+<li>Where:
+<ul>
+<li>P(Y=1|X): The probability of the dependent variable Y being equal to 1 given the input features X.</li>
+<li>β0: The intercept term (bias).</li>
+<li>β1, β2, …, βn: The coefficients (weights) for each input feature X1, X2, …, Xn.</li>
+</ul></li>
+<li>The coefficients are learned during the training process using maximum likelihood estimation (MLE), which finds the values of the coefficients that maximize the likelihood of the observed data given the model.</li>
+<li>The bias teram helps the model to fit the data better by allowing it to shift the decision boundary. A bias &lt;0 means the model is more likely to predict class 0, while a bias &gt;0 means the model is more likely to predict class 1.</li>
+</ul>
+<p><strong>Log-Odds</strong>:</p>
+<ul>
+<li>The log-odds (or logit) is the logarithm of the odds ratio, which is the ratio of the probability of an event occurring to the probability of it not occurring.</li>
+<li>The log-odds can be calculated as:
+<ul>
+<li><span class="math display">\[\text{log-odds} = \log\left(\frac{P(Y=1|X)}{1 - P(Y=1|X)}\right) = = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_nX_n\]</span></li>
+</ul></li>
+<li>The log-odds transformation is useful because it maps the probability values (0, 1) to the entire real line (-∞, +∞), allowing for a linear relationship between the input features and the log-odds.</li>
+<li>The log-odds can be interpreted as the change in the log-odds of the dependent variable for a one-unit increase in the independent variable.</li>
+<li>Logg odds of the probability of the positive class can be modelled as a linear function of the input features</li>
+</ul>
+<section id="training-logistic-regression" class="level3">
+<h3 class="anchored" data-anchor-id="training-logistic-regression">Training Logistic Regression</h3>
+<ul>
+<li><strong>Maximum Likelihood Estimation (MLE)</strong> is used to estimate the coefficients of the logistic regression model.
+<ul>
+<li>The MLE finds the values of the coefficients that maximize the likelihood of the observed data given the model.</li>
+</ul></li>
+<li><strong>L2 regularization (Ridge)</strong> is often used to prevent overfitting by adding a penalty term to the loss function.
+<ul>
+<li>The regularization term helps to constrain the coefficients, reducing their variance and improving the model’s generalization to unseen data.</li>
+<li>The choice of regularization strength is crucial, as too much regularization can lead to underfitting, while too little can result in overfitting.</li>
+<li>Cross-validation is commonly used to select the optimal regularization parameter.</li>
+<li>It is important to evaluate the model’s performance on a validation set to ensure that it generalizes well to new data.</li>
+</ul></li>
+<li><strong>L1 regularization (Lasso)</strong> can also be used to perform feature selection by driving some coefficients to zero, effectively removing those features from the model.</li>
+<li><strong>Elastic Net</strong> is a combination of L1 and L2 regularization, allowing for both feature selection and coefficient shrinkage.</li>
+<li><strong>Bayesian logistic regression</strong> is another approach that incorporates prior distributions on the coefficients, allowing for uncertainty quantification and regularization.</li>
+</ul>
+<p>Scikit-Learn’s LogisticRegression</p>
+<ul>
+<li>the most commonly used solver is L2-regularized MLE with the <code>liblinear</code> solver.</li>
+<li>The available optimization solvers are:
+<ul>
+<li><code>liblinear</code>: A coordinate descent algorithm for L1 and L2 regularization. Better for small datasets of size &lt; 10,000.</li>
+<li><code>saga</code>: A stochastic average gradient descent algorithm for L1 and L2 regularization. Suitable for large datasets of size &gt; 10,000.</li>
+<li><code>newton-cg</code>: A Newton’s method algorithm for L2 regularization.</li>
+<li><code>lbfgs</code>: An optimization algorithm based on the limited-memory Broyden-Fletcher-Goldfarb-Shanno (BFGS) method for L2 regularization. Suitable for small to medium-sized datasets</li>
+</ul></li>
+</ul>
+</section>
+<section id="bag-of-words-vs.-tf-idf" class="level3">
+<h3 class="anchored" data-anchor-id="bag-of-words-vs.-tf-idf">Bag of Words vs. TF-IDF</h3>
+<ul>
+<li><strong>Bag of Words (BoW)</strong>: A simple representation of text data where each document is represented as a vector of word counts. It ignores the order of words and focuses on the frequency of each word in the document.
+<ul>
+<li>Pros: Simple to implement, easy to interpret, works well for many applications.</li>
+<li>Cons: Ignores word order, can lead to high-dimensional sparse vectors, may not capture semantic meaning.</li>
+</ul></li>
+<li><strong>Term Frequency-Inverse Document Frequency (TF-IDF)</strong>: A more sophisticated representation of text data that considers both the frequency of words in a document and their importance across the entire corpus. It assigns higher weights to words that are frequent in a document but rare in the corpus.</li>
+<li>TF-IDF is calculated as:</li>
+<li><span class="math display">\[\text{TF-IDF}(w, d) = \text{TF}(w, d) \cdot \text{IDF}(w)\]</span>
+<ul>
+<li>TF(w, d): The term frequency of word w in document d.</li>
+<li>IDF(w): The inverse document frequency of word w, calculated as:
+<ul>
+<li><span class="math display">\[\text{IDF}(w) = \log\left(\frac{N}{DF(w)}\right)\]</span></li>
+<li>Where:
+<ul>
+<li>N: The total number of documents in the corpus.</li>
+<li>DF(w): The number of documents containing word w.</li>
+<li>In this context documents is the number of tokens in the corpus.</li>
+</ul></li>
+</ul></li>
+<li>TF-IDF captures the importance of words in a document relative to the entire corpus, making it more effective for tasks such as text classification and information retrieval.</li>
+<li><strong>Pros</strong>: Captures word importance, reduces the impact of common words, better for semantic understanding.</li>
+<li><strong>Cons</strong>: More complex to implement, may still lead to high-dimensional sparse vectors.</li>
+</ul></li>
+<li><strong>Example</strong>: In a corpus of 100 documents, the word “the” appears in 90 documents, while the word “NLP” appears in 10 documents. The TF-IDF score for “the” will be lower than that for “NLP” because “the” is common across many documents, while “NLP” is more specific to certain documents.</li>
+</ul>
+<p>Make table of columns: Feature | BoW | TF-IDF</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 41%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Bag of Words (BoW)</th>
+<th>TF-IDF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Concept</td>
+<td>Counts word frequencies</td>
+<td>Weights word importance</td>
+</tr>
+<tr class="even">
+<td>Dimensionality</td>
+<td>High-dimensional sparse vectors</td>
+<td>High-dimensional sparse vectors, but weights may reduce freature noise</td>
+</tr>
+<tr class="odd">
+<td>Complexity</td>
+<td>Simple to implement</td>
+<td>More complex to implement, due to IDF calculation</td>
+</tr>
+<tr class="even">
+<td>Word Importance</td>
+<td>Ignores word importance</td>
+<td>Considers word importance relative to the corpus</td>
+</tr>
+<tr class="odd">
+<td>Context Sensitivity</td>
+<td>Ignores word order and context</td>
+<td>Ignores word order, but captures context through IDF</td>
+</tr>
+<tr class="even">
+<td>Peformance</td>
+<td>Works well for many applications</td>
+<td>Better for semantic understanding and information retrieval</td>
+</tr>
+<tr class="odd">
+<td>Use Cases</td>
+<td>Text classification, sentiment analysis</td>
+<td>Text classification, information retrieval, search engines</td>
+</tr>
+<tr class="even">
+<td>Limitations</td>
+<td>Ignores word order, may lead to high-dimensional vectors</td>
+<td>May still lead to high-dimensional vectors, sensitive to document length, Does not capture word order</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lr-model-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="lr-model-assumptions">LR Model Assumptions</h3>
+<ul>
+<li><strong>Linearity</strong>: The relationship between the independent variables and the log-odds of the dependent variable is linear. This means that a one-unit change in an independent variable will result in a constant change in the log-odds of the dependent variable.</li>
+<li><strong>Independence</strong>: The observations are independent of each other. This means that the outcome of one observation does not influence the outcome of another observation.</li>
+<li><strong>No Multicollinearity</strong>: The independent variables are not highly correlated with each other. This means that the model should not include highly correlated features, as this can lead to unstable coefficient estimates and difficulty in interpreting the results.</li>
+<li><strong>No Outliers</strong>: The model assumes that there are no extreme outliers in the data that could disproportionately influence the results. Outliers can affect the estimates of the coefficients and the overall fit of the model.</li>
+</ul>
+</section>
+<section id="lr-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="lr-limitations">LR Limitations</h3>
+<ul>
+<li><strong>Linearity Assumption</strong>: Logistic regression assumes a linear relationship between the independent variables and the log-odds of the dependent variable. This may not hold true for all datasets, leading to poor performance.</li>
+<li><strong>Feature Independence</strong>: Logistic regression assumes that the independent variables are independent of each other. In practice, this assumption may not hold, leading to multicollinearity issues.</li>
+<li><strong>Sensitivity to Outliers</strong>: Logistic regression can be sensitive to outliers, which can disproportionately influence the model’s coefficients and predictions.</li>
+<li><strong>Inability to Capture Complex Relationships</strong>: Logistic regression is a linear model and may not capture complex relationships between features and the target variable. Non-linear relationships may require more advanced models, such as decision trees or neural networks.</li>
+<li>-<strong>Requires Large Sample Size</strong>: Logistic regression requires a sufficient amount of data to produce reliable estimates. Small sample sizes may lead to overfitting and unreliable predictions. Sample size should be at least 10 times the number of features. eg if you have 5 features, you should have at least 50 samples.</li>
+</ul>
 </section>
 </section>
 </section>

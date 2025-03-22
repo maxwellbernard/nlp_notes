@@ -791,3 +791,271 @@ print(f"Generated sentence: {generated_text}")
 end_time = time.time()
 print(f"Execution time: {end_time - start_time:.5f} seconds")
 ```
+
+# Lecture 4
+## Text Classification
+- Text classification is the process of assigning predefined categories or labels to text documents based on their content.
+- It is a supervised learning task where a model is trained on labeled data to learn the relationship between the text and its corresponding labels.
+- Text classification is used in various applications such as spam detection, sentiment analysis, topic categorization, and more.
+- The goal of text classification is to build a model that can accurately predict the category of unseen text documents based on their content.
+- The process of text classification involves several steps, including data preprocessing, feature extraction, model training, and evaluation.
+- The choice of features and the classification algorithm can significantly impact the performance of the model.
+  
+There are three main types of text classification techniques:
+- **Supervised Learning**: The model is trained on labeled data, where each document is associated with a predefined category. The model learns to map the input features to the corresponding labels.
+  -  Naive Bayes, Logistic Regression
+- **Unsupervised Learning**: The model is trained on unlabeled data, where the goal is to discover hidden patterns or clusters in the data. The model learns to group similar documents together without any predefined labels.
+  - Latent Dirichlet Allocation (LDA), K-means clustering
+- **Deep Learning**: The model is trained on large amounts of data using deep neural networks. Deep learning models can automatically learn complex features and representations from the data, making them suitable for text classification tasks.
+  - Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), Transformers (BERT, GPT-3)
+
+
+## Bayes Theorem
+- Bayes theorem is a fundamental concept in probability theory that describes the relationship between conditional probabilities. It is used to update the probability of a hypothesis based on new evidence.
+- The equation is given by: 
+$$P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}$$
+- Where:
+  - P(H|E): The probability of hypothesis H given evidence E (posterior probability).
+  - P(E|H): The probability of evidence E given hypothesis H (likelihood).
+  - P(H): The prior probability of hypothesis H.
+  - P(E): The total probability of evidence E.
+
+- **Naive Assumption**: The naive assumption in Naive Bayes classifiers is that the features are conditionally independent given the class label. This simplifies the computation of the posterior probability.
+- The naive assumption allows us to calculate the joint probability of the features given the class label as the product of the individual probabilities of each feature.
+- An exmple of the naive assumption is:
+- $$P(X_1, X_2, ..., X_n \mid C) = P(X_1 \mid C) \cdot P(X_2 \mid C) \cdot ... \cdot P(X_n \mid C)$$
+- Where:
+  - P(X1, X2, ..., Xn | C): The joint probability of features X1, X2, ..., Xn given class C.
+  - P(Xi | C): The probability of feature Xi given class C.
+- The naive assumption is a simplification that allows Naive Bayes classifiers to work well in practice, even when the features are not truly independent.
+
+Types of Naive Bayes Classifiers:
+- **Gaussian Naive Bayes**: Assumes that the features follow a Gaussian (normal) distribution. It is suitable for continuous features.
+- **Multinomial Naive Bayes**: Assumes that the features are counts or frequencies. It is suitable for discrete features, such as word counts in text classification.
+- **Bernoulli Naive Bayes**: Assumes that the features are binary (0 or 1). It is suitable for binary features, such as presence or absence of words in text classification.
+
+Implementing Naive Bayes
+- **Step 1**: Load the dataset, clean and preprocess the text data.
+- **Step 2**: Split the dataset into training and testing sets.
+- **Step 3**: Extract features from the text data using techniques such as Bag of Words (BoW)
+- **Step 4**: Train the Naive Bayes classifier on the training set.
+- **Step 5**: Evaluate the classifier on the testing set using metrics such as accuracy, precision, recall, and F1-score.
+
+```{python}
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.pipeline import make_pipeline
+from sklearn.datasets import fetch_20newsgroups
+from nltk.corpus import stopwords
+stop_words = set(stopwords.words("english"))
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
+stemmer = PorterStemmer()
+from nltk import download
+from nltk import pos_tag
+from nltk import ne_chunk
+from nltk.tree import Tree
+from nltk.tokenize import word_tokenize
+
+
+# Load the dataset
+newsgroups = fetch_20newsgroups(
+    subset="all", categories=["alt.atheism", "sci.space"], remove=("headers", "footers", "quotes")
+)
+df = pd.DataFrame({"text": newsgroups.data, "label": newsgroups.target})
+# Preprocess the text data
+
+
+def preprocess_text(text):
+    # Tokenize the text
+    tokens = word_tokenize(text)
+    # Remove stop words
+    tokens = [word for word in tokens if word.lower() not in stop_words]
+    # Stem the words
+    tokens = [stemmer.stem(word) for word in tokens]
+    return " ".join(tokens)
+
+
+df["text"] = df["text"].apply(preprocess_text)
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(
+    df["text"], df["label"], test_size=0.2, random_state=42
+)
+
+# Create a pipeline with CountVectorizer and MultinomialNB
+pipeline = make_pipeline(CountVectorizer(), MultinomialNB())
+
+# Train the Naive Bayes classifier
+pipeline.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = pipeline.predict(X_test)
+
+# Evaluate the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.4f}")
+
+print("Classification Report:")
+print(classification_report(y_test, y_pred, target_names=newsgroups.target_names))
+
+```
+
+## Evaluation Metrics
+
+- **Accuracy**: The proportion of correctly classified instances out of the total instances.
+  - Formula: $Accuracy = \frac{TP + TN}{TP + TN + FP + FN}$
+  - Where:
+    - TP: True Positives
+    - TN: True Negatives
+    - FP: False Positives
+    - FN: False Negatives
+- **Precision**: The proportion of true positive predictions out of all positive predictions.
+  - Formula: $Precision = \frac{TP}{TP + FP}$
+  - Indicates how many of the predicted positive instances are actually positive.
+  - High precision means fewer false positives.
+- **Recall**: The proportion of true positive predictions out of all actual positive instances.
+  - Formula: $Recall = \frac{TP}{TP + FN}$
+  - Indicates how many of the actual positive instances were correctly predicted.
+  - High recall means fewer false negatives.
+  - Also known as Sensitivity or True Positive Rate.
+  - High precision and low recall means the model is conservative in making positive predictions.
+- **F1-Score**: The harmonic mean of precision and recall. It is a single metric that balances both precision and recall.
+  - Formula: $F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}$
+  - A high F1-score indicates a good balance between precision and recall.
+  - Useful when the class distribution is imbalanced, because accuracy can be misleading.
+  - **Classification Report**: A summary of precision, recall, and F1-score for each class in a multi-class classification problem.
+
+
+Disadvatages of Naive Bayes:
+
+  - **Independence Assumption**: The naive assumption of feature independence may not hold in real-world data, leading to suboptimal performance.
+  - **Zero Probability Problem**: If a feature value is not present in the training data for a particular class, the model will assign a probability of zero to that class, which can be problematic.
+  - **Probability Estimation Bias**: Naive Bayes may produce biased probability estimates, especially for rare events or classes with limited training data.
+  - **Feature Revelance**: Naive Bayes may not perform well when features are highly correlated or when the feature space is large and sparse.
+  - **Limited Expressiveness**: Naive Bayes is a linear classifier and may not capture complex relationships between features and classes.
+
+
+If you are using a Naive Bayes classifier for a dataset
+where 95% of the tweets are from positive class. Can
+you suggest any method to handle this imbalance, and
+briefly explain how it helps improve model
+performance?
+
+**Answer:** To handle class imbalance in a dataset where 95% of the tweets are from the positive class, you can use the following methods:
+
+  1. **Resampling Techniques**:
+      - **Oversampling**: Increase the number of instances in the minority class (negative class) by duplicating existing instances or generating synthetic samples (e.g., using SMOTE).
+      - **Undersampling**: Decrease the number of instances in the majority class (positive class) by randomly removing instances.
+      - **Combination**: Use a combination of oversampling and undersampling to balance the classes.
+      - **How it helps**: Resampling techniques help to create a more balanced dataset, which allows the model to learn better from both classes and reduces the bias towards the majority class. This can lead to improved performance in terms of precision, recall, and F1-score for the minority class.
+  2. **Class Weights**: Assign higher weights to the minority class during model training. This can be done by using the `class_weight` parameter in scikit-learn classifiers.
+      - **How it helps**: By assigning higher weights to the minority class, the model is penalized more for misclassifying instances from that class, which encourages it to focus on learning from the minority class.
+  3. **Ensemble Methods**: Use ensemble methods such as Random Forest or Gradient Boosting, which can handle class imbalance better than individual classifiers.
+      - **How it helps**: Ensemble methods combine the predictions of multiple classifiers, which can improve overall performance and robustness against class imbalance.
+
+
+# Lecture 5 
+## Logistic Regression
+- Logistic regression is a statistical method used for binary classification problems. It models the relationship between a binary dependent variable and one or more independent variables by estimating the probability of the dependent variable being in a particular class.
+- It is a type of regression analysis that uses the logistic function to model the probability of a binary outcome.
+- Logistic regression is widely used in various fields, including social sciences, healthcare, marketing, and finance, for tasks such as predicting customer churn, disease diagnosis, and credit risk assessment.
+- Logistic regression is a linear model that uses the logistic function to map the linear combination of input features to a probability value between 0 and 1.
+- The logistic function is defined as:
+  - $$f(x) = \frac{1}{1 + e^{-x}}$$ 
+  - Where:
+    - x: The linear combination of input features and their corresponding weights.
+    - e: The base of the natural logarithm (approximately 2.71828).
+    - f(x): The output probability value between 0 and 1.
+    - This is known as the sigmoid function.
+- The logistic regression model can be represented as:
+- $$P(Y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_nX_n)}}$$
+- Where:
+  - P(Y=1|X): The probability of the dependent variable Y being equal to 1 given the input features X.
+  - β0: The intercept term (bias).
+  - β1, β2, ..., βn: The coefficients (weights) for each input feature X1, X2, ..., Xn.
+- The coefficients are learned during the training process using maximum likelihood estimation (MLE), which finds the values of the coefficients that maximize the likelihood of the observed data given the model.
+- The bias teram helps the model to fit the data better by allowing it to shift the decision boundary. A bias <0 means the model is more likely to predict class 0, while a bias >0 means the model is more likely to predict class 1.
+
+**Log-Odds**:
+
+- The log-odds (or logit) is the logarithm of the odds ratio, which is the ratio of the probability of an event occurring to the probability of it not occurring.
+- The log-odds can be calculated as:
+  - $$\text{log-odds} = \log\left(\frac{P(Y=1|X)}{1 - P(Y=1|X)}\right) = = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_nX_n$$
+  
+- The log-odds transformation is useful because it maps the probability values (0, 1) to the entire real line (-∞, +∞), allowing for a linear relationship between the input features and the log-odds.
+- The log-odds can be interpreted as the change in the log-odds of the dependent variable for a one-unit increase in the independent variable.
+- Logg odds of the probability of the positive class can be modelled as a linear function of the input features
+
+
+### Training Logistic Regression
+- **Maximum Likelihood Estimation (MLE)** is used to estimate the coefficients of the logistic regression model.
+  - The MLE finds the values of the coefficients that maximize the likelihood of the observed data given the model.
+- **L2 regularization (Ridge)** is often used to prevent overfitting by adding a penalty term to the loss function.
+  - The regularization term helps to constrain the coefficients, reducing their variance and improving the model's generalization to unseen data.
+  - The choice of regularization strength is crucial, as too much regularization can lead to underfitting, while too little can result in overfitting.
+  - Cross-validation is commonly used to select the optimal regularization parameter.
+  - It is important to evaluate the model's performance on a validation set to ensure that it generalizes well to new data.
+- **L1 regularization (Lasso)** can also be used to perform feature selection by driving some coefficients to zero, effectively removing those features from the model.
+- **Elastic Net** is a combination of L1 and L2 regularization, allowing for both feature selection and coefficient shrinkage.
+- **Bayesian logistic regression** is another approach that incorporates prior distributions on the coefficients, allowing for uncertainty quantification and regularization.
+
+
+Scikit-Learn's LogisticRegression
+
+- the most commonly used solver is L2-regularized MLE with the `liblinear` solver.
+- The available optimization solvers are:
+  - `liblinear`: A coordinate descent algorithm for L1 and L2 regularization. Better for small datasets of size < 10,000.
+  - `saga`: A stochastic average gradient descent algorithm for L1 and L2 regularization. Suitable for large datasets of size > 10,000.
+  - `newton-cg`: A Newton's method algorithm for L2 regularization.
+  - `lbfgs`: An optimization algorithm based on the limited-memory Broyden-Fletcher-Goldfarb-Shanno (BFGS) method for L2 regularization. Suitable for small to medium-sized datasets
+
+
+### Bag of Words vs. TF-IDF
+- **Bag of Words (BoW)**: A simple representation of text data where each document is represented as a vector of word counts. It ignores the order of words and focuses on the frequency of each word in the document.
+  - Pros: Simple to implement, easy to interpret, works well for many applications.
+  - Cons: Ignores word order, can lead to high-dimensional sparse vectors, may not capture semantic meaning.
+- **Term Frequency-Inverse Document Frequency (TF-IDF)**: A more sophisticated representation of text data that considers both the frequency of words in a document and their importance across the entire corpus. It assigns higher weights to words that are frequent in a document but rare in the corpus.
+- TF-IDF is calculated as:
+- $$\text{TF-IDF}(w, d) = \text{TF}(w, d) \cdot \text{IDF}(w)$$
+    - TF(w, d): The term frequency of word w in document d.
+    - IDF(w): The inverse document frequency of word w, calculated as:
+      - $$\text{IDF}(w) = \log\left(\frac{N}{DF(w)}\right)$$
+      - Where:
+        - N: The total number of documents in the corpus.
+        - DF(w): The number of documents containing word w.
+        - In this context documents is the number of tokens in the corpus.
+  - TF-IDF captures the importance of words in a document relative to the entire corpus, making it more effective for tasks such as text classification and information retrieval.
+  - **Pros**: Captures word importance, reduces the impact of common words, better for semantic understanding.
+  - **Cons**: More complex to implement, may still lead to high-dimensional sparse vectors.
+- **Example**: In a corpus of 100 documents, the word "the" appears in 90 documents, while the word "NLP" appears in 10 documents. The TF-IDF score for "the" will be lower than that for "NLP" because "the" is common across many documents, while "NLP" is more specific to certain documents.
+
+Make table of columns: Feature | BoW | TF-IDF
+
+| Feature | Bag of Words (BoW) | TF-IDF |
+|---------|---------------|------------|
+| Concept | Counts word frequencies | Weights word importance |
+| Dimensionality | High-dimensional sparse vectors | High-dimensional sparse vectors, but weights may reduce freature noise|
+| Complexity | Simple to implement | More complex to implement, due to IDF calculation |
+| Word Importance | Ignores word importance | Considers word importance relative to the corpus |
+| Context Sensitivity | Ignores word order and context | Ignores word order, but captures context through IDF |
+| Peformance | Works well for many applications | Better for semantic understanding and information retrieval |
+| Use Cases | Text classification, sentiment analysis | Text classification, information retrieval, search engines |
+| Limitations | Ignores word order, may lead to high-dimensional vectors | May still lead to high-dimensional vectors, sensitive to document length, Does not capture word order |
+
+### LR Model Assumptions
+- **Linearity**: The relationship between the independent variables and the log-odds of the dependent variable is linear. This means that a one-unit change in an independent variable will result in a constant change in the log-odds of the dependent variable.
+- **Independence**: The observations are independent of each other. This means that the outcome of one observation does not influence the outcome of another observation.
+- **No Multicollinearity**: The independent variables are not highly correlated with each other. This means that the model should not include highly correlated features, as this can lead to unstable coefficient estimates and difficulty in interpreting the results.
+- **No Outliers**: The model assumes that there are no extreme outliers in the data that could disproportionately influence the results. Outliers can affect the estimates of the coefficients and the overall fit of the model.
+  
+
+### LR Limitations
+- **Linearity Assumption**: Logistic regression assumes a linear relationship between the independent variables and the log-odds of the dependent variable. This may not hold true for all datasets, leading to poor performance.
+- **Feature Independence**: Logistic regression assumes that the independent variables are independent of each other. In practice, this assumption may not hold, leading to multicollinearity issues.
+- **Sensitivity to Outliers**: Logistic regression can be sensitive to outliers, which can disproportionately influence the model's coefficients and predictions.
+- **Inability to Capture Complex Relationships**: Logistic regression is a linear model and may not capture complex relationships between features and the target variable. Non-linear relationships may require more advanced models, such as decision trees or neural networks.
+- -**Requires Large Sample Size**: Logistic regression requires a sufficient amount of data to produce reliable estimates. Small sample sizes may lead to overfitting and unreliable predictions. Sample size should be at least 10 times the number of features. eg if you have 5 features, you should have at least 50 samples.
