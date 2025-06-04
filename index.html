@@ -3304,6 +3304,14 @@ font-size: 0.7em;
   <li><a href="#lr-limitations" id="toc-lr-limitations" class="nav-link" data-scroll-target="#lr-limitations">LR Limitations</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#lecture-6" id="toc-lecture-6" class="nav-link" data-scroll-target="#lecture-6">Lecture 6</a>
+  <ul class="collapse">
+  <li><a href="#sentiment-analysis-sa" id="toc-sentiment-analysis-sa" class="nav-link" data-scroll-target="#sentiment-analysis-sa">Sentiment Analysis (SA)</a></li>
+  <li><a href="#resources-for-sentiment-lexicons" id="toc-resources-for-sentiment-lexicons" class="nav-link" data-scroll-target="#resources-for-sentiment-lexicons">Resources for Sentiment Lexicons</a></li>
+  <li><a href="#how-to-do-sentiment-analysis" id="toc-how-to-do-sentiment-analysis" class="nav-link" data-scroll-target="#how-to-do-sentiment-analysis">How to do Sentiment Analysis?</a></li>
+  <li><a href="#python-libraries-and-tools-for-sa" id="toc-python-libraries-and-tools-for-sa" class="nav-link" data-scroll-target="#python-libraries-and-tools-for-sa">Python Libraries and Tools for SA</a></li>
+  <li><a href="#sa-challenges" id="toc-sa-challenges" class="nav-link" data-scroll-target="#sa-challenges">SA Challenges</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -3403,7 +3411,7 @@ font-size: 0.7em;
 <li><strong>Removing Emojis and Special Characters</strong>: Removing emojis, emoticons, and other special characters.</li>
 </ul>
 <p><strong>Removal of Stopwords in Python using NLTK</strong></p>
-<div id="0d63d1e3" class="cell" data-execution_count="2">
+<div id="2b3e83c4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&quot;english&quot;</span>))</span>
@@ -3414,7 +3422,7 @@ font-size: 0.7em;
 </div>
 </div>
 <p><strong>Removal of Stopwords in Python using spaCy</strong></p>
-<div id="3974f0ba" class="cell" data-execution_count="3">
+<div id="d6aee368" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>) <span class="co"># Load English language model</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
@@ -3447,7 +3455,7 @@ font-size: 0.7em;
 <li><strong>Type</strong> is number of unique tokens in a text</li>
 <li><strong>Token</strong> is a single instance of a token in a text</li>
 </ul>
-<div id="b328f392" class="cell" data-execution_count="4">
+<div id="3edbd128" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>total_tokens <span class="op">=</span> <span class="bu">len</span>(tokens)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>total_types <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(tokens))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3460,7 +3468,7 @@ font-size: 0.7em;
 <ul>
 <li>word.isalnum() - returns True if all characters in the word are alphanumeric</li>
 </ul>
-<div id="299ae5b4" class="cell" data-execution_count="5">
+<div id="6ba3efc6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>shakespeare_url <span class="op">=</span> <span class="st">&quot;https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt&quot;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>crime_punishment_url <span class="op">=</span> <span class="st">&quot;http://www.gutenberg.org/files/2554/2554-0.txt&quot;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3508,7 +3516,7 @@ font-size: 0.7em;
 </ul>
 <section id="example-of-stemming-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk">Example of stemming in Python using NLTK</h4>
-<div id="5af53305" class="cell" data-execution_count="6">
+<div id="dbb1f182" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sbs <span class="op">=</span> SnowballStemmer(<span class="st">&quot;english&quot;</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">&quot;The stars twinkled in the dark, illuminating the night sky.&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>method <span class="op">=</span> TreebankWordTokenizer()</span>
@@ -3545,7 +3553,7 @@ sky | sky
 </ul>
 <section id="example-of-stemming-in-python-using-nltk-1" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk-1">Example of stemming in Python using NLTK</h4>
-<div id="9324182d" class="cell" data-execution_count="7">
+<div id="d98c1061" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sbs <span class="op">=</span> SnowballStemmer(<span class="st">&quot;english&quot;</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">&quot;The stars twinkled in the dark, illuminating the night sky.&quot;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>method <span class="op">=</span> TreebankWordTokenizer()</span>
@@ -3767,7 +3775,7 @@ sky | sky
 </tbody>
 </table>
 <p><strong>Example of Regular Expressions in Python</strong></p>
-<div id="feeab5ea" class="cell" data-execution_count="8">
+<div id="c0122182" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog. The dog barks at the fox.&quot;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
@@ -3973,7 +3981,7 @@ sky | sky
 </table>
 <section id="example-of-pos-tagging-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-pos-tagging-in-python-using-nltk">Example of POS Tagging in Python using NLTK</h4>
-<div id="7ee0c028" class="cell" data-execution_count="9">
+<div id="79b10f81" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog.&quot;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>tags <span class="op">=</span> pos_tag(words)</span>
@@ -4001,7 +4009,7 @@ dog | NN
 <li>This model is a small English model trained on written web text (blogs, news, comments), which includes vocabulary, vectors, syntax, and entities.</li>
 <li>The model is trained on the OntoNotes 5 corpus and supports POS tagging, dependency parsing, named entity recognition, and more.</li>
 </ul>
-<div id="d99f46d7" class="cell" data-execution_count="10">
+<div id="d2663cb7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sample_text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog.&quot;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> model(sample_text)</span>
@@ -4045,7 +4053,7 @@ dog | NOUN
 <section id="example-of-named-entity-recognition-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-nltk">Example of Named Entity Recognition in Python using NLTK</h4>
 <p>In NLP, a tree structure is often used to represent the syntactic structure of a sentence. Each node in the tree represents a linguistic unit, such as a word or a phrase, and the edges represent the relationships between these units. The <code>Tree</code> class provides various methods for creating, traversing, and modifying these tree structures.</p>
-<div id="0799786f" class="cell" data-execution_count="11">
+<div id="a1456d81" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Apple is a technology company based in Cupertino, California.&quot;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>tags <span class="op">=</span> pos_tag(words)</span>
@@ -4069,7 +4077,7 @@ GPE: California</code></pre>
 </section>
 <section id="example-of-named-entity-recognition-in-python-using-spacy" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-spacy">Example of Named Entity Recognition in Python using spaCy</h4>
-<div id="1cda49de" class="cell" data-execution_count="12">
+<div id="abc65174" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sample_text <span class="op">=</span> <span class="st">&quot;Apple is a technology company based in Cupertino, California.&quot;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> model(sample_text)</span>
@@ -4109,7 +4117,7 @@ GPE: California</code></pre>
 </ul>
 <p>number of n-grams = (total number of words) - (n - 1)</p>
 <p><strong>Generating different n-grams for a text</strong>:</p>
-<div id="2d7aa220" class="cell" data-execution_count="13">
+<div id="a27aa95f" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Italy is famous for its cuisine.&quot;</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_ngrams(text, n):</span>
@@ -4201,7 +4209,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </ul>
 <p><strong>Notes</strong>: the choice of how many padding tokens to use depends on the order of the N-gram model. For a bigram model, you would use one padding token at the beginning of the sentence. For a trigram model, you would use two padding tokens at the beginning of the sentence. The padding tokens are not part of the vocabulary and are used only for modeling purposes.</p>
 <p><strong>Padding Example in Python</strong></p>
-<div id="fd3aa11c" class="cell" data-execution_count="14">
+<div id="18105788" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;I like NLP. NLP is fun. NLP in python is fun.&quot;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4304,7 +4312,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </ul></li>
 </ul>
 <p><strong>STEP 1: tokenize text and add padding tokens</strong></p>
-<div id="95aaf8b7" class="cell" data-execution_count="15">
+<div id="f5c9b016" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;I like NLP. NLP is fun. NLP in python is fun. I like coding in python. NLP is cool.&quot;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>padded_sentences <span class="op">=</span> []</span>
@@ -4326,7 +4334,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </div>
 </div>
 <p><strong>STEP 2: Generate trigrams (and bigrams for MLE calculation)</strong></p>
-<div id="76929ec5" class="cell" data-execution_count="16">
+<div id="0428cfcb" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>trigrams <span class="op">=</span> []</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sent <span class="kw">in</span> padded_sentences:</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    sent_trigrams <span class="op">=</span> <span class="bu">list</span>(ngrams(sent, <span class="dv">3</span>))</span>
@@ -4372,7 +4380,7 @@ Trigrams:
 </div>
 </div>
 <p><strong>STEP 3: Count unique trigrams and bigrams</strong></p>
-<div id="f18131fb" class="cell" data-execution_count="17">
+<div id="d76c4971" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>trigram_counts <span class="op">=</span> Counter(trigrams)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>bigrams_counts <span class="op">=</span> Counter(bigrams)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>unique_bigrams <span class="op">=</span> <span class="bu">len</span>(bigrams_counts)</span>
@@ -4415,7 +4423,7 @@ Unique Bigrams: 17
 </div>
 </div>
 <p><strong>STEP 4: Calculate trigram probabilities (MLE)</strong></p>
-<div id="27c05585" class="cell" data-execution_count="18">
+<div id="496328ee" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tri_mle <span class="op">=</span> {}</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (w1, w2, w3), count <span class="kw">in</span> trigram_counts.items():</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    tri_mle[(w1, w2, w3)] <span class="op">=</span> <span class="bu">round</span>(count <span class="op">/</span> bigrams_counts[(w1, w2)], <span class="dv">3</span>)</span>
@@ -4455,7 +4463,7 @@ Trigram MLE:
 </div>
 </div>
 <p><strong>(Calculating MLE with Laplace Smoothing)</strong></p>
-<div id="4974502a" class="cell" data-execution_count="19">
+<div id="3180311a" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> <span class="bu">len</span>(trigram_counts)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Laplace smoothing constant</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>tri_mle_laplace <span class="op">=</span> {}</span>
@@ -4498,7 +4506,7 @@ Trigram MLE with Laplace Smoothing:
 </div>
 </div>
 <p><strong>STEP 5: Calculate Perplexity</strong></p>
-<div id="995bbc47" class="cell" data-execution_count="20">
+<div id="26c1e9e3" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>test_trigrams <span class="op">=</span> trigrams  <span class="co"># Reusing the training trigrams for simplicity</span></span>
@@ -4535,13 +4543,13 @@ Perplexity: 1.288</code></pre>
 </section>
 <section id="example-of-trigram-lm-with-nltk-abc-corpus" class="level3">
 <h3 class="anchored" data-anchor-id="example-of-trigram-lm-with-nltk-abc-corpus">Example of Trigram LM with NLTK ABC Corpus</h3>
-<div id="d511e8a5" class="cell" data-execution_count="21">
+<div id="c44cd877" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="bu">list</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class &#39;type&#39;&gt;</code></pre>
 </div>
 </div>
-<div id="cd6d0181" class="cell" data-execution_count="22">
+<div id="176bc857" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.util <span class="im">import</span> trigrams, bigrams</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4610,13 +4618,13 @@ Unique Trigrams: 45447
 Unique Bigrams: 30474
 Predicted next word after &#39;the prime&#39;: minister
 Probability of the next word occurring: 0.02978
-Execution time: 0.17939 seconds</code></pre>
+Execution time: 0.15287 seconds</code></pre>
 </div>
 </div>
 </section>
 <section id="example-of-sentence-generation-with-trigram-lm" class="level3">
 <h3 class="anchored" data-anchor-id="example-of-sentence-generation-with-trigram-lm">Example of Sentence Generation with Trigram LM</h3>
-<div id="dc04475f" class="cell" data-execution_count="23">
+<div id="271a2585" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
@@ -4642,8 +4650,8 @@ Execution time: 0.17939 seconds</code></pre>
 <span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
 <span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Execution time: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">:.5f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Generated sentence: life in the
-Execution time: 0.00048 seconds</code></pre>
+<pre><code>Generated sentence: the code issue
+Execution time: 0.00120 seconds</code></pre>
 </div>
 </div>
 </section>
@@ -4688,7 +4696,7 @@ Execution time: 0.00048 seconds</code></pre>
 </ul>
 <p>Types of Naive Bayes Classifiers: - <strong>Gaussian Naive Bayes</strong>: Assumes that the features follow a Gaussian (normal) distribution. It is suitable for continuous features. - <strong>Multinomial Naive Bayes</strong>: Assumes that the features are counts or frequencies. It is suitable for discrete features, such as word counts in text classification. - <strong>Bernoulli Naive Bayes</strong>: Assumes that the features are binary (0 or 1). It is suitable for binary features, such as presence or absence of words in text classification.</p>
 <p>Implementing Naive Bayes - <strong>Step 1</strong>: Load the dataset, clean and preprocess the text data. - <strong>Step 2</strong>: Split the dataset into training and testing sets. - <strong>Step 3</strong>: Extract features from the text data using techniques such as Bag of Words (BoW) - <strong>Step 4</strong>: Train the Naive Bayes classifier on the training set. - <strong>Step 5</strong>: Evaluate the classifier on the testing set using metrics such as accuracy, precision, recall, and F1-score.</p>
-<div id="62c5be16" class="cell" data-execution_count="24">
+<div id="88963c7d" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
@@ -5006,6 +5014,161 @@ weighted avg       0.94      0.94      0.94       358
 <li>-<strong>Requires Large Sample Size</strong>: Logistic regression requires a sufficient amount of data to produce reliable estimates. Small sample sizes may lead to overfitting and unreliable predictions. Sample size should be at least 10 times the number of features. eg if you have 5 features, you should have at least 50 samples.</li>
 </ul>
 </section>
+</section>
+</section>
+<section id="lecture-6" class="level1">
+<h1>Lecture 6</h1>
+<section id="sentiment-analysis-sa" class="level2">
+<h2 class="anchored" data-anchor-id="sentiment-analysis-sa">Sentiment Analysis (SA)</h2>
+<ul>
+<li>Sentiment analysis is the process of determining the sentiment or opinion expressed in a piece of text, such as positive, negative, or neutral.</li>
+<li>A lexicon
+<ul>
+<li>A lexicon is a collection of words and phrases that are associated with specific sentiments, which can be used to analyze the sentiment of a given text.</li>
+<li>A sentiment lexicon can include words like “happy,” “sad,” “angry,” and “excited,” each associated with a specific sentiment score.</li>
+</ul></li>
+</ul>
+<p>Ekman’s Six Basic Emotions are: - Happiness - Sadness - Anger - Fear - Surprise - Disgust</p>
+</section>
+<section id="resources-for-sentiment-lexicons" class="level2">
+<h2 class="anchored" data-anchor-id="resources-for-sentiment-lexicons">Resources for Sentiment Lexicons</h2>
+<ul>
+<li><strong>VADER (Valence Aware Dictionary and sEntiment Reasoner)</strong>: A lexicon specifically designed for sentiment analysis in social media. It provides sentiment scores for words and phrases, along with rules for handling negations and intensifiers.
+<ul>
+<li>VADER is particularly effective for analyzing short texts, such as tweets and product reviews, and is widely used in natural language processing tasks.</li>
+<li>VADER uses a combination of lexical features, syntactic rules, and sentiment intensity scores to determine the sentiment of a given text.</li>
+<li>It is available in the NLTK library and can be easily integrated into Python applications.</li>
+<li>Uses valence score (-1 to 1) to represent the sentiment of a word or phrase.</li>
+</ul></li>
+<li><strong>AFINN (Affective Norms for English Words)</strong>: A lexicon that provides affective ratings for English words, including valence, arousal, and dominance scores.
+<ul>
+<li>It is a list of 3300+ English words rated for valence (positive or negative sentiment) on a scale from -5 to +5.</li>
+<li>AFINN is useful for sentiment analysis tasks, particularly in social media and online reviews.</li>
+</ul></li>
+<li><strong>SentiWordNet</strong>: A lexical resource that assigns sentiment scores to WordNet synsets. It provides positive, negative, and objective scores for each synset (group of synonymous words which are words that have similar/same meanings eg Happy and Joyful), allowing for more nuanced sentiment analysis.
+<ul>
+<li>It is beneficial for tasks that require understanding the sentiment of words in context.</li>
+</ul></li>
+<li><strong>LIWC (Linguistic Inquiry and Word Count)</strong>: A text analysis tool that categorizes words into psychological and linguistic categories. It provides insights into emotional, cognitive, and structural aspects of text.
+<ul>
+<li>LIWC is widely used in psychology and social sciences for analyzing the emotional content of text data.</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-to-do-sentiment-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-do-sentiment-analysis">How to do Sentiment Analysis?</h2>
+<ul>
+<li>Two main approaches to sentiment analysis:</li>
+<li><strong>Rule-based</strong>: Uses predefined rules and lexicons to determine sentiment. It relies on linguistic patterns, such as negations, intensifiers, and sentiment-bearing words.
+<ul>
+<li>Example: “I love this product!” would be classified as positive based on the presence of the word “love.”</li>
+<li>Pros: Simple to implement, interpretable results.</li>
+<li>Cons: Limited flexibility, may not capture complex sentiments or sarcasm.</li>
+</ul></li>
+<li>Scoring in Lexicon-based sentiment analysis:
+<ul>
+<li>Prepare a sentiment lexicon with words and their corresponding sentiment scores. Scoring can be binary, where words are classified as positive, negative, or neutral. or categorical, where words are classified into multiple categories (e.g., happy, sad, angry). or scale based, where words are assigned a score on a scale (e.g., -1 to 1).</li>
+<li>Text preprocessing: Clean and preprocess the text data by removing stop words, punctuation, and special characters. Tokenize the text into words or phrases.</li>
+<li>Match and Score: For each word in the text, check if it exists in the sentiment lexicon. If it does, retrieve its sentiment score and add it to the overall sentiment score for the text.</li>
+<li>Calculate the overall sentiment score by summing the individual word scores. The final sentiment score can be positive, negative, or neutral based on a predefined threshold.</li>
+<li>Example: If the sentiment score is greater than 0, classify the text as positive; if less than 0, classify it as negative; and if equal to 0, classify it as neutral.</li>
+</ul></li>
+<li><strong>Machine learning-based</strong>: Uses supervised learning algorithms to train a model on labeled data. It learns to classify text based on features extracted from the text, such as word frequencies or TF-IDF scores.</li>
+<li>Uses supervised learning algorithms, such as Naive Bayes, Logistic Regression, Support Vector Machines (SVMs), Neural Networks, to classify text into sentiment categories.
+<ul>
+<li>Example: A model trained on positive and negative movie reviews can classify new reviews as positive or negative based on learned patterns.</li>
+<li>Uses deep learning models, such as Recurrent Neural Networks (RNNs) or Transformers, to capture complex relationships in the text data.</li>
+</ul></li>
+<li>Example: A model trained on positive and negative movie reviews can classify new reviews as positive or negative based on learned patterns.
+<ul>
+<li>Pros: More flexible, can capture complex sentiments and context.</li>
+<li>Cons: Requires labeled data, may be less interpretable.</li>
+</ul></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 37%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Rule-Based Sentiment Analysis</th>
+<th>Machine Learning-based Sentiment Analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Approach</td>
+<td>Uses predefined rules and lexicons</td>
+<td>Uses supervised learning algorithms</td>
+</tr>
+<tr class="even">
+<td>Examples</td>
+<td>VADER, AFINN, LIWC</td>
+<td>Naive Bayes, Logistic Regression, SVMs</td>
+</tr>
+<tr class="odd">
+<td>Adaptability</td>
+<td>Limited flexibility, may not capture complex sentiments</td>
+<td>More flexible, can capture complex sentiments and context</td>
+</tr>
+<tr class="even">
+<td>Data Requirements</td>
+<td>Low. Requires a sentiment lexicon</td>
+<td>High. Requires labeled training data</td>
+</tr>
+<tr class="odd">
+<td>Context Sensitivity</td>
+<td>Limited context sensitivity</td>
+<td>Can capture context and nuances</td>
+</tr>
+<tr class="even">
+<td>Language evolution</td>
+<td>May not adapt well to new language trends</td>
+<td>Can learn from new data and adapt to language evolution</td>
+</tr>
+<tr class="odd">
+<td>Application</td>
+<td>Suitable for simple tasks</td>
+<td>Suitable for complex tasks and large datasets</td>
+</tr>
+<tr class="even">
+<td>Precision and Recall</td>
+<td>May have lower precision and recall</td>
+<td>Can achieve higher precision and recall with sufficient data</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Hybrid Approach</strong>: Combines rule-based and machine learning-based methods to leverage the strengths of both approaches. It uses predefined rules for initial sentiment classification and then refines the results using machine learning models.
+<ul>
+<li>Example: A hybrid model may use VADER for initial sentiment scoring and then apply a machine learning model to improve accuracy.</li>
+</ul></li>
+</ul>
+</section>
+<section id="python-libraries-and-tools-for-sa" class="level2">
+<h2 class="anchored" data-anchor-id="python-libraries-and-tools-for-sa">Python Libraries and Tools for SA</h2>
+<ul>
+<li><strong>NLTK (Natural Language Toolkit)</strong>: A popular library for natural language processing in Python. It provides tools for text preprocessing, tokenization, stemming, and sentiment analysis using <strong>VADER</strong> and <strong>WordNet</strong>.</li>
+<li><strong>TextBlob</strong>: A simple library for processing textual data. It provides a user-friendly API for common natural language processing tasks, including sentiment analysis, part-of-speech tagging, and noun phrase extraction.</li>
+<li><strong>TensorFlow</strong>: An open-source machine learning library developed by Google. It provides tools for building and training deep learning models, including recurrent neural networks (RNNs) and transformers for sentiment analysis. Suited for large-scale applications and production environments.</li>
+<li><strong>PyTorch</strong>: An open-source machine learning library developed by Facebook. It is widely used for deep learning applications and provides a flexible platform for building and training neural networks.</li>
+<li><strong>Hugging Face Transformers</strong>: A library that provides pre-trained models for natural language processing tasks, including sentiment analysis, text generation, and translation. It supports various architectures like BERT, GPT-2, and T5, making it easy to implement state-of-the-art models.</li>
+</ul>
+</section>
+<section id="sa-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="sa-challenges">SA Challenges</h2>
+<ul>
+<li>Biggest challenges in lexicon-based sentiment analysis?</li>
+<li>The biggest challenge in lexicon-based sentiment analysis is the inability to capture context and sarcasm. Lexicon-based methods rely on predefined sentiment lexicons, which may not account for the nuances of language, such as:</li>
+<li><strong>Contextual Meaning</strong>: Words can have different meanings depending on the context in which they are used. For example, the word “sick” can be positive (e.g., “That movie was sick!”) or negative (e.g., “I feel sick”). Lexicon-based methods may misinterpret such words without considering context.</li>
+<li><strong>Sarcasm and Irony</strong>: Lexicon-based methods may struggle to identify sarcasm or irony, where the intended sentiment is opposite to the literal meaning of the words. For example, “Great job!” can be sarcastic in a negative context.</li>
+<li><strong>Ambiguity</strong>: Some words may have multiple meanings or sentiments, leading to ambiguity in sentiment classification. For example, the word “bark” can refer to the sound a dog makes or the outer covering of a tree.</li>
+<li><strong>Cultural and Domain-Specific Language</strong>: Different cultures and domains may use language differently, leading to variations in sentiment expression. Lexicon-based methods may not generalize well across different contexts.</li>
+<li><strong>Negation Handling</strong>: Lexicon-based methods may struggle to handle negations effectively. For example, “not good” should be classified as negative, but a simple lexicon lookup may misinterpret it as positive.</li>
+</ul>
 </section>
 </section>
 
