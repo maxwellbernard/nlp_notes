@@ -3447,7 +3447,7 @@ font-size: 0.7em;
 <li><strong>Removing Emojis and Special Characters</strong>: Removing emojis, emoticons, and other special characters.</li>
 </ul>
 <p><strong>Removal of Stopwords in Python using NLTK</strong></p>
-<div id="8f5a966c" class="cell" data-execution_count="2">
+<div id="0b636257" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&quot;english&quot;</span>))</span>
@@ -3458,7 +3458,7 @@ font-size: 0.7em;
 </div>
 </div>
 <p><strong>Removal of Stopwords in Python using spaCy</strong></p>
-<div id="eb8e551d" class="cell" data-execution_count="3">
+<div id="a0b1d33f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>) <span class="co"># Load English language model</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
@@ -3477,7 +3477,7 @@ font-size: 0.7em;
 <p>Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements.</p>
 <p>The tokens are the words, sentences, characters, or subwords that are produced by the tokenization process.</p>
 <p>Space based token is used to prepare the text for further processing such as stemming, lemmatization, and POS tagging. - <strong>Type</strong> is number of unique tokens in a text - <strong>Token</strong> is a single instance of a token in a text</p>
-<div id="9028104a" class="cell" data-execution_count="4">
+<div id="4f650770" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>total_tokens <span class="op">=</span> <span class="bu">len</span>(tokens)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>total_types <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(tokens))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3490,7 +3490,7 @@ font-size: 0.7em;
 <ul>
 <li>word.isalnum() - returns True if all characters in the word are alphanumeric</li>
 </ul>
-<div id="9e83a98f" class="cell" data-execution_count="5">
+<div id="224db07e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>shakespeare_url <span class="op">=</span> <span class="st">&quot;https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt&quot;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>crime_punishment_url <span class="op">=</span> <span class="st">&quot;http://www.gutenberg.org/files/2554/2554-0.txt&quot;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3538,7 +3538,7 @@ font-size: 0.7em;
 </ul>
 <section id="example-of-stemming-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk">Example of stemming in Python using NLTK</h4>
-<div id="ad11bcc6" class="cell" data-execution_count="6">
+<div id="98627bb2" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sbs <span class="op">=</span> SnowballStemmer(<span class="st">&quot;english&quot;</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">&quot;The stars twinkled in the dark, illuminating the night sky.&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>method <span class="op">=</span> TreebankWordTokenizer()</span>
@@ -3578,7 +3578,7 @@ sky | sky
 </ul>
 <section id="example-of-stemming-in-python-using-nltk-1" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk-1">Example of stemming in Python using NLTK</h4>
-<div id="032fa959" class="cell" data-execution_count="7">
+<div id="60575f9d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sbs <span class="op">=</span> SnowballStemmer(<span class="st">&quot;english&quot;</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">&quot;The stars twinkled in the dark, illuminating the night sky.&quot;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>method <span class="op">=</span> TreebankWordTokenizer()</span>
@@ -3798,7 +3798,7 @@ sky | sky
 </tbody>
 </table>
 <p><strong>Example of Regular Expressions in Python</strong></p>
-<div id="48115a38" class="cell" data-execution_count="8">
+<div id="59d9ee62" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog. The dog barks at the fox.&quot;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
@@ -3984,7 +3984,7 @@ sky | sky
 </table>
 <section id="example-of-pos-tagging-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-pos-tagging-in-python-using-nltk">Example of POS Tagging in Python using NLTK</h4>
-<div id="57eb35ce" class="cell" data-execution_count="9">
+<div id="db911245" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog.&quot;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>tags <span class="op">=</span> pos_tag(words)</span>
@@ -4010,7 +4010,7 @@ dog | NN
 <p>Make sure to download the spaCy model using <code>python -m spacy download en_core_web_sm</code></p>
 <p>This model is a small English model trained on written web text (blogs, news, comments), which includes vocabulary, vectors, syntax, and entities.</p>
 <p>The model is trained on the OntoNotes 5 corpus and supports POS tagging, dependency parsing, named entity recognition, and more.</p>
-<div id="70d0336a" class="cell" data-execution_count="10">
+<div id="aa5f220f" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sample_text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog.&quot;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> model(sample_text)</span>
@@ -4041,7 +4041,7 @@ dog | NOUN
 <section id="example-of-named-entity-recognition-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-nltk">Example of Named Entity Recognition in Python using NLTK</h4>
 <p>In NLP, a tree structure is often used to represent the syntactic structure of a sentence. Each node in the tree represents a linguistic unit, such as a word or a phrase, and the edges represent the relationships between these units. The <code>Tree</code> class provides various methods for creating, traversing, and modifying these tree structures.</p>
-<div id="c2870bcc" class="cell" data-execution_count="11">
+<div id="58e672c6" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Apple is a technology company based in Cupertino, California.&quot;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>tags <span class="op">=</span> pos_tag(words)</span>
@@ -4063,7 +4063,7 @@ GPE: California</code></pre>
 </section>
 <section id="example-of-named-entity-recognition-in-python-using-spacy" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-spacy">Example of Named Entity Recognition in Python using spaCy</h4>
-<div id="58fb59d3" class="cell" data-execution_count="12">
+<div id="96ce9fb2" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sample_text <span class="op">=</span> <span class="st">&quot;Apple is a technology company based in Cupertino, California.&quot;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> model(sample_text)</span>
@@ -4103,7 +4103,7 @@ GPE: California</code></pre>
 </ul>
 <p>number of n-grams = (total number of words) - (n - 1)</p>
 <p><strong>Generating different n-grams for a text</strong>:</p>
-<div id="3b742bff" class="cell" data-execution_count="13">
+<div id="cc234ec3" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Italy is famous for its cuisine.&quot;</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_ngrams(text, n):</span>
@@ -4196,7 +4196,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </ul>
 <p><strong>Notes</strong>: the choice of how many padding tokens to use depends on the order of the N-gram model. For a bigram model, you would use one padding token at the beginning of the sentence. For a trigram model, you would use two padding tokens at the beginning of the sentence. The padding tokens are not part of the vocabulary and are used only for modeling purposes.</p>
 <p><strong>Padding Example in Python</strong></p>
-<div id="3e8aa412" class="cell" data-execution_count="14">
+<div id="7017723b" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;I like NLP. NLP is fun. NLP in python is fun.&quot;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4300,7 +4300,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </ul></li>
 </ul>
 <p><strong>STEP 1: tokenize text and add padding tokens</strong></p>
-<div id="cab40fe3" class="cell" data-execution_count="15">
+<div id="2f74e27c" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;I like NLP. NLP is fun. NLP in python is fun. I like coding in python. NLP is cool.&quot;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>padded_sentences <span class="op">=</span> []</span>
@@ -4322,7 +4322,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </div>
 </div>
 <p><strong>STEP 2: Generate trigrams (and bigrams for MLE calculation)</strong></p>
-<div id="37dcb85f" class="cell" data-execution_count="16">
+<div id="76bf183d" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>trigrams <span class="op">=</span> []</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sent <span class="kw">in</span> padded_sentences:</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    sent_trigrams <span class="op">=</span> <span class="bu">list</span>(ngrams(sent, <span class="dv">3</span>))</span>
@@ -4368,7 +4368,7 @@ Trigrams:
 </div>
 </div>
 <p><strong>STEP 3: Count unique trigrams and bigrams</strong></p>
-<div id="e33ba690" class="cell" data-execution_count="17">
+<div id="2ed14a17" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>trigram_counts <span class="op">=</span> Counter(trigrams)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>bigrams_counts <span class="op">=</span> Counter(bigrams)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>unique_bigrams <span class="op">=</span> <span class="bu">len</span>(bigrams_counts)</span>
@@ -4411,7 +4411,7 @@ Unique Bigrams: 17
 </div>
 </div>
 <p><strong>STEP 4: Calculate trigram probabilities (MLE)</strong></p>
-<div id="c539391e" class="cell" data-execution_count="18">
+<div id="d0c0c572" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tri_mle <span class="op">=</span> {}</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (w1, w2, w3), count <span class="kw">in</span> trigram_counts.items():</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    tri_mle[(w1, w2, w3)] <span class="op">=</span> <span class="bu">round</span>(count <span class="op">/</span> bigrams_counts[(w1, w2)], <span class="dv">3</span>)</span>
@@ -4451,7 +4451,7 @@ Trigram MLE:
 </div>
 </div>
 <p><strong>(Calculating MLE with Laplace Smoothing)</strong></p>
-<div id="90735af3" class="cell" data-execution_count="19">
+<div id="0b9a604d" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> <span class="bu">len</span>(trigram_counts)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Laplace smoothing constant</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>tri_mle_laplace <span class="op">=</span> {}</span>
@@ -4494,7 +4494,7 @@ Trigram MLE with Laplace Smoothing:
 </div>
 </div>
 <p><strong>STEP 5: Calculate Perplexity</strong></p>
-<div id="a6095f1b" class="cell" data-execution_count="20">
+<div id="7d94c0bc" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>test_trigrams <span class="op">=</span> trigrams  <span class="co"># Reusing the training trigrams for simplicity</span></span>
@@ -4531,7 +4531,7 @@ Perplexity: 1.288</code></pre>
 </section>
 <section id="example-of-trigram-lm-with-nltk-abc-corpus" class="level3">
 <h3 class="anchored" data-anchor-id="example-of-trigram-lm-with-nltk-abc-corpus">Example of Trigram LM with NLTK ABC Corpus</h3>
-<div id="609c263e" class="cell" data-execution_count="21">
+<div id="92872298" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.util <span class="im">import</span> trigrams, bigrams</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4600,13 +4600,13 @@ Unique Trigrams: 45447
 Unique Bigrams: 30474
 Predicted next word after &#39;the prime&#39;: minister
 Probability of the next word occurring: 0.02978
-Execution time: 0.13728 seconds</code></pre>
+Execution time: 0.14917 seconds</code></pre>
 </div>
 </div>
 </section>
 <section id="example-of-sentence-generation-with-trigram-lm" class="level3">
 <h3 class="anchored" data-anchor-id="example-of-sentence-generation-with-trigram-lm">Example of Sentence Generation with Trigram LM</h3>
-<div id="26f39287" class="cell" data-execution_count="22">
+<div id="ac4221df" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
@@ -4632,8 +4632,8 @@ Execution time: 0.13728 seconds</code></pre>
 <span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
 <span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Execution time: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">:.5f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Generated sentence: of generic wines
-Execution time: 0.00050 seconds</code></pre>
+<pre><code>Generated sentence: greater consideration .
+Execution time: 0.00066 seconds</code></pre>
 </div>
 </div>
 </section>
@@ -4692,7 +4692,7 @@ Execution time: 0.00050 seconds</code></pre>
 <li>Train the Naive Bayes classifier on the training set.</li>
 <li>Evaluate the classifier on the testing set using metrics such as accuracy, precision, recall, and F1-score.</li>
 </ol>
-<div id="a5a718fe" class="cell" data-execution_count="23">
+<div id="750cd5f7" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
