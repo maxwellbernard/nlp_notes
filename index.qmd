@@ -1524,7 +1524,7 @@ Base Models are the result of pre-training.
 
 **Chat Models** are further tuned with dialogue data for conversational use. 
 
-**Prompt engineering** involves effectively designing prompts to get better results from LLMs. 
+**Prompt engineering** involves effectively designing prompts to get better results from LLMS.
 
 LLM Settings that can be controlled include:
 
