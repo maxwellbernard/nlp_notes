@@ -29,6 +29,10 @@ from nltk.tokenize import word_tokenize, sent_tokenize, TreebankWordTokenizer  #
 import spacy  # for spaCy library
 from spacy import displacy  # for visualizing named entities
 import nltk
+nltk.download('averaged_perceptron_tagger_eng')
+nltk.download('maxent_ne_chunker_tab')
+nltk.download('words')
+nltk.download('abc')
 from nltk import FreqDist, ne_chunk
 
 # nltk.download("stopwords")  # download stopwords to local machine
@@ -48,13 +52,14 @@ import re  # Regular Expressions
 
 |  | NLTK | spaCy |
 |---------|---------|---------|
-| Methods | string processing library | object-oriented approach - it parses a text, returns document object whose words and sentences are objects themselves | 
-| Tokenization | uses regular expression-based methods which are not always accurate | uses a rule-based approach to tokenization which is more accurate |
+| Methods | string processing library | **object-oriented approach** - it parses a text, returns document object whose words and sentences are objects themselves | 
+| Tokenization | uses regular expression-based methods which are not always accurate | uses a **rule-based approach** to tokenization which is **more accurate** |
 | POS Tagging | provides wide range of POS taggers (ranging from rule-based to machine learning-based) | uses a deep learning-based POS tagger which is more accurate (also offers pre-trained models in multiple languages) |
 | Named Entity Recognition (NER) | provides multiple NER taggers (ranging from rule-based to machine learning-based) | uses a highly efficient deep learning-based NER tagger for detecting entities such as names, organizations, locations, etc. |
 | Performance | slower than spaCy | faster than NLTK (due to its optimized implementation in Cython) |
 
-- `Textblob` is another popular library for NLP in Python. It is built on top of NLTK and provides a simple API for common NLP tasks such as tokenization, POS tagging, and sentiment analysis. 
+
+`Textblob` is another popular library for NLP in Python. It is built on top of NLTK and provides a simple API for common NLP tasks such as tokenization, POS tagging, and sentiment analysis. 
   - It is **not good for large scale production use**
 
 ## Normalization
@@ -66,7 +71,7 @@ Tasks involved in normalization include
 - **Tokenization**: Breaking a text into words, phrases, symbols, or other meaningful elements.
 - **Case Folding**: Converting all characters to lowercase.
 - **Removing Punctuation**: Removing any non-alphanumeric characters.
-- **Removing Stopwords**: Removing common words that do not carry much meaning.
+- **Removing Stopwords**: Removing common words that **do not carry much meaning.**
 - **Stemming or Lemmatization**: Reducing words to their base or root form.
 - **Removing Extra Spaces**: Removing any extra spaces between words.
 - **Expanding Contractions**: Expanding contractions such as "don't" to "do not".
@@ -93,8 +98,7 @@ print(f"spaCy stopwords removal: {' '.join(filtered_tokens)}")
 ```
 
 #### Morphological Normalization
-
-- Morphological normalization is the process of reducing a word to its base or root form
+Morphological normalization is the process of reducing a word to its base or root form
 - This can involve **stemming** or **lemmatization**
 - **Roots** are the base forms of words eg. "run" is the root of "running", "ran", "runs"
 - **Affixes** are the prefixes and suffixes that are added to roots to create different forms of words eg. "ing", "ed", "s"
@@ -104,9 +108,11 @@ print(f"spaCy stopwords removal: {' '.join(filtered_tokens)}")
 
 ### Tokenization
 
-- Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements.
-- The tokens are the words, sentences, characters, or subwords that are produced by the tokenization process.
-- Space based token is used to prepare the text for further processing such as stemming, lemmatization, and POS tagging.
+Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements.
+
+The tokens are the words, sentences, characters, or subwords that are produced by the tokenization process.
+
+Space based token is used to prepare the text for further processing such as stemming, lemmatization, and POS tagging.
 - **Type** is number of unique tokens in a text
 - **Token** is a single instance of a token in a text
 
@@ -153,13 +159,16 @@ print(crime_common)
 
 ##### NLTK Tokenizers
 - `word_tokenize()`: Tokenizes a text into words using a regular expression-based tokenizer. A versatile tokenizer that handles contractions, abbreviations, and punctuation marks effectively. It is suitable for most general-purpose tokenization tasks.
+  
 - `WordPunctTokenizer()`: Tokenizes a text into words using a regular expression that matches punctuation as separate tokens. A specialized tokenizer that separates words and punctuation explicitly. It is useful when you need to distinguish between alphabetic and non-alphabetic characters.
   
 ### Stemming
+Stemming is the process of **reducing a word to its root or base form.** For example, the word "running" would be reduced to "run" by a stemming algorithm.
 
-- Stemming is the process of reducing a word to its root or base form. For example, the word "running" would be reduced to "run" by a stemming algorithm.
-- Stemmers remove word suffixes by running input word tokens against a pre-defined list of common suffixes.
-- Stemming is a heuristic process that does not always produce a valid root word, but it can be useful for text processing tasks such as search indexing and information retrieval.
+Stemmers remove word suffixes by running input word tokens against a **pre-defined list of common suffixes.**
+
+Stemming is a **heuristic process** that does not always produce a valid root word, but it can be useful for text processing tasks such as search indexing and information retrieval.
+
 - **Porter Stemmer** is a popular (rule-based) stemming algorithm that is widely used in text processing applications.
 - **Snowball Stemmer** is an improved version of the Porter Stemmer that supports multiple languages.
 
@@ -176,13 +185,17 @@ for i in range(len(word_tokens)):
     print(f"{word_tokens[i]} | {stemmed[i]}")
 ```
 
-### Lemmatization
+- `TreebankWordTokenizer` is a tokenizer that uses the Penn Treebank tokenization conventions, which include rules for handling punctuation, contractions, and special cases.
 
-- The process of reducing a word to its base or root form, known as a lemma.
-- Is more sophisticated than stemming because it uses a dictionary to map words to their base forms.
-- POS tagging is used to determine the correct lemma for a word based on its part of speech.
-- Lemmatization is more accurate than stemming but can be slower and more computationally intensive.
-- **WordNet Lemmatizer** is a popular lemmatization algorithm that is available in NLTK.
+### Lemmatization
+The process of reducing a word to its base or root form, known as a lemma.
+
+Is **more sophisticated than stemming because it uses a dictionary to map words to their base forms.**
+
+POS tagging is used to determine the correct lemma for a word based on its part of speech.
+
+- Lemmatization is more accurate than stemming but can be slower and **more computationally intensive.**
+- `WordNetLemmatizer()` is a popular lemmatization algorithm that is available in NLTK.
 
 #### Example of stemming in Python using NLTK
 ```{python}
@@ -212,8 +225,9 @@ for i in range(len(word_tokens)):
 
 ## Regular Expressions
 
-- Regular expressions are a powerful tool for **pattern matching** and text processing.
-- They allow you to search for patterns in text, extract specific information, and perform complex text transformations.
+Regular expressions are a powerful tool for **pattern matching** and text processing.
+
+They allow you to search for patterns in text, extract specific information, and perform complex text transformations.
 
 **Regular Expression (Disjunction) Table**
 
@@ -273,14 +287,15 @@ for sentence in sentences:
 
 ## POS Tagging
 
-- Part-of-speech (POS) tagging is the process of assigning a part of speech to each word in a text. The part of speech indicates the grammatical category of the word, such as noun, verb, adjective, etc.
-- The goal of POS tagging is to identify the syntactic structure of a sentence and extract useful information about the text.
+Part-of-speech (POS) tagging is the process of assigning a part of speech to each word in a text. The part of speech indicates the **grammatical category of the word, such as noun, verb, adjective, etc.**
 
-- **Types of POS Tagging**
+The goal of POS tagging is to **identify the syntactic structure of a sentence** and extract useful information about the text.
+
+**Types of POS Tagging**
   - **Rule-based POS Tagging**:
     - Uses hand-crafted rules to assign POS tags to words based on their context.
     - Relies on a predefined set of rules and patterns to determine the correct POS tag for a word.
-    - **Pros**:
+      - **Pros**:
         - Simple and easy to implement, but may not be as accurate as other methods.
         - Doesnt require a lot of computational resources or training data.
         - Can be easily customized and adapted to different languages and domains.
@@ -293,7 +308,7 @@ for sentence in sentences:
 <br>
 
   - **Statistical POS Tagging**:
-  - Uses statistical models (such as Hidden Markov Models) to assign POS tags to words based on their context and probability.
+  - Uses **statistical models** (such as Hidden Markov Models) to assign POS tags to words **based on their context and probability.**
   - Learns the patterns and relationships between words and their POS tags from a large corpus of annotated text.
     - **Pros**:
       - More accurate than rule-based methods, especially for complex or ambiguous cases.
@@ -351,9 +366,11 @@ for word, tag in tags:
 ```
 
 #### Example of POS Tagging in Python using spaCy
-- Make sure to download the spaCy model using `python -m spacy download en_core_web_sm`
-- This model is a small English model trained on written web text (blogs, news, comments), which includes vocabulary, vectors, syntax, and entities.
-- The model is trained on the OntoNotes 5 corpus and supports POS tagging, dependency parsing, named entity recognition, and more.
+Make sure to download the spaCy model using `python -m spacy download en_core_web_sm`
+
+This model is a small English model trained on written web text (blogs, news, comments), which includes vocabulary, vectors, syntax, and entities.
+
+The model is trained on the OntoNotes 5 corpus and supports POS tagging, dependency parsing, named entity recognition, and more.
 ```{python}
 model = spacy.load("en_core_web_sm")
 sample_text = "The quick brown fox jumps over the lazy dog."
@@ -364,10 +381,13 @@ for word in doc:
 ```
 
 ## Named Entity Recognition (NER)
-- Named Entity Recognition (NER) is the process of identifying and classifying named entities in a text.
-- Named entities are real-world objects such as persons, organizations, locations, dates, and more.
-- NER is an important task in NLP because it helps extract useful information from unstructured text and enables downstream tasks such as information retrieval, question answering, and text summarization.
-- NER models are trained on annotated datasets that contain labeled examples of named entities in text.
+Named Entity Recognition (NER) is the process of identifying and classifying named entities in a text.
+
+Named entities are real-world objects such as p**ersons, organizations, locations, dates,** and more.
+
+NER is an important task in NLP because it helps extract useful information from unstructured text and enables downstream tasks such as information retrieval, question answering, and text summarization.
+
+NER models are trained on annotated datasets that contain labeled examples of named entities in text.
 - **Common types of named entities**:
   - **Person**: Names of people, such as "John Doe" or "Alice Smith".
   - **Organization**: Names of companies, institutions, or groups, such as "Google" or "United Nations".
@@ -392,8 +412,10 @@ for subtree in tree:
         words = " ".join([word for word, tag in subtree.leaves()])
         print(f"{label}: {words}")
 ```
-- Note: NLTK's named entity recognizer has identified "Apple", "Cupertino", and "California" as geopolitical entities (GPE).
-- The NER model uses context and patterns learned from training data to classify named entities, but it is not always perfect and can sometimes make mistakes, as seen with "Apple" in this case.
+
+Note: NLTK's named entity recognizer has identified "Apple", "Cupertino", and "California" as geopolitical entities (GPE).
+
+The NER model uses context and patterns learned from training data to classify named entities, but it is not always perfect and can sometimes make mistakes, as seen with "Apple" in this case.
 
 #### Example of Named Entity Recognition in Python using spaCy
 ```{python}
@@ -408,7 +430,7 @@ displacy.render(doc, style="ent", jupyter=True) # style="ent" is used to display
 # Lecture 3
 
 ## N-Gram (Probabilistic LM)
-This is model predicts the probability of a word given the previous n-1 words. It is based on the assumption that the probability of a word depends on the context provided by the previous n-1 words. N-grams are used in various NLP tasks such as speech recognition, machine translation, and text generation.
+This is model predicts the probability of a word given the previous n-1 words. It is based on the **assumption that the probability of a word depends on the context provided by the previous n-1 words.**   N-grams are used in various NLP tasks such as speech recognition, machine translation, and text generation.
 
 - **Unigram**: A single word
 - **Bigram**: A pair of words
@@ -432,18 +454,15 @@ trigrams = generate_ngrams(text, 3)
 ### Conditional Probability and Chain Rule
 
 - **Joint Probability**: The probability of two or more events occurring together. It is denoted as P(A, B) and is calculated as the probability of both events A and B occurring.
-  - **Joint Probability Formula**: $P(A \cap B) = P(A) \times P(B)$
-  - is equivalent to $P(A \cap B) = P(A) \times P(B)$
-<br>
-<br>
+  - **Joint Probability Formula**: $P(A, B) = P(A) \times P(B)$
+
 
 - **Conditional Probability**: The probability of an event given that another event has occurred. It is denoted as P(A | B) which is the probability of event A occurring given that event B has occurred.
 - It is calculated as the probability of both events A and B occurring divided by the probability of event B occurring.
   - **Conditional Probability Formula**: $P(A \mid B) = \frac{P(A, B)}{P(B)}$
-<br>
-<br>
 
-- **Chain Rule of Probability**: The probability of a sequence of events can be calculated by multiplying the conditional probabilities of each event given the previous events in the sequence.
+
+- **Chain Rule of Probability**: The probability of a sequence of events can be calculated by **multiplying the conditional probabilities of each event given the previous events** in the sequence.
   - **Chain Rule Formula**:
 $$
 \small
@@ -467,12 +486,10 @@ To make things manageable, N-gram models approximate the chain rule by making a 
 
 
 - **First-Order Markov Model**: The probability of a word depends only on the previous word.
-  - $$P(w_n | w_1, w_2, ..., w_{n-1}) = P(w_n | w_{n-1})$$
-  - "The probability of the 10th word depends only on the 9th word, not on the previous words."
+- $$P(w_n | w_1, w_2, ..., w_{n-1}) = P(w_n | w_{n-1})$$
+- "The probability of the 10th word depends only on the 9th word, not on the previous words."
   - **Example**: $P(\text{fox} \mid \text{The quick brown}) = P(\text{fox} \mid \text{brown})$
   - **Note**: The first-order Markov model is a special case of the N-gram model where n=2.
-<br>
-<br>
 
 - **Second-Order Markov Model**: The probability of a word depends only on the previous two words.
   - $$P(w_n | w_1, w_2, ..., w_{n-1}) = P(w_n | w_{n-2}, w_{n-1})$$
@@ -500,12 +517,13 @@ To make things manageable, N-gram models approximate the chain rule by making a 
   
 ### Padding 
 Is a technique used to handle the boundary conditions in N-gram models where the context words are not available.
-- **Start-of-Sentence (BOS) Padding**: A special token that represents the beginning of a sentence. It is used to handle the first word in a sentence where the context words are not available.
+
+**Start-of-Sentence (BOS) Padding**: A special token that represents the beginning of a sentence. It is used to handle the first word in a sentence where the context words are not available.
+
   - **Example**: `<s>` The quick brown fox jumps over the lazy dog. Note `<s>` is equivalent to `<start>`
-<br>
-<br>
 
 - **End-of-Sentence (EOS) Padding**: A special token that represents the end of a sentence. It is used to handle the last word in a sentence where the context words are not available.
+  
   - **Example**: The fox jumps over the lazy dog. `</s>`
 
 **Notes**: the choice of how many padding tokens to use depends on the order of the N-gram model. For a bigram model, you would use one padding token at the beginning of the sentence. For a trigram model, you would use two padding tokens at the beginning of the sentence. The padding tokens are not part of the vocabulary and are used only for modeling purposes.
@@ -533,9 +551,10 @@ for sentence in padded_sentences:
 - **Solution**: Use ``log probabilities`` to avoid underflow by converting the product of probabilities to the sum of log probabilities.
 
 ### Smoothing Techniques
-- This is a technique used to address the issue of zero probabilities in N-gram models. It assigns a small non-zero probability to unseen n-grams to improve the generalization of the model. You "test" these by comparing smoothed probabilities to unsmoothed ones.
-<br>
-<br>
+This is a technique used to **address the issue of zero probabilities in N-gram models.**
+
+It assigns a **small non-zero probability to unseen n-grams** to improve the generalization of the model. You "test" these by comparing smoothed probabilities to unsmoothed ones.
+
 
 - **Laplace (Add-One) Smoothing**: A simple smoothing technique that adds one to the count of each n-gram to avoid zero probabilities.
   - **Formula**: $P(w_n | w_1, w_2, ..., w_{n-1}) = \frac{(\text{Count(n-gram)} + 1)}{(\text{Count(of previous n-1 words)} + V)}$
@@ -699,9 +718,6 @@ print(f"Perplexity: {perplexity:.3f}")
 ### Example of Trigram LM with NLTK ABC Corpus
 
 ```{python}
-print(type(list))
-```
-```{python}
 import time
 from nltk.util import trigrams, bigrams
 
@@ -794,18 +810,25 @@ print(f"Execution time: {end_time - start_time:.5f} seconds")
 
 # Lecture 4
 ## Text Classification
-- Text classification is the process of assigning predefined categories or labels to text documents based on their content.
-- It is a supervised learning task where a model is trained on labeled data to learn the relationship between the text and its corresponding labels.
-- Text classification is used in various applications such as spam detection, sentiment analysis, topic categorization, and more.
-- The goal of text classification is to build a model that can accurately predict the category of unseen text documents based on their content.
-- The process of text classification involves several steps, including data preprocessing, feature extraction, model training, and evaluation.
-- The choice of features and the classification algorithm can significantly impact the performance of the model.
+
+Text classification is the process of assigning predefined categories or labels to text documents based on their content.
+
+It is a **supervised learning task** where a model is trained on labeled data to learn the relationship between the text and its corresponding labels.
+
+Text classification is used in various applications such as **spam detection, sentiment analysis, topic categorization**, and more.
+
+The goal of text classification is to build a model that can accurately predict the category of unseen text documents based on their content. The process of text classification involves several steps, including data preprocessing, feature extraction, model training, and evaluation.
+
+The choice of features and the classification algorithm can significantly impact the performance of the model.
   
 There are three main types of text classification techniques:
+
 - **Supervised Learning**: The model is trained on labeled data, where each document is associated with a predefined category. The model learns to map the input features to the corresponding labels.
   -  Naive Bayes, Logistic Regression
+  
 - **Unsupervised Learning**: The model is trained on unlabeled data, where the goal is to discover hidden patterns or clusters in the data. The model learns to group similar documents together without any predefined labels.
   - Latent Dirichlet Allocation (LDA), K-means clustering
+
 - **Deep Learning**: The model is trained on large amounts of data using deep neural networks. Deep learning models can automatically learn complex features and representations from the data, making them suitable for text classification tasks.
   - Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), Transformers (BERT, GPT-3)
 
@@ -820,9 +843,9 @@ $$P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}$$
   - P(H): The prior probability of hypothesis H.
   - P(E): The total probability of evidence E.
 
-- **Naive Assumption**: The naive assumption in Naive Bayes classifiers is that the features are conditionally independent given the class label. This simplifies the computation of the posterior probability.
-- The naive assumption allows us to calculate the joint probability of the features given the class label as the product of the individual probabilities of each feature.
-- An exmple of the naive assumption is:
+**Naive Assumption**: The naive assumption in Naive Bayes classifiers is that the **features are conditionally independent given the class label**. This simplifies the computation of the posterior probability.
+  - The naive assumption allows us to calculate the joint probability of the features given the class label as the product of the individual probabilities of each feature.
+- An example of the naive assumption is:
 - $$P(X_1, X_2, ..., X_n \mid C) = P(X_1 \mid C) \cdot P(X_2 \mid C) \cdot ... \cdot P(X_n \mid C)$$
 - Where:
   - P(X1, X2, ..., Xn | C): The joint probability of features X1, X2, ..., Xn given class C.
@@ -830,16 +853,20 @@ $$P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}$$
 - The naive assumption is a simplification that allows Naive Bayes classifiers to work well in practice, even when the features are not truly independent.
 
 Types of Naive Bayes Classifiers:
-- **Gaussian Naive Bayes**: Assumes that the features follow a Gaussian (normal) distribution. It is suitable for continuous features.
-- **Multinomial Naive Bayes**: Assumes that the features are counts or frequencies. It is suitable for discrete features, such as word counts in text classification.
-- **Bernoulli Naive Bayes**: Assumes that the features are binary (0 or 1). It is suitable for binary features, such as presence or absence of words in text classification.
+
+- **Gaussian Naive Bayes**: Assumes that the features follow a Gaussian **(normal) distribution.** It is suitable for **continuous features.**
+  
+- **Multinomial Naive Bayes**: Assumes that the features are counts or frequencies. It is suitable for **discrete features, such as word counts in text classification.**
+  
+- **Bernoulli Naive Bayes**: Assumes that the **features are binary (0 or 1).** It is suitable for binary features, such as **presence or absence of words in text classification.**
 
 Implementing Naive Bayes
-- **Step 1**: Load the dataset, clean and preprocess the text data.
-- **Step 2**: Split the dataset into training and testing sets.
-- **Step 3**: Extract features from the text data using techniques such as Bag of Words (BoW)
-- **Step 4**: Train the Naive Bayes classifier on the training set.
-- **Step 5**: Evaluate the classifier on the testing set using metrics such as accuracy, precision, recall, and F1-score.
+
+1. Load the dataset, clean and preprocess the text data.
+2. Split the dataset into training and testing sets.
+3. Extract features from the text data using techniques such as Bag of Words (BoW)
+4. Train the Naive Bayes classifier on the training set.
+5. Evaluate the classifier on the testing set using metrics such as accuracy, precision, recall, and F1-score.
 
 ```{python}
 import pandas as pd
@@ -913,11 +940,11 @@ print(classification_report(y_test, y_pred, target_names=newsgroups.target_names
     - TN: True Negatives
     - FP: False Positives
     - FN: False Negatives
-- **Precision**: The proportion of true positive predictions out of all positive predictions.
+- **Precision**: The proportion of true positive predictions **out of all positive** predictions.
   - Formula: $Precision = \frac{TP}{TP + FP}$
   - Indicates how many of the predicted positive instances are actually positive.
   - High precision means fewer false positives.
-- **Recall**: The proportion of true positive predictions out of all actual positive instances.
+- **Recall**: The proportion of true positive predictions **out of all actual positive** instances.
   - Formula: $Recall = \frac{TP}{TP + FN}$
   - Indicates how many of the actual positive instances were correctly predicted.
   - High recall means fewer false negatives.
@@ -953,18 +980,22 @@ performance?
       - **Combination**: Use a combination of oversampling and undersampling to balance the classes.
       - **How it helps**: Resampling techniques help to create a more balanced dataset, which allows the model to learn better from both classes and reduces the bias towards the majority class. This can lead to improved performance in terms of precision, recall, and F1-score for the minority class.
   2. **Class Weights**: Assign higher weights to the minority class during model training. This can be done by using the `class_weight` parameter in scikit-learn classifiers.
-      - **How it helps**: By assigning higher weights to the minority class, the model is penalized more for misclassifying instances from that class, which encourages it to focus on learning from the minority class.
+      - **How it helps**: By assigning higher weights to the minority class, the **model is penalized more for misclassifying instances from that class**, which encourages it to focus on learning from the minority class.
   3. **Ensemble Methods**: Use ensemble methods such as Random Forest or Gradient Boosting, which can handle class imbalance better than individual classifiers.
       - **How it helps**: Ensemble methods combine the predictions of multiple classifiers, which can improve overall performance and robustness against class imbalance.
 
 
 # Lecture 5 
 ## Logistic Regression
-- Logistic regression is a statistical method used for binary classification problems. It models the relationship between a binary dependent variable and one or more independent variables by estimating the probability of the dependent variable being in a particular class.
-- It is a type of regression analysis that uses the logistic function to model the probability of a binary outcome.
-- Logistic regression is widely used in various fields, including social sciences, healthcare, marketing, and finance, for tasks such as predicting customer churn, disease diagnosis, and credit risk assessment.
-- Logistic regression is a linear model that uses the logistic function to map the linear combination of input features to a probability value between 0 and 1.
-- The logistic function is defined as:
+
+Logistic regression is a statistical method used for **binary classification problems.**
+
+It models the relationship between a binary dependent variable and one or more independent variables by estimating the probability of the dependent variable being in a particular class.
+
+It is a type of regression analysis that uses the logistic function to model the probability of a binary outcome.
+  - Logistic regression is widely used in various fields, including social sciences, healthcare, marketing, and finance, for tasks such as predicting customer churn, disease diagnosis, and credit risk assessment.
+  - Logistic regression is a linear model that uses the logistic function to **map the linear combination of input features to a probability value between 0 and 1.**
+  - The logistic function is defined as:
   - $$f(x) = \frac{1}{1 + e^{-x}}$$ 
   - Where:
     - x: The linear combination of input features and their corresponding weights.
@@ -992,14 +1023,14 @@ performance?
 
 
 ### Training Logistic Regression
-- **Maximum Likelihood Estimation (MLE)** is used to estimate the coefficients of the logistic regression model.
+**Maximum Likelihood Estimation (MLE)** is used to estimate the coefficients of the logistic regression model.
   - The MLE finds the values of the coefficients that maximize the likelihood of the observed data given the model.
 - **L2 regularization (Ridge)** is often used to prevent overfitting by adding a penalty term to the loss function.
   - The regularization term helps to constrain the coefficients, reducing their variance and improving the model's generalization to unseen data.
   - The choice of regularization strength is crucial, as too much regularization can lead to underfitting, while too little can result in overfitting.
   - Cross-validation is commonly used to select the optimal regularization parameter.
   - It is important to evaluate the model's performance on a validation set to ensure that it generalizes well to new data.
-- **L1 regularization (Lasso)** can also be used to perform feature selection by driving some coefficients to zero, effectively removing those features from the model.
+- **L1 regularization (Lasso)** can also be used to perform feature selection by **driving some coefficients to zero**, effectively removing those features from the model.
 - **Elastic Net** is a combination of L1 and L2 regularization, allowing for both feature selection and coefficient shrinkage.
 - **Bayesian logistic regression** is another approach that incorporates prior distributions on the coefficients, allowing for uncertainty quantification and regularization.
 
@@ -1015,10 +1046,11 @@ Scikit-Learn's LogisticRegression
 
 
 ### Bag of Words vs. TF-IDF
-- **Bag of Words (BoW)**: A simple representation of text data where each document is represented as a vector of word counts. It ignores the order of words and focuses on the frequency of each word in the document.
+
+**Bag of Words (BoW)**: A simple representation of text data where each document is represented as a vector of word counts. It **ignores the order of words** and focuses on the **frequency of each word in the document.**
   - Pros: Simple to implement, easy to interpret, works well for many applications.
   - Cons: Ignores word order, can lead to high-dimensional sparse vectors, may not capture semantic meaning.
-- **Term Frequency-Inverse Document Frequency (TF-IDF)**: A more sophisticated representation of text data that considers both the frequency of words in a document and their importance across the entire corpus. It assigns higher weights to words that are frequent in a document but rare in the corpus.
+- **Term Frequency-Inverse Document Frequency (TF-IDF)**: A more sophisticated representation of text data that **considers both the frequency of words in a document and their importance across the entire corpus.** It assigns **higher weights to words that are frequent in a document but rare in the corpus.**
 - TF-IDF is calculated as:
 - $$\text{TF-IDF}(w, d) = \text{TF}(w, d) \cdot \text{IDF}(w)$$
     - TF(w, d): The term frequency of word w in document d.
@@ -1033,12 +1065,12 @@ Scikit-Learn's LogisticRegression
   - **Cons**: More complex to implement, may still lead to high-dimensional sparse vectors.
 - **Example**: In a corpus of 100 documents, the word "the" appears in 90 documents, while the word "NLP" appears in 10 documents. The TF-IDF score for "the" will be lower than that for "NLP" because "the" is common across many documents, while "NLP" is more specific to certain documents.
 
-Make table of columns: Feature | BoW | TF-IDF
+BoW vs TF-IDF Comparison Table:
 
 | Feature | Bag of Words (BoW) | TF-IDF |
 |---------|---------------|------------|
 | Concept | Counts word frequencies | Weights word importance |
-| Dimensionality | High-dimensional sparse vectors | High-dimensional sparse vectors, but weights may reduce freature noise|
+| Dimensionality | High-dimensional sparse vectors | High-dimensional sparse vectors, but weights may reduce feature noise|
 | Complexity | Simple to implement | More complex to implement, due to IDF calculation |
 | Word Importance | Ignores word importance | Considers word importance relative to the corpus |
 | Context Sensitivity | Ignores word order and context | Ignores word order, but captures context through IDF |
@@ -1048,24 +1080,30 @@ Make table of columns: Feature | BoW | TF-IDF
 
 ### LR Model Assumptions
 - **Linearity**: The relationship between the independent variables and the log-odds of the dependent variable is linear. This means that a one-unit change in an independent variable will result in a constant change in the log-odds of the dependent variable.
+  
 - **Independence**: The observations are independent of each other. This means that the outcome of one observation does not influence the outcome of another observation.
+  
 - **No Multicollinearity**: The independent variables are not highly correlated with each other. This means that the model should not include highly correlated features, as this can lead to unstable coefficient estimates and difficulty in interpreting the results.
+  
 - **No Outliers**: The model assumes that there are no extreme outliers in the data that could disproportionately influence the results. Outliers can affect the estimates of the coefficients and the overall fit of the model.
   
 
 ### LR Limitations
 - **Linearity Assumption**: Logistic regression assumes a linear relationship between the independent variables and the log-odds of the dependent variable. This may not hold true for all datasets, leading to poor performance.
+  
 - **Feature Independence**: Logistic regression assumes that the independent variables are independent of each other. In practice, this assumption may not hold, leading to multicollinearity issues.
+  
 - **Sensitivity to Outliers**: Logistic regression can be sensitive to outliers, which can disproportionately influence the model's coefficients and predictions.
+  
 - **Inability to Capture Complex Relationships**: Logistic regression is a linear model and may not capture complex relationships between features and the target variable. Non-linear relationships may require more advanced models, such as decision trees or neural networks.
-- -**Requires Large Sample Size**: Logistic regression requires a sufficient amount of data to produce reliable estimates. Small sample sizes may lead to overfitting and unreliable predictions. Sample size should be at least 10 times the number of features. eg if you have 5 features, you should have at least 50 samples.
+  
+- -**Requires Large Sample Size**: Logistic regression requires a sufficient amount of data to produce reliable estimates. Small sample sizes may lead to overfitting and unreliable predictions. **Sample size should be at least 10 times the number of features**. eg if you have 5 features, you should have at least 50 samples.
 
 
 # Lecture 6
 ## Sentiment Analysis (SA)
-- Sentiment analysis is the process of determining the sentiment or opinion expressed in a piece of text, such as positive, negative, or neutral.
-- A lexicon 
-  - A lexicon is a collection of words and phrases that are associated with specific sentiments, which can be used to analyze the sentiment of a given text.
+Sentiment analysis is the process of determining the sentiment or opinion expressed in a piece of text, such as positive, negative, or neutral.
+- A **lexicon** is a **collection of words and phrases that are associated with specific sentiments**, which can be used to analyze the sentiment of a given text.
   - A sentiment lexicon can include words like "happy," "sad," "angry," and "excited," each associated with a specific sentiment score.
 
 Ekman's Six Basic Emotions are:
@@ -1077,11 +1115,12 @@ Ekman's Six Basic Emotions are:
   - Disgust
 
 ## Resources for Sentiment Lexicons 
-- **VADER (Valence Aware Dictionary and sEntiment Reasoner)**: A lexicon specifically designed for sentiment analysis in social media. It provides sentiment scores for words and phrases, along with rules for handling negations and intensifiers.
+- **VADER (Valence Aware Dictionary and sEntiment Reasoner)**: A lexicon specifically designed for sentiment analysis in **social media.** It provides sentiment scores for words and phrases, along with rules for handling negations and intensifiers.
   - VADER is particularly effective for analyzing short texts, such as tweets and product reviews, and is widely used in natural language processing tasks.
   - VADER uses a combination of lexical features, syntactic rules, and sentiment intensity scores to determine the sentiment of a given text.
-  - It is available in the NLTK library and can be easily integrated into Python applications.
-  - Uses valence score (-1 to 1) to represent the sentiment of a word or phrase.
+  - VADER **does not require data preprocessing**, such as stemming or lemmatization, making it easy to use.
+  - It is **available in the NLTK library** and can be easily integrated into Python applications.
+  - Uses valence score **(-1 to 1)** to represent the sentiment of a word or phrase.
 - **AFINN (Affective Norms for English Words)**: A lexicon that provides affective ratings for English words, including valence, arousal, and dominance scores. 
   - It is a list of 3300+ English words rated for valence (positive or negative sentiment) on a scale from -5 to +5.
   - AFINN is useful for sentiment analysis tasks, particularly in social media and online reviews.
@@ -1091,23 +1130,25 @@ Ekman's Six Basic Emotions are:
   - LIWC is widely used in psychology and social sciences for analyzing the emotional content of text data.
 
 ## How to do Sentiment Analysis?
-- Two main approaches to sentiment analysis:
+Two main approaches to sentiment analysis:
   
-- **Rule-based**: Uses predefined rules and lexicons to determine sentiment. It relies on linguistic patterns, such as negations, intensifiers, and sentiment-bearing words.
+**Rule-based**: Uses predefined rules and lexicons to determine sentiment. It relies on linguistic patterns, such as negations, intensifiers, and sentiment-bearing words.
   - Example: "I love this product!" would be classified as positive based on the presence of the word "love."
   - **Pros**: Simple to implement, interpretable results.
   - **Cons**: Limited flexibility, may not capture complex sentiments or sarcasm.
 - Scoring in Lexicon-based sentiment analysis:
   - Prepare a sentiment lexicon with words and their corresponding sentiment scores. Scoring can be binary, where words are classified as positive, negative, or neutral. or categorical, where words are classified into multiple categories (e.g., happy, sad, angry). or scale based, where words are assigned a score on a scale (e.g., -1 to 1).
-  - Text preprocessing: Clean and preprocess the text data by removing stop words, punctuation, and special characters. Tokenize the text into words or phrases.
-  - Match and Score: For each word in the text, check if it exists in the sentiment lexicon. If it does, retrieve its sentiment score and add it to the overall sentiment score for the text.
+  - Text preprocessing:**Clean and preprocess the text data** by removing stop words, punctuation, and special characters. Tokenize the text into words or phrases.
+  - **Match and Score:** For each word in the text, check if it exists in the sentiment lexicon. If it does, retrieve its sentiment score and add it to the overall sentiment score for the text.
   - Calculate the overall sentiment score by summing the individual word scores. The final sentiment score can be positive, negative, or neutral based on a predefined threshold.
-  - Example: If the sentiment score is greater than 0, classify the text as positive; if less than 0, classify it as negative; and if equal to 0, classify it as neutral.
+  - **Example:** If the sentiment score is greater than 0, classify the text as positive; if less than 0, classify it as negative; and if equal to 0, classify it as neutral.
   
-- **Machine learning-based**: Uses supervised learning algorithms to train a model on labeled data. It learns to classify text based on features extracted from the text, such as word frequencies or TF-IDF scores.
+**Machine learning-based**: Uses supervised learning algorithms to train a model on labeled data. It learns to classify text based on features extracted from the text, such as word frequencies or TF-IDF scores.
 - Uses supervised learning algorithms, such as Naive Bayes, Logistic Regression, Support Vector Machines (SVMs), Neural Networks, to classify text into sentiment categories.
   - Example: A model trained on positive and negative movie reviews can classify new reviews as positive or negative based on learned patterns.
-  - Uses deep learning models, such as Recurrent Neural Networks (RNNs) or Transformers, to capture complex relationships in the text data.
+  
+  - Uses deep learning models, such as **Recurrent Neural Networks (RNNs) or Transformers**, to capture complex relationships in the text data.
+
 - Example: A model trained on positive and negative movie reviews can classify new reviews as positive or negative based on learned patterns.
   - Pros: More flexible, can capture complex sentiments and context.
   - Cons: Requires labeled data, may be less interpretable.
@@ -1124,23 +1165,475 @@ Ekman's Six Basic Emotions are:
 | Precision and Recall | May have lower precision and recall | Can achieve higher precision and recall with sufficient data |
 
 
-- **Hybrid Approach**: Combines rule-based and machine learning-based methods to leverage the strengths of both approaches. It uses predefined rules for initial sentiment classification and then refines the results using machine learning models.
-  - Example: A hybrid model may use VADER for initial sentiment scoring and then apply a machine learning model to improve accuracy.
+**Hybrid Approach**: Combines rule-based and machine learning-based methods to leverage the strengths of both approaches. It uses predefined rules for initial sentiment classification and then refines the results using machine learning models.
+  - Example: A hybrid model may **use VADER for initial sentiment scoring** and then **apply a machine learning model to improve accuracy.**
 
 ## Python Libraries and Tools for SA 
-- **NLTK (Natural Language Toolkit)**: A popular library for natural language processing in Python. It provides tools for text preprocessing, tokenization, stemming, and sentiment analysis using **VADER** and **WordNet**.
-- **TextBlob**: A simple library for processing textual data. It provides a user-friendly API for common natural language processing tasks, including sentiment analysis, part-of-speech tagging, and noun phrase extraction.
-- **TensorFlow**: An open-source machine learning library developed by Google. It provides tools for building and training deep learning models, including recurrent neural networks (RNNs) and transformers for sentiment analysis. Suited for large-scale applications and production environments.
-- **PyTorch**: An open-source machine learning library developed by Facebook. It is widely used for deep learning applications and provides a flexible platform for building and training neural networks.
-- **Hugging Face Transformers**: A library that provides pre-trained models for natural language processing tasks, including sentiment analysis, text generation, and translation. It supports various architectures like BERT, GPT-2, and T5, making it easy to implement state-of-the-art models.
+**NLTK (Natural Language Toolkit)**: A popular library for natural language processing in Python. It provides tools for text preprocessing, tokenization, stemming, and sentiment analysis using **VADER** and **WordNet**.
+
+**TextBlob**: A simple library for processing textual data. It provides a user-friendly API for common natural language processing tasks, including sentiment analysis, part-of-speech tagging, and noun phrase extraction.
+
+**TensorFlow**: An open-source machine learning library developed by Google. It provides tools for building and training deep learning models, including recurrent neural networks (RNNs) and transformers for sentiment analysis. Suited for large-scale applications and production environments.
+
+**PyTorch**: An open-source machine learning library developed by Facebook. It is widely used for deep learning applications and provides a flexible platform for building and training neural networks.
+
+**Hugging Face Transformers**: A library that provides pre-trained models for natural language processing tasks, including sentiment analysis, text generation, and translation. It supports various architectures like BERT, GPT-2, and T5, making it easy to implement state-of-the-art models.
 
 ## SA Challenges
-- Biggest challenges in lexicon-based sentiment analysis?
-- The biggest challenge in lexicon-based sentiment analysis is the inability to capture context and sarcasm. Lexicon-based methods rely on predefined sentiment lexicons, which may not account for the nuances of language, such as:
+
+The biggest challenge in lexicon-based sentiment analysis is the **inability to capture context and sarcasm.** Lexicon-based methods rely on predefined sentiment lexicons, which may not account for the nuances of language, such as:
 - **Contextual Meaning**: Words can have different meanings depending on the context in which they are used. For example, the word "sick" can be positive (e.g., "That movie was sick!") or negative (e.g., "I feel sick"). Lexicon-based methods may misinterpret such words without considering context.
+  
 - **Sarcasm and Irony**: Lexicon-based methods may struggle to identify sarcasm or irony, where the intended sentiment is opposite to the literal meaning of the words. For example, "Great job!" can be sarcastic in a negative context.
+  
 - **Ambiguity**: Some words may have multiple meanings or sentiments, leading to ambiguity in sentiment classification. For example, the word "bark" can refer to the sound a dog makes or the outer covering of a tree.
+  
 - **Cultural and Domain-Specific Language**: Different cultures and domains may use language differently, leading to variations in sentiment expression. Lexicon-based methods may not generalize well across different contexts.
+  
 - **Negation Handling**: Lexicon-based methods may struggle to handle negations effectively. For example, "not good" should be classified as negative, but a simple lexicon lookup may misinterpret it as positive.
 
 # Lecture 7 
+
+## Topic Modeling
+Topic modeling is a **unsupervised** NLP technique used to **discover the underlying topics** in a collection of documents. 
+
+It helps to identify the main themes or topics present in a large corpus of text data without any prior knowledge of the content.
+
+Goal: Identify clusters of words (topics) that frequently occur together and assign them to documents.
+
+Uses: 
+
+- **Document Clustering**: Grouping similar documents based on their content.
+- **Information Retrieval**: Improving search results by identifying relevant documents based on topics.
+- **Content Recommendation**: Suggesting related articles or documents based on identified topics.
+- **Trend Analysis**: Analyzing the evolution of topics over time in a corpus of documents.
+
+Commonly used algorithms for topic modeling:
+
+### Latent Dirichlet Allocation (LDA)
+LDA is a **generative probabilistic model** that assumes:
+- each document is a mixture of topics
+- each topic is a mixture of words. (distribution over words, specifically a Dirichlet distribution)
+
+**Latent:** The topics are not directly observed but inferred from the data. (hidden)
+
+**Dirichlet:** A type of probability distribution used to model the distribution of topics in documents and words in topics.
+
+**Allocation:** The process of assigning topics to documents and words to topics.
+
+Generative Process:
+
+1. For each document:
+   - Choose a distribution over topics (Dirichlet distribution).
+  
+2. For each word in the document:
+     - Choose a topic from the distribution.
+     - Choose a word from the chosen topic's word distribution.
+
+- It treats documents as **bag of words**
+- Assumes that the order of words does not matter (and **ignores semantic context**) 
+- **Relies on nice cleaning** (stop words, stemming, lemmatization)
+- Requires that you have an idea about number of topics in advance
+- does NOT work well on small documents
+- It **maps each document** in a corpus to a set of topics by assigning topics to arrangements of words.
+
+LDA trades off two goals:
+
+1. For each document, it allocates it words to as few topics as possible.
+2. For each topic, assigns high probability to as few words as possible.
+
+Trading off these goals finds grounds of tightly co-occurring words that are likely to be related to a topic.
+
+#### Hyperparameters in LDA:
+
+- **Number of Topics (K)**: The number of topics to be discovered in the corpus. It is a crucial parameter that determines the granularity of the topics.
+  - In python LDA, it is specified as `num_topics`.
+- **Alpha (α)**: A hyperparameter that controls the distribution of topics in documents. It determines the sparsity of the topic distribution for each document.
+  - A higher value of alpha = more topics are assigned to each document.
+  - In python LDA, it is specified as `alpha`.
+- **Beta (β)**: A hyperparameter that controls the distribution of words in topics. It determines the sparsity of the word distribution for each topic.
+  - A higher value of beta = more words are assigned to each topic.
+  - In python LDA, it is specified as `beta`. 
+
+
+## Gibbs Sampling
+
+Problem with LDA: Posterior distribution is  for exact inference, so we cannot directly compute the probabilities of topics given documents and words.
+  - Put simply: We can't directly calculate LDA's "after-seeing-data" probabilities for topics, so we use approximation methods instead.
+
+Gibbs sampling is a Markov Chain Monte Carlo (MCMC) method used to **approximate the posterior distribution of latent variables in LDA.** 
+
+How it Works:
+
+1. Initialize the topic assignments for each word in the documents randomly.
+2. **Iteratively sample each word's topic assignment** based on the current topic assignments of other words in the same document and the overall topic distribution.
+3. Update the topic assignments until convergence or a specified number of iterations is reached.
+
+
+Helps: Estimate the posterior distribution of topics more accurately without requiring exact inference and complex integral calculations.
+
+
+## Top2Vec
+Goal: Learn topic representations using **document and word embeddings.**
+
+Top2Vec is a more advanced and efficient method for topic modeling that leverages deep learning techniques to capture semantic relationships in the data.
+
+Does not require number of topics to be known in advance and **does not require pre-processing**
+
+Steps:
+
+1. Generate joint embeddings of documents and words using a pre-trained model (e.g., Doc2Vec, BERT). (this captures the semantic meaning)
+   
+2. Use dimensionality reduction techniques (e.g., UMAP) to reduce the dimensionality of the embeddings.
+   
+3. Apply clustering algorithms (e.g., HDBSCAN) to identify dense regions in the embedding space, which correspond to topics.
+   
+4. For each cluster, extract the top words that are most representative of the topic based on their proximity to the cluster centroid.
+
+Top2Vec vs LDA – Comparison table
+
+| Feature                     | LDA                                      | Top2Vec                                 |
+|-----------------------------|------------------------------------------|-----------------------------------------|
+| Approach                     | Probabilistic generative model (BoW)   | Embedding-based clustering (semantic)  |
+| Preprocessing                | Requires extensive (lemmatization, stop words etc.) | Minimal pre-processing required         |
+| Interpretability               | Human-tuned, sometimes less coherent     | More coherent semantic clusters |
+| Scalability                   | Can be slow on large datasets            | More scalable due to efficient pre-trained embeddings |
+| Number of Topics             | Requires specifying number of topics     | Automatically determines number of topics via clustering |
+
+
+#### Top2Vec Hyperparameters:
+- **Embedding Model**: The pre-trained model used to generate document and word embeddings (e.g., Doc2Vec, BERT).
+  - Doc2Vec: Vector size = means each document is represented by a X-dimensional vector.
+  - Doc2Vec: Window size = means the number of words to consider on either side of the target word.
+- **UMAP Parameters**: Parameters for the UMAP dimensionality reduction algorithm, such as `n_neighbors` and `min_dist`, metric for distance calculation (e.g.'cosine' is the default).
+- **HDBSCAN Parameters**: Parameters for the HDBSCAN clustering algorithm, such as `min_cluster_size` and `min_samples`, metric for distance calculation (e.g., 'euclidean' is the default).
+
+Cons:
+
+- Requires a large amount of data to produce meaningful topics.
+- May struggle with very short documents or documents with little content.
+- The quality of the topics is highly dependent on the quality of the embeddings.
+- Time-consuming for large datasets due to the embedding generation and clustering steps.
+
+#### BERTopic
+Similar to Top2Vec but does not calculate centroids (it considers all documents in a cluster as a single topic) and uses BERT embeddings for better semantic understanding.
+
+Extracts topics using class-based variation of TF-IDF (which is more effective in capturing the context of words within documents).
+
+As it is transformer-based, it can be costly due to the computational resources required for training and inference.
+
+# Lecture 8
+
+## Word Meanings
+
+Two key ideas for defining meaning are by:
+
+1. linguistic distribution
+2. As a point in a multidimensional space. 
+
+This is exemplified by the Term-Document Matrix, where documents are represented as vectors of word counts, and similarity between documents can be observed by comparing these vectors.
+
+Similarly, words can also be represented as vectors based on their co-occurrence with other words in a "Word-Context Matrix." (Two words are similar in meaning if their context vectors are similar.)
+
+**Comparing Word Vectors:** The similarity between word vectors can be quantified using mathematical operations like:
+
+ - the dot product (inner product)
+ - vector length (magnitude)
+ - cosine similarity. (measures the angle between two vectors)
+
+NOTE: cosine is just a normalized dot product, which is more efficient to compute.
+
+### Word2Vec Embeddings
+Learns dense word vectors (embeddings) by predicting if a candidate word is a "neighbor" of a target word, rather than just counting co-occurrences. Uses self-supervised learning to train the model.
+
+It treats target words and neighboring context words as positive examples, and randomly sampled words as negative examples. Known as skip-gram word prediction method.
+
+Goal: is to **maximize the similarity of positive word pairs** and **minimize the similarity of negative word pairs.**
+
+This is achieved by **training a classifier using a sigmoid function** to **estimate the probability of a word occurring in a context window.**
+
+It turns out that **dense vectors work better in every NLP** task than sparse vectors.
+
+Word2Vec embeddings are powerful representations for various NLP tasks like translation and sentiment analysis.
+
+They can **capture abstract relations** (e.g., male-female, capital-city-of, comparative/superlative) through vector arithmetic, known as the **parallelogram method (which can solve analogies**, eg Man is to King as Woman is to Queen, with both sparse and dense embeddings)
+
+However, **word2vec embeddings are "static,"** meaning a word's embedding doesn't change with context.
+
+Word2Vec is widely used in various NLP tasks, including:
+
+- Text classification
+- Sentiment analysis
+- Named entity recognition
+- Machine translation
+- Information retrieval
+
+# Lecture 9
+## Neural Networks
+Neural networks are a class of machine learning models inspired by the structure and function of the human brain. They consist of interconnected nodes (neurons) organized into layers, which process and learn from data.
+
+- **Neurons**: Basic units of a neural network that receive inputs, apply weights and biases, and produce an output.
+- **Layers**: Neural networks are organized into layers, including:
+  - **Input Layer**: Receives the input data.
+  - **Hidden Layers**: Intermediate layers that process the data and learn complex patterns.
+  - **Output Layer**: Produces the final output of the network.
+- **Activation Functions**: Functions applied to the output of neurons to introduce non-linearity and enable the network to learn complex relationships. Common activation functions include:
+  - **Sigmoid**: used in log reg, Maps input to a value between 0 and 1.
+  - **ReLU (Rectified Linear Unit)**: Outputs the input directly if positive, else zero.
+  - **Tanh**: Maps input to a value between -1 and 1.
+
+
+- **Loss Function**: A function that measures the difference between the predicted output and the actual output. The goal of training a neural network is to minimize this loss function. Common loss functions include:
+  - **Mean Squared Error (MSE)**: Used for regression tasks.
+  - **Cross-Entropy Loss**: Used for classification tasks.
+
+Sentences can be highly ambiguous, and neural networks can learn to disambiguate them by capturing complex patterns in the data.
+
+**Lexical ambiguity:** where a word or phrase has multiple meanings or interpretations eg financial bank vs river bank
+
+**Structural ambiguity:** where the structure of a sentence allows for multiple interpretations
+  - eg "I saw the man with the telescope" (Did I see the man who had the telescope, or did I use the telescope to see the man?)
+
+### XOR Problem
+Early neural units (perceptrons) could not solve the XOR problem because perceptrons are linear classifiers and XOR is not a linearly separable function.
+
+The solution to the XOR problem, and a fundamental concept in neural networks, is the **use of layered networks (MLPs) with hidden layers.** Hidden layers learn to form useful, abstract representations of the input data.
+
+## Feedforward NNs (MLPs)
+
+Also called MLPs, is a multilayer network in which the units are connected with no cycles; the outputs from units in each layer are passed to units in the next higher layer, and no outputs are passed back to lower layers. 
+
+**Binary logistic regression** can be seen as a **single-layer neural network with a sigmoid output**
+
+**Multinomial** logistic regression is a single-layer network with a **softmax output for multiple classes.**
+
+Two-layer networks introduce a hidden layer with an activation function (like ReLU or tanh) before the output layer, multi layer has a series of hidden layers each with activation functions to handle non-linearlity.
+
+Applying Feedforward Networks to NLP Tasks:
+
+1. Text Classification (eg **Sentiment Analysis**):
+   
+   - Input: Text data (e.g., word embeddings or TF-IDF vectors).
+   - Output: Class labels (e.g., positive, negative).
+   - Process: Feed the input through the network, apply activation functions, and use a softmax output layer for classification.
+
+A key advantage is the ability to use learned representations (embeddings) instead of hand-engineered features, which improves performance.
+
+Challenges include handling **variable text lengths** as FFNNs expect fixed-size inputs, which can be addressed by:
+
+   -  padding
+   -  truncating (cutting off)
+   -  creating single "sentence embeddings." (create one fixed-size vector that represents the entire sentence.)  
+
+2. Language Modelling (**Predicting the next word**):
+   
+   - Neural language models (LMs) aim to calculate the probability of the next word given its history.
+   - They **outperform traditional N-gram models**, even simple feedforward LMs, by using **word embeddings to generalize based on word similarity.**
+   - For example, if trained on "cat gets fed," a neural LM can predict "fed" for "dog gets ___" due to the similarity of "cat" and "dog" embeddings. This is often done with a fixed-length sliding window approach.
+
+
+**Training NNs**
+
+Training involves a forward pass (computing the output) and a backward pass (updating weights based on the difference between the estimated output and the true answer, known as the loss function), this is known as **backpropagation.**
+
+It updates the weights in the direction that minimizes the loss function using optimization algorithms like **Stochastic Gradient Descent (SGD)** or its variants (e.g., Adam, RMSprop).
+
+# Lecture 10
+## Transformers
+
+**Problem with Static Embeddings:** Traditional word embeddings (like word2vec) are static, meaning a word's meaning doesn't change based on its context.
+
+For example, the meaning of "it" in "The chicken didn't cross the road because it was too tired" is ambiguous without knowing what "it" refers to.
+
+**Contextual embeddings** provide a different vector for each word depending on its surrounding words, capturing its context-specific meaning.
+
+**Attention** is a mechanism that helps compute contextual embeddings by selectively integrating information from all neighboring words.  It essentially involves a weighted sum of vectors, where words "attend to" other relevant words more strongly. 
+  - Result: is that each word's embedding is unique in different contexts. 
+
+**Transformers:** The Transformer architecture is central to modern large language models.
+
+It leverages self-attention mechanisms to process input sequences in parallel, making it highly efficient for training on large datasets. Transformers consist of an encoder-decoder structure, where the encoder processes the input and the decoder generates the output.
+
+1. **Position Embeddings:** To account for word order, Transformers use position embeddings, which are learned along with word embeddings. Each word's input to the Transformer is the sum of its word embedding and its position embedding.
+
+2. **Language Model Head:** The output of the Transformer goes through a "language modeling head," which produces "logits" (score vectors) for each possible word in the vocabulary. These logits are then converted into probabilities using a softmax function.
+
+## BERT 
+
+BERT is an **encoder-only Transformer** designed to produce rich vector representations for each token in an input sequence.  It is not a chatbot and is **well-suited for classification tasks like sentiment analysis or spam detection.**
+
+1. **Bidirectional Context:** Unlike traditional language models that read text sequentially (left-to-right or right-to-left), BERT reads the entire sequence at once, **allowing it to capture context from both directions.**
+
+2. **Fine-tuning:** After pre-training on a large corpus, BERT can be fine-tuned on specific tasks (e.g., sentiment analysis, question answering) with minimal task-specific architecture modifications.
+
+BERT is trained using a "bidirectional cloze task" (filling in masked words in a sentence).
+
+For **classification tasks, BERT adds a special [CLS] token** at the beginning of the sequence, whose embedding represents the **entire sequence (sentence embedding).** 
+
+Note: decoder-only models, like GPT, have a different goal: produce new output sequence from input sequence
+
+
+## LLMs
+
+LLMs are similar to simpler N-gram models in that they assign probabilities to word sequences and generate text by sampling next words.
+
+But instead of being trained on counts computed from lots of text (like n-gram models) they are **trained by learning to guess** the next word from enormous amounts of text, which allows them to acquire vast language knowledge.
+
+Many NLP tasks can be reframed as word prediction tasks for LLMs.  This is especially true for **decoder-only models** (also called Causal, Autoregressive, or Left-to-right LLMs), which **predict words from left to right.**
+
+Examples of tasks solvable through conditional generation include sentiment analysis, question answering, and summarization. 
+
+## Decoding and Sampling for LLM Generation:
+
+The process of choosing words to generate based on the model's probabilities is called **decoding**
+
+The most common method of decoding is **Sampling**, where the model randomly selects the next word based on its probability distribution. This can lead to more diverse and creative outputs compared to deterministic methods.
+
+Simple random sampling can lead to repetitive or odd sentences due to the "long tail" of low-probability words.
+
+Better sampling techniques balance quality (accuracy, coherence) and diversity (creativity):
+
+1. **Top-k Sampling**: Limits the sampling pool to the top k most probable words, reducing the chance of selecting low-probability words. Then randomly sample a word from within this top k most probable words.
+   - Problem: k is fixed so may cover very different amounts of probability mass in different situations
+
+
+2. **Top-p Sampling (Nucleus Sampling)**: Considers the smallest set of words that collectively account for p percent of the total probability mass. This allows for more dynamic selection based on the distribution.
+   - This addresses the fixed k problem of top-k sampling. 
+
+3. **Temperature Scaling**: Reshapes the probability distribution by dividing the logits by a temperature parameter (τ) before softmax
+   - A **higher** temperature (e.g., 1.0) makes the distribution more uniform (**more diverse outputs**)
+   - A **lower** temperature (e.g., 0.5) make the distribution "greedy" (**favoring high-probability words**) and thus less creative!
+
+## Pretraning LLMs
+
+The core idea behind LLM performance is pretraining a Transformer model on vast amounts of text
+
+This is a **self-supervised training algorithm** where the model learns by predicting the next word in a corpus.
+
+"Self-supervised" because it just uses the next word as the label!
+
+The **cross-entropy loss function** is used to minimize prediction errors, encouraging the model to assign **high probabilities to the true next word.**
+
+Pretraining data primarily comes from the web (e.g., Common Crawl, C4), along with academic papers, books, and dialogues.  This exposure to massive text datasets is what gives LLMs with extensive knowledge. 
+
+## Working with LLMs
+
+Base Models are the result of pre-training. 
+
+**Instruct Models** are base models fine-tuned to follow instructions. 
+
+**Chat Models** are further tuned with dialogue data for conversational use. 
+
+**Prompt engineering** involves effectively designing prompts to get better results from LLMs. 
+
+LLM Settings that can be controlled include:
+
+- Temperature
+- Top P
+- Max Length
+- Stop Sequences
+- Frequency Penalty
+- Presence Penalty
+
+Elements of a Prompt: Prompts typically include
+
+- Instruction 
+- Context
+- Input Data
+- Output Indicator
+
+## Prompting Techniques
+
+1. **Zero-shot prompting**: Directly asking the model to perform a task without any examples.
+   - Example: "Translate 'Hello' to French."
+  
+2. **One-shot prompting**: Providing a single example to guide the model's response.
+   - Example: "Translate 'Hello' to French. Example: 'Goodbye' to Spanish."
+  
+3. **Few-shot prompting**: Providing multiple examples to help the model understand the task better.
+   - Example: "Translate the following sentences to French: 1. 'Hello' -> 'Bonjour', 2. 'Goodbye' -> 'Au revoir'. Now translate 'Thank you'."
+  
+4. **Chain-of-thought prompting**: Encouraging the model to think step-by-step before arriving at the final answer.
+   - Example: "To solve this math problem, first break it down into smaller steps. What is 2 + 2? Now, what is the result of that addition?"
+
+# Lecture 11
+
+## Question Answering (QA)
+
+Forms of Question Answering (QA) Systems:
+
+1. **Information Retrieval (IR) QA (Open Domain QA):** These systems find relevant passages from a document collection and then use Machine Reading Comprehension (MRC) to extract an answer directly from the text.
+   - Deal with **factoid questions** (simple facts with short answers)
+   - They involve a document collection (e.g., webpages, news articles) from which a query (user's information need) is used to retrieve relevant documents.
+   - The basic approach involves **mapping queries and documents to vectors based on unigram word counts** and using **cosine similarity to rank documents**. This is a "bag-of-words" approach.
+   - **TF-IDF (Term Frequency-Inverse Document Frequency):** This weighting scheme assigns higher weight to terms that appear more frequently in a document (tf) but lower weight to terms that appear in many documents (idf), thus prioritizing unique and important terms for scoring document relevance. Documents are scored by the cosine distance between their TF-IDF vector and the query's TF-IDF vector.
+   - **Inverted Index:** An efficient data structure used in IR that maps terms to the documents (and positions within them) where they appear, allowing for fast retrieval of documents containing specific query terms.
+   - **Evaluation of IR Systems:** Performance is measured using Precision (fraction of returned documents that are relevant) and Recall (fraction of all relevant documents that are returned).
+   - **IR with Dense Vectors:** To overcome the "vocabulary mismatch problem" (where a search for "tragic love story" might not find "star-crossed lovers" due to different phrasing), **dense vectors (embeddings from models like BERT) are used to encode queries and documents.** Document relevance is then scored by comparing these dense embeddings, typically using a dot product.
+   - **Retrieve and Read QA:** This two-stage IR-based QA system first retrieves relevant documents using a retriever and then extracts the answer span from those documents using a neural reading comprehension system (a "reader," often a BERT-based model). Datasets like Stanford Question Answering Dataset (SQuAD) are used for this, where answers are spans of text from passages. BERT implementation for span-based QA predicts start and end positions of answer spans within a passage.
+   - **Entity Linking (Wikification):** The process of associating a mention in text with a real-world entity, often by linking it to a Wikipedia page.
+
+
+2. **Knowledge-based QA:** These systems build a **semantic representation of the query** and use it to query a structured database.
+   - Answers questions by mapping them to a query over a structured database
+   - **Graph-based QA:** Models knowledge as a graph where entities are nodes and relations are edges. It can answer factoid questions from RDF (Resource Description Framework) triples. *eg birth-year(Brad Pitt, ?x)* Datasets like DBpedia and Freebase (part of Wikidata) are used, with specific question datasets like "Simple Questions".
+   - **QA by Semantic Parsing:** Maps natural language questions to a logical form (e.g., predicate calculus, SQL) that can be executed against a database. Semantic parsing can be fully supervised (with hand-built logical forms) or weakly supervised (with answers, where the logical form is a latent variable).
+
+
+3. **LLMs for QA:** LLMs can be used for both IR and knowledge-based QA by leveraging their ability to understand and generate natural language.
+
+
+## RAG
+
+Retrieval Augmented Generation (RAG): A technique that **combines retrieval and generation.**
+
+When a user asks a question, relevant documents are retrieved (by comparing query and document embeddings), and then a **new prompt is generated by combining these retrieved "chunks" of information with the original user input**. 
+ 
+This augmented prompt is fed to the LLM to generate a response, reducing hallucinations and providing grounded answers.
+
+Evaluation of RAG:
+
+Assesses both the quality of the retrieval (are the right chunks found?) and the generation (is the right text produced?).
+
+Evaluation can be "with reference" (using human annotations for relevant chunks/answers) or "reference-free" (using LLMs to judge quality, but recall is harder to assess).
+
+**RAGAS is a framework** for automated reference-free evaluation of RAG pipelines, focusing on faithfulness, answer relevance, and context relevance.
+
+## Agents
+
+Agents are autonomous entities that perceive their environment and take actions to achieve specific goals
+
+An AI agent is defined as a system that uses an LLM to decide the control flow of an application, capable of forming intentions, plans, and implies internal mental states.
+
+Agents can incorporate multimodality, integrating text, audio, and visual inputs, often by using external tools (e.g., speech2text, image captioning) and modality fusion techniques to create unified vector representations.
+
+Key components of an agent include:
+
+- **Perception:** The ability to gather information from the environment (e.g., user queries, document collections).
+- **Reasoning:** The capability to process and analyze the gathered information to make decisions.
+- **Action:** The ability to take actions based on the reasoning process (e.g., retrieving documents, generating responses).
+
+Agents can be classified into different types based on their functionality:
+
+1. **Retrieval Agents:** Focus on retrieving relevant information from a knowledge base or document collection.
+2. **Generation Agents:** Specialize in generating natural language responses based on the retrieved information.
+3. **Hybrid Agents:** Combine both retrieval and generation capabilities to provide more comprehensive answers.
+
+Incorporating agents into QA systems can enhance their performance by enabling more dynamic and context-aware interactions with users.
+
+## Evaluating Capabilities of LLMs
+
+LLMs appear to have largely solved formal competence
+Many challenges remain with functional competence
+
+**Formal linguistic competence** refers to the knowledge of linguistic rules and patterns. LLMs seem to have largely solved this
+
+**Functional linguistic competence** refers to understanding and using language in the world, which involves formal reasoning, world knowledge, situation modeling, and social reasoning.
+
+There's a distinction between "good at language -> good at thought" and "bad at thought -> bad at language" fallacies when evaluating LLM capabilities.
+
+LLMs perform well on linguistic benchmarks (e.g., distinguishing grammatical from ungrammatical sentences)
+
+However, **challenges** remain with functional competence, particularly in areas like situation modeling (understanding narratives and states of affairs) and **Theory of Mind (understanding other people's mental states).**
+
+

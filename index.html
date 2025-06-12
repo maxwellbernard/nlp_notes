@@ -3312,6 +3312,47 @@ font-size: 0.7em;
   <li><a href="#python-libraries-and-tools-for-sa" id="toc-python-libraries-and-tools-for-sa" class="nav-link" data-scroll-target="#python-libraries-and-tools-for-sa">Python Libraries and Tools for SA</a></li>
   <li><a href="#sa-challenges" id="toc-sa-challenges" class="nav-link" data-scroll-target="#sa-challenges">SA Challenges</a></li>
   </ul></li>
+  <li><a href="#lecture-7" id="toc-lecture-7" class="nav-link" data-scroll-target="#lecture-7">Lecture 7</a>
+  <ul class="collapse">
+  <li><a href="#topic-modeling" id="toc-topic-modeling" class="nav-link" data-scroll-target="#topic-modeling">Topic Modeling</a>
+  <ul class="collapse">
+  <li><a href="#latent-dirichlet-allocation-lda" id="toc-latent-dirichlet-allocation-lda" class="nav-link" data-scroll-target="#latent-dirichlet-allocation-lda">Latent Dirichlet Allocation (LDA)</a></li>
+  </ul></li>
+  <li><a href="#gibbs-sampling" id="toc-gibbs-sampling" class="nav-link" data-scroll-target="#gibbs-sampling">Gibbs Sampling</a></li>
+  <li><a href="#top2vec" id="toc-top2vec" class="nav-link" data-scroll-target="#top2vec">Top2Vec</a></li>
+  </ul></li>
+  <li><a href="#lecture-8" id="toc-lecture-8" class="nav-link" data-scroll-target="#lecture-8">Lecture 8</a>
+  <ul class="collapse">
+  <li><a href="#word-meanings" id="toc-word-meanings" class="nav-link" data-scroll-target="#word-meanings">Word Meanings</a>
+  <ul class="collapse">
+  <li><a href="#word2vec-embeddings" id="toc-word2vec-embeddings" class="nav-link" data-scroll-target="#word2vec-embeddings">Word2Vec Embeddings</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#lecture-9" id="toc-lecture-9" class="nav-link" data-scroll-target="#lecture-9">Lecture 9</a>
+  <ul class="collapse">
+  <li><a href="#neural-networks" id="toc-neural-networks" class="nav-link" data-scroll-target="#neural-networks">Neural Networks</a>
+  <ul class="collapse">
+  <li><a href="#xor-problem" id="toc-xor-problem" class="nav-link" data-scroll-target="#xor-problem">XOR Problem</a></li>
+  </ul></li>
+  <li><a href="#feedforward-nns-mlps" id="toc-feedforward-nns-mlps" class="nav-link" data-scroll-target="#feedforward-nns-mlps">Feedforward NNs (MLPs)</a></li>
+  </ul></li>
+  <li><a href="#lecture-10" id="toc-lecture-10" class="nav-link" data-scroll-target="#lecture-10">Lecture 10</a>
+  <ul class="collapse">
+  <li><a href="#transformers" id="toc-transformers" class="nav-link" data-scroll-target="#transformers">Transformers</a></li>
+  <li><a href="#bert" id="toc-bert" class="nav-link" data-scroll-target="#bert">BERT</a></li>
+  <li><a href="#llms" id="toc-llms" class="nav-link" data-scroll-target="#llms">LLMs</a></li>
+  <li><a href="#decoding-and-sampling-for-llm-generation" id="toc-decoding-and-sampling-for-llm-generation" class="nav-link" data-scroll-target="#decoding-and-sampling-for-llm-generation">Decoding and Sampling for LLM Generation:</a></li>
+  <li><a href="#pretraning-llms" id="toc-pretraning-llms" class="nav-link" data-scroll-target="#pretraning-llms">Pretraning LLMs</a></li>
+  <li><a href="#working-with-llms" id="toc-working-with-llms" class="nav-link" data-scroll-target="#working-with-llms">Working with LLMs</a></li>
+  <li><a href="#prompting-techniques" id="toc-prompting-techniques" class="nav-link" data-scroll-target="#prompting-techniques">Prompting Techniques</a></li>
+  </ul></li>
+  <li><a href="#lecture-11" id="toc-lecture-11" class="nav-link" data-scroll-target="#lecture-11">Lecture 11</a>
+  <ul class="collapse">
+  <li><a href="#question-answering-qa" id="toc-question-answering-qa" class="nav-link" data-scroll-target="#question-answering-qa">Question Answering (QA)</a></li>
+  <li><a href="#rag" id="toc-rag" class="nav-link" data-scroll-target="#rag">RAG</a></li>
+  <li><a href="#agents" id="toc-agents" class="nav-link" data-scroll-target="#agents">Agents</a></li>
+  <li><a href="#evaluating-capabilities-of-llms" id="toc-evaluating-capabilities-of-llms" class="nav-link" data-scroll-target="#evaluating-capabilities-of-llms">Evaluating Capabilities of LLMs</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -3363,12 +3404,12 @@ font-size: 0.7em;
 <tr class="odd">
 <td>Methods</td>
 <td>string processing library</td>
-<td>object-oriented approach - it parses a text, returns document object whose words and sentences are objects themselves</td>
+<td><strong>object-oriented approach</strong> - it parses a text, returns document object whose words and sentences are objects themselves</td>
 </tr>
 <tr class="even">
 <td>Tokenization</td>
 <td>uses regular expression-based methods which are not always accurate</td>
-<td>uses a rule-based approach to tokenization which is more accurate</td>
+<td>uses a <strong>rule-based approach</strong> to tokenization which is <strong>more accurate</strong></td>
 </tr>
 <tr class="odd">
 <td>POS Tagging</td>
@@ -3387,12 +3428,7 @@ font-size: 0.7em;
 </tr>
 </tbody>
 </table>
-<ul>
-<li><code>Textblob</code> is another popular library for NLP in Python. It is built on top of NLTK and provides a simple API for common NLP tasks such as tokenization, POS tagging, and sentiment analysis.
-<ul>
-<li>It is <strong>not good for large scale production use</strong></li>
-</ul></li>
-</ul>
+<p><code>Textblob</code> is another popular library for NLP in Python. It is built on top of NLTK and provides a simple API for common NLP tasks such as tokenization, POS tagging, and sentiment analysis. - It is <strong>not good for large scale production use</strong></p>
 </section>
 <section id="normalization" class="level2">
 <h2 class="anchored" data-anchor-id="normalization">Normalization</h2>
@@ -3402,7 +3438,7 @@ font-size: 0.7em;
 <li><strong>Tokenization</strong>: Breaking a text into words, phrases, symbols, or other meaningful elements.</li>
 <li><strong>Case Folding</strong>: Converting all characters to lowercase.</li>
 <li><strong>Removing Punctuation</strong>: Removing any non-alphanumeric characters.</li>
-<li><strong>Removing Stopwords</strong>: Removing common words that do not carry much meaning.</li>
+<li><strong>Removing Stopwords</strong>: Removing common words that <strong>do not carry much meaning.</strong></li>
 <li><strong>Stemming or Lemmatization</strong>: Reducing words to their base or root form.</li>
 <li><strong>Removing Extra Spaces</strong>: Removing any extra spaces between words.</li>
 <li><strong>Expanding Contractions</strong>: Expanding contractions such as “don’t” to “do not”.</li>
@@ -3411,7 +3447,7 @@ font-size: 0.7em;
 <li><strong>Removing Emojis and Special Characters</strong>: Removing emojis, emoticons, and other special characters.</li>
 </ul>
 <p><strong>Removal of Stopwords in Python using NLTK</strong></p>
-<div id="2b3e83c4" class="cell" data-execution_count="2">
+<div id="8f5a966c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&quot;english&quot;</span>))</span>
@@ -3422,7 +3458,7 @@ font-size: 0.7em;
 </div>
 </div>
 <p><strong>Removal of Stopwords in Python using spaCy</strong></p>
-<div id="d6aee368" class="cell" data-execution_count="3">
+<div id="eb8e551d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>) <span class="co"># Load English language model</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;NLTK and spaCy are popular NLP libraries used for text processing.&quot;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
@@ -3434,28 +3470,14 @@ font-size: 0.7em;
 </div>
 <section id="morphological-normalization" class="level4">
 <h4 class="anchored" data-anchor-id="morphological-normalization">Morphological Normalization</h4>
-<ul>
-<li>Morphological normalization is the process of reducing a word to its base or root form</li>
-<li>This can involve <strong>stemming</strong> or <strong>lemmatization</strong></li>
-<li><strong>Roots</strong> are the base forms of words eg. “run” is the root of “running”, “ran”, “runs”</li>
-<li><strong>Affixes</strong> are the prefixes and suffixes that are added to roots to create different forms of words eg. “ing”, “ed”, “s”
-<ul>
-<li><strong>Prefixes</strong> are added to the beginning of a word eg. “un” in “undo”</li>
-<li><strong>Suffixes</strong> are added to the end of a word eg. “ly” in “quickly”</li>
-</ul></li>
-<li><strong>Inflectional</strong> affixes are added to a word to change its grammatical form eg. “s” for plural nouns, “ed” for past tense verbs eg. “dogs”, “walked”</li>
-</ul>
+<p>Morphological normalization is the process of reducing a word to its base or root form - This can involve <strong>stemming</strong> or <strong>lemmatization</strong> - <strong>Roots</strong> are the base forms of words eg. “run” is the root of “running”, “ran”, “runs” - <strong>Affixes</strong> are the prefixes and suffixes that are added to roots to create different forms of words eg. “ing”, “ed”, “s” - <strong>Prefixes</strong> are added to the beginning of a word eg. “un” in “undo” - <strong>Suffixes</strong> are added to the end of a word eg. “ly” in “quickly” - <strong>Inflectional</strong> affixes are added to a word to change its grammatical form eg. “s” for plural nouns, “ed” for past tense verbs eg. “dogs”, “walked”</p>
 </section>
 <section id="tokenization" class="level3">
 <h3 class="anchored" data-anchor-id="tokenization">Tokenization</h3>
-<ul>
-<li>Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements.</li>
-<li>The tokens are the words, sentences, characters, or subwords that are produced by the tokenization process.</li>
-<li>Space based token is used to prepare the text for further processing such as stemming, lemmatization, and POS tagging.</li>
-<li><strong>Type</strong> is number of unique tokens in a text</li>
-<li><strong>Token</strong> is a single instance of a token in a text</li>
-</ul>
-<div id="3edbd128" class="cell" data-execution_count="4">
+<p>Tokenization is the process of breaking a text into words, phrases, symbols, or other meaningful elements.</p>
+<p>The tokens are the words, sentences, characters, or subwords that are produced by the tokenization process.</p>
+<p>Space based token is used to prepare the text for further processing such as stemming, lemmatization, and POS tagging. - <strong>Type</strong> is number of unique tokens in a text - <strong>Token</strong> is a single instance of a token in a text</p>
+<div id="9028104a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>total_tokens <span class="op">=</span> <span class="bu">len</span>(tokens)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>total_types <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(tokens))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3468,7 +3490,7 @@ font-size: 0.7em;
 <ul>
 <li>word.isalnum() - returns True if all characters in the word are alphanumeric</li>
 </ul>
-<div id="6ba3efc6" class="cell" data-execution_count="5">
+<div id="9e83a98f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>shakespeare_url <span class="op">=</span> <span class="st">&quot;https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt&quot;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>crime_punishment_url <span class="op">=</span> <span class="st">&quot;http://www.gutenberg.org/files/2554/2554-0.txt&quot;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3500,23 +3522,23 @@ font-size: 0.7em;
 <section id="nltk-tokenizers" class="level5">
 <h5 class="anchored" data-anchor-id="nltk-tokenizers">NLTK Tokenizers</h5>
 <ul>
-<li><code>word_tokenize()</code>: Tokenizes a text into words using a regular expression-based tokenizer. A versatile tokenizer that handles contractions, abbreviations, and punctuation marks effectively. It is suitable for most general-purpose tokenization tasks.</li>
-<li><code>WordPunctTokenizer()</code>: Tokenizes a text into words using a regular expression that matches punctuation as separate tokens. A specialized tokenizer that separates words and punctuation explicitly. It is useful when you need to distinguish between alphabetic and non-alphabetic characters.</li>
+<li><p><code>word_tokenize()</code>: Tokenizes a text into words using a regular expression-based tokenizer. A versatile tokenizer that handles contractions, abbreviations, and punctuation marks effectively. It is suitable for most general-purpose tokenization tasks.</p></li>
+<li><p><code>WordPunctTokenizer()</code>: Tokenizes a text into words using a regular expression that matches punctuation as separate tokens. A specialized tokenizer that separates words and punctuation explicitly. It is useful when you need to distinguish between alphabetic and non-alphabetic characters.</p></li>
 </ul>
 </section>
 </section>
 <section id="stemming" class="level3">
 <h3 class="anchored" data-anchor-id="stemming">Stemming</h3>
+<p>Stemming is the process of <strong>reducing a word to its root or base form.</strong> For example, the word “running” would be reduced to “run” by a stemming algorithm.</p>
+<p>Stemmers remove word suffixes by running input word tokens against a <strong>pre-defined list of common suffixes.</strong></p>
+<p>Stemming is a <strong>heuristic process</strong> that does not always produce a valid root word, but it can be useful for text processing tasks such as search indexing and information retrieval.</p>
 <ul>
-<li>Stemming is the process of reducing a word to its root or base form. For example, the word “running” would be reduced to “run” by a stemming algorithm.</li>
-<li>Stemmers remove word suffixes by running input word tokens against a pre-defined list of common suffixes.</li>
-<li>Stemming is a heuristic process that does not always produce a valid root word, but it can be useful for text processing tasks such as search indexing and information retrieval.</li>
 <li><strong>Porter Stemmer</strong> is a popular (rule-based) stemming algorithm that is widely used in text processing applications.</li>
 <li><strong>Snowball Stemmer</strong> is an improved version of the Porter Stemmer that supports multiple languages.</li>
 </ul>
 <section id="example-of-stemming-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk">Example of stemming in Python using NLTK</h4>
-<div id="dbb1f182" class="cell" data-execution_count="6">
+<div id="ad11bcc6" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sbs <span class="op">=</span> SnowballStemmer(<span class="st">&quot;english&quot;</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">&quot;The stars twinkled in the dark, illuminating the night sky.&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>method <span class="op">=</span> TreebankWordTokenizer()</span>
@@ -3540,20 +3562,23 @@ sky | sky
 . | .</code></pre>
 </div>
 </div>
+<ul>
+<li><code>TreebankWordTokenizer</code> is a tokenizer that uses the Penn Treebank tokenization conventions, which include rules for handling punctuation, contractions, and special cases.</li>
+</ul>
 </section>
 </section>
 <section id="lemmatization" class="level3">
 <h3 class="anchored" data-anchor-id="lemmatization">Lemmatization</h3>
+<p>The process of reducing a word to its base or root form, known as a lemma.</p>
+<p>Is <strong>more sophisticated than stemming because it uses a dictionary to map words to their base forms.</strong></p>
+<p>POS tagging is used to determine the correct lemma for a word based on its part of speech.</p>
 <ul>
-<li>The process of reducing a word to its base or root form, known as a lemma.</li>
-<li>Is more sophisticated than stemming because it uses a dictionary to map words to their base forms.</li>
-<li>POS tagging is used to determine the correct lemma for a word based on its part of speech.</li>
-<li>Lemmatization is more accurate than stemming but can be slower and more computationally intensive.</li>
-<li><strong>WordNet Lemmatizer</strong> is a popular lemmatization algorithm that is available in NLTK.</li>
+<li>Lemmatization is more accurate than stemming but can be slower and <strong>more computationally intensive.</strong></li>
+<li><code>WordNetLemmatizer()</code> is a popular lemmatization algorithm that is available in NLTK.</li>
 </ul>
 <section id="example-of-stemming-in-python-using-nltk-1" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-stemming-in-python-using-nltk-1">Example of stemming in Python using NLTK</h4>
-<div id="d98c1061" class="cell" data-execution_count="7">
+<div id="032fa959" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sbs <span class="op">=</span> SnowballStemmer(<span class="st">&quot;english&quot;</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">&quot;The stars twinkled in the dark, illuminating the night sky.&quot;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>method <span class="op">=</span> TreebankWordTokenizer()</span>
@@ -3622,10 +3647,8 @@ sky | sky
 </section>
 <section id="regular-expressions" class="level2">
 <h2 class="anchored" data-anchor-id="regular-expressions">Regular Expressions</h2>
-<ul>
-<li>Regular expressions are a powerful tool for <strong>pattern matching</strong> and text processing.</li>
-<li>They allow you to search for patterns in text, extract specific information, and perform complex text transformations.</li>
-</ul>
+<p>Regular expressions are a powerful tool for <strong>pattern matching</strong> and text processing.</p>
+<p>They allow you to search for patterns in text, extract specific information, and perform complex text transformations.</p>
 <p><strong>Regular Expression (Disjunction) Table</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -3775,7 +3798,7 @@ sky | sky
 </tbody>
 </table>
 <p><strong>Example of Regular Expressions in Python</strong></p>
-<div id="c0122182" class="cell" data-execution_count="8">
+<div id="48115a38" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog. The dog barks at the fox.&quot;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
@@ -3801,31 +3824,12 @@ sky | sky
 </section>
 <section id="pos-tagging" class="level2">
 <h2 class="anchored" data-anchor-id="pos-tagging">POS Tagging</h2>
+<p>Part-of-speech (POS) tagging is the process of assigning a part of speech to each word in a text. The part of speech indicates the <strong>grammatical category of the word, such as noun, verb, adjective, etc.</strong></p>
+<p>The goal of POS tagging is to <strong>identify the syntactic structure of a sentence</strong> and extract useful information about the text.</p>
+<p><strong>Types of POS Tagging</strong> - <strong>Rule-based POS Tagging</strong>: - Uses hand-crafted rules to assign POS tags to words based on their context. - Relies on a predefined set of rules and patterns to determine the correct POS tag for a word. - <strong>Pros</strong>: - Simple and easy to implement, but may not be as accurate as other methods. - Doesnt require a lot of computational resources or training data. - Can be easily customized and adapted to different languages and domains. - <strong>Cons</strong>: - May not be as accurate as other methods, especially for complex or ambiguous cases. - Requires manual effort to define rules and patterns for different languages and domains. - Limited to the rules and patterns defined by the developer, which may not cover all cases. - <strong>Example</strong>: Rule-based POS taggers in NLTK such as the <code>DefaultTagger</code> and <code>RegexpTagger</code> and <code>pos_tag</code> method. <br> <br></p>
 <ul>
-<li><p>Part-of-speech (POS) tagging is the process of assigning a part of speech to each word in a text. The part of speech indicates the grammatical category of the word, such as noun, verb, adjective, etc.</p></li>
-<li><p>The goal of POS tagging is to identify the syntactic structure of a sentence and extract useful information about the text.</p></li>
-<li><p><strong>Types of POS Tagging</strong></p>
-<ul>
-<li><strong>Rule-based POS Tagging</strong>:
-<ul>
-<li>Uses hand-crafted rules to assign POS tags to words based on their context.</li>
-<li>Relies on a predefined set of rules and patterns to determine the correct POS tag for a word.</li>
-<li><strong>Pros</strong>:
-<ul>
-<li>Simple and easy to implement, but may not be as accurate as other methods.</li>
-<li>Doesnt require a lot of computational resources or training data.</li>
-<li>Can be easily customized and adapted to different languages and domains.</li>
-<li><strong>Cons</strong>:
-<ul>
-<li>May not be as accurate as other methods, especially for complex or ambiguous cases.</li>
-<li>Requires manual effort to define rules and patterns for different languages and domains.</li>
-<li>Limited to the rules and patterns defined by the developer, which may not cover all cases.</li>
-</ul></li>
-<li><strong>Example</strong>: Rule-based POS taggers in NLTK such as the <code>DefaultTagger</code> and <code>RegexpTagger</code> and <code>pos_tag</code> method. <br> <br></li>
-</ul></li>
-</ul></li>
 <li><strong>Statistical POS Tagging</strong>:</li>
-<li>Uses statistical models (such as Hidden Markov Models) to assign POS tags to words based on their context and probability.</li>
+<li>Uses <strong>statistical models</strong> (such as Hidden Markov Models) to assign POS tags to words <strong>based on their context and probability.</strong></li>
 <li>Learns the patterns and relationships between words and their POS tags from a large corpus of annotated text.
 <ul>
 <li><strong>Pros</strong>:
@@ -3841,7 +3845,6 @@ sky | sky
 <li>May not be as interpretable or transparent as rule-based methods, making it difficult to understand the model’s decisions.</li>
 </ul></li>
 <li><strong>Examples</strong>: Machine learning-based POS taggers in spaCy such as the <code>PerceptronTagger</code> and <code>CNNTagger</code>.</li>
-</ul></li>
 </ul></li>
 </ul>
 <p><strong>Most Common POS Tags (NLTK)</strong></p>
@@ -3981,7 +3984,7 @@ sky | sky
 </table>
 <section id="example-of-pos-tagging-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-pos-tagging-in-python-using-nltk">Example of POS Tagging in Python using NLTK</h4>
-<div id="79b10f81" class="cell" data-execution_count="9">
+<div id="57eb35ce" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog.&quot;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>tags <span class="op">=</span> pos_tag(words)</span>
@@ -4004,12 +4007,10 @@ dog | NN
 </section>
 <section id="example-of-pos-tagging-in-python-using-spacy" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-pos-tagging-in-python-using-spacy">Example of POS Tagging in Python using spaCy</h4>
-<ul>
-<li>Make sure to download the spaCy model using <code>python -m spacy download en_core_web_sm</code></li>
-<li>This model is a small English model trained on written web text (blogs, news, comments), which includes vocabulary, vectors, syntax, and entities.</li>
-<li>The model is trained on the OntoNotes 5 corpus and supports POS tagging, dependency parsing, named entity recognition, and more.</li>
-</ul>
-<div id="d2663cb7" class="cell" data-execution_count="10">
+<p>Make sure to download the spaCy model using <code>python -m spacy download en_core_web_sm</code></p>
+<p>This model is a small English model trained on written web text (blogs, news, comments), which includes vocabulary, vectors, syntax, and entities.</p>
+<p>The model is trained on the OntoNotes 5 corpus and supports POS tagging, dependency parsing, named entity recognition, and more.</p>
+<div id="70d0336a" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sample_text <span class="op">=</span> <span class="st">&quot;The quick brown fox jumps over the lazy dog.&quot;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> model(sample_text)</span>
@@ -4033,27 +4034,14 @@ dog | NOUN
 </section>
 <section id="named-entity-recognition-ner" class="level2">
 <h2 class="anchored" data-anchor-id="named-entity-recognition-ner">Named Entity Recognition (NER)</h2>
-<ul>
-<li>Named Entity Recognition (NER) is the process of identifying and classifying named entities in a text.</li>
-<li>Named entities are real-world objects such as persons, organizations, locations, dates, and more.</li>
-<li>NER is an important task in NLP because it helps extract useful information from unstructured text and enables downstream tasks such as information retrieval, question answering, and text summarization.</li>
-<li>NER models are trained on annotated datasets that contain labeled examples of named entities in text.</li>
-<li><strong>Common types of named entities</strong>:
-<ul>
-<li><strong>Person</strong>: Names of people, such as “John Doe” or “Alice Smith”.</li>
-<li><strong>Organization</strong>: Names of companies, institutions, or groups, such as “Google” or “United Nations”.</li>
-<li><strong>Location</strong>: Names of places, such as “New York” or “Mount Everest”.</li>
-<li><strong>Date</strong>: Dates and times, such as “January 1, 2022” or “10:30 AM”.</li>
-<li><strong>Number</strong>: Numerical quantities, such as “100” or “3.14”.</li>
-<li><strong>Miscellaneous</strong>: Other named entities, such as “Apple” (the company) or “Python” (the programming language).</li>
-<li><strong>Event</strong>: Names of events, such as “World War II” or “Super Bowl”.</li>
-<li><strong>Product</strong>: Names of products, such as “iPhone” or “Coca-Cola”.</li>
-</ul></li>
-</ul>
+<p>Named Entity Recognition (NER) is the process of identifying and classifying named entities in a text.</p>
+<p>Named entities are real-world objects such as p<strong>ersons, organizations, locations, dates,</strong> and more.</p>
+<p>NER is an important task in NLP because it helps extract useful information from unstructured text and enables downstream tasks such as information retrieval, question answering, and text summarization.</p>
+<p>NER models are trained on annotated datasets that contain labeled examples of named entities in text. - <strong>Common types of named entities</strong>: - <strong>Person</strong>: Names of people, such as “John Doe” or “Alice Smith”. - <strong>Organization</strong>: Names of companies, institutions, or groups, such as “Google” or “United Nations”. - <strong>Location</strong>: Names of places, such as “New York” or “Mount Everest”. - <strong>Date</strong>: Dates and times, such as “January 1, 2022” or “10:30 AM”. - <strong>Number</strong>: Numerical quantities, such as “100” or “3.14”. - <strong>Miscellaneous</strong>: Other named entities, such as “Apple” (the company) or “Python” (the programming language). - <strong>Event</strong>: Names of events, such as “World War II” or “Super Bowl”. - <strong>Product</strong>: Names of products, such as “iPhone” or “Coca-Cola”.</p>
 <section id="example-of-named-entity-recognition-in-python-using-nltk" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-nltk">Example of Named Entity Recognition in Python using NLTK</h4>
 <p>In NLP, a tree structure is often used to represent the syntactic structure of a sentence. Each node in the tree represents a linguistic unit, such as a word or a phrase, and the edges represent the relationships between these units. The <code>Tree</code> class provides various methods for creating, traversing, and modifying these tree structures.</p>
-<div id="a1456d81" class="cell" data-execution_count="11">
+<div id="c2870bcc" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Apple is a technology company based in Cupertino, California.&quot;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> word_tokenize(text)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>tags <span class="op">=</span> pos_tag(words)</span>
@@ -4070,14 +4058,12 @@ GPE: Cupertino
 GPE: California</code></pre>
 </div>
 </div>
-<ul>
-<li>Note: NLTK’s named entity recognizer has identified “Apple”, “Cupertino”, and “California” as geopolitical entities (GPE).</li>
-<li>The NER model uses context and patterns learned from training data to classify named entities, but it is not always perfect and can sometimes make mistakes, as seen with “Apple” in this case.</li>
-</ul>
+<p>Note: NLTK’s named entity recognizer has identified “Apple”, “Cupertino”, and “California” as geopolitical entities (GPE).</p>
+<p>The NER model uses context and patterns learned from training data to classify named entities, but it is not always perfect and can sometimes make mistakes, as seen with “Apple” in this case.</p>
 </section>
 <section id="example-of-named-entity-recognition-in-python-using-spacy" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-named-entity-recognition-in-python-using-spacy">Example of Named Entity Recognition in Python using spaCy</h4>
-<div id="abc65174" class="cell" data-execution_count="12">
+<div id="58fb59d3" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> spacy.load(<span class="st">&quot;en_core_web_sm&quot;</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sample_text <span class="op">=</span> <span class="st">&quot;Apple is a technology company based in Cupertino, California.&quot;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> model(sample_text)</span>
@@ -4109,7 +4095,7 @@ GPE: California</code></pre>
 <h1>Lecture 3</h1>
 <section id="n-gram-probabilistic-lm" class="level2">
 <h2 class="anchored" data-anchor-id="n-gram-probabilistic-lm">N-Gram (Probabilistic LM)</h2>
-<p>This is model predicts the probability of a word given the previous n-1 words. It is based on the assumption that the probability of a word depends on the context provided by the previous n-1 words. N-grams are used in various NLP tasks such as speech recognition, machine translation, and text generation.</p>
+<p>This is model predicts the probability of a word given the previous n-1 words. It is based on the <strong>assumption that the probability of a word depends on the context provided by the previous n-1 words.</strong> N-grams are used in various NLP tasks such as speech recognition, machine translation, and text generation.</p>
 <ul>
 <li><strong>Unigram</strong>: A single word</li>
 <li><strong>Bigram</strong>: A pair of words</li>
@@ -4117,7 +4103,7 @@ GPE: California</code></pre>
 </ul>
 <p>number of n-grams = (total number of words) - (n - 1)</p>
 <p><strong>Generating different n-grams for a text</strong>:</p>
-<div id="a27aa95f" class="cell" data-execution_count="13">
+<div id="3b742bff" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Italy is famous for its cuisine.&quot;</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_ngrams(text, n):</span>
@@ -4132,15 +4118,14 @@ GPE: California</code></pre>
 <ul>
 <li><strong>Joint Probability</strong>: The probability of two or more events occurring together. It is denoted as P(A, B) and is calculated as the probability of both events A and B occurring.
 <ul>
-<li><strong>Joint Probability Formula</strong>: <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></li>
-<li>is equivalent to <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span> <br> <br></li>
+<li><strong>Joint Probability Formula</strong>: <span class="math inline">\(P(A, B) = P(A) \times P(B)\)</span></li>
 </ul></li>
 <li><strong>Conditional Probability</strong>: The probability of an event given that another event has occurred. It is denoted as P(A | B) which is the probability of event A occurring given that event B has occurred.</li>
 <li>It is calculated as the probability of both events A and B occurring divided by the probability of event B occurring.
 <ul>
-<li><strong>Conditional Probability Formula</strong>: <span class="math inline">\(P(A \mid B) = \frac{P(A, B)}{P(B)}\)</span> <br> <br></li>
+<li><strong>Conditional Probability Formula</strong>: <span class="math inline">\(P(A \mid B) = \frac{P(A, B)}{P(B)}\)</span></li>
 </ul></li>
-<li><strong>Chain Rule of Probability</strong>: The probability of a sequence of events can be calculated by multiplying the conditional probabilities of each event given the previous events in the sequence.
+<li><strong>Chain Rule of Probability</strong>: The probability of a sequence of events can be calculated by <strong>multiplying the conditional probabilities of each event given the previous events</strong> in the sequence.
 <ul>
 <li><p><strong>Chain Rule Formula</strong>: <span class="math display">\[
 \small
@@ -4165,12 +4150,12 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 <h3 class="anchored" data-anchor-id="markov-assumption">Markov Assumption</h3>
 <p>To make things manageable, N-gram models approximate the chain rule by making a simplifying assumption called the Markov assumption. This assumption states that the <strong>probability of a word depends only on the previous n-1 words, not on all the previous words in the sequence.</strong> This simplifies the calculation of the conditional probability of a word given the previous n-1 words.</p>
 <ul>
-<li><strong>First-Order Markov Model</strong>: The probability of a word depends only on the previous word.
-<ul>
+<li><strong>First-Order Markov Model</strong>: The probability of a word depends only on the previous word.</li>
 <li><span class="math display">\[P(w_n | w_1, w_2, ..., w_{n-1}) = P(w_n | w_{n-1})\]</span></li>
-<li>“The probability of the 10th word depends only on the 9th word, not on the previous words.”</li>
+<li>“The probability of the 10th word depends only on the 9th word, not on the previous words.”
+<ul>
 <li><strong>Example</strong>: <span class="math inline">\(P(\text{fox} \mid \text{The quick brown}) = P(\text{fox} \mid \text{brown})\)</span></li>
-<li><strong>Note</strong>: The first-order Markov model is a special case of the N-gram model where n=2. <br> <br></li>
+<li><strong>Note</strong>: The first-order Markov model is a special case of the N-gram model where n=2.</li>
 </ul></li>
 <li><strong>Second-Order Markov Model</strong>: The probability of a word depends only on the previous two words.
 <ul>
@@ -4200,16 +4185,18 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </section>
 <section id="padding" class="level3">
 <h3 class="anchored" data-anchor-id="padding">Padding</h3>
-<p>Is a technique used to handle the boundary conditions in N-gram models where the context words are not available. - <strong>Start-of-Sentence (BOS) Padding</strong>: A special token that represents the beginning of a sentence. It is used to handle the first word in a sentence where the context words are not available. - <strong>Example</strong>: <code>&lt;s&gt;</code> The quick brown fox jumps over the lazy dog. Note <code>&lt;s&gt;</code> is equivalent to <code>&lt;start&gt;</code> <br> <br></p>
+<p>Is a technique used to handle the boundary conditions in N-gram models where the context words are not available.</p>
+<p><strong>Start-of-Sentence (BOS) Padding</strong>: A special token that represents the beginning of a sentence. It is used to handle the first word in a sentence where the context words are not available.</p>
 <ul>
-<li><strong>End-of-Sentence (EOS) Padding</strong>: A special token that represents the end of a sentence. It is used to handle the last word in a sentence where the context words are not available.
+<li><p><strong>Example</strong>: <code>&lt;s&gt;</code> The quick brown fox jumps over the lazy dog. Note <code>&lt;s&gt;</code> is equivalent to <code>&lt;start&gt;</code></p></li>
+<li><p><strong>End-of-Sentence (EOS) Padding</strong>: A special token that represents the end of a sentence. It is used to handle the last word in a sentence where the context words are not available.</p>
 <ul>
 <li><strong>Example</strong>: The fox jumps over the lazy dog. <code>&lt;/s&gt;</code></li>
 </ul></li>
 </ul>
 <p><strong>Notes</strong>: the choice of how many padding tokens to use depends on the order of the N-gram model. For a bigram model, you would use one padding token at the beginning of the sentence. For a trigram model, you would use two padding tokens at the beginning of the sentence. The padding tokens are not part of the vocabulary and are used only for modeling purposes.</p>
 <p><strong>Padding Example in Python</strong></p>
-<div id="18105788" class="cell" data-execution_count="14">
+<div id="3e8aa412" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;I like NLP. NLP is fun. NLP in python is fun.&quot;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4238,9 +4225,10 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </section>
 <section id="smoothing-techniques" class="level3">
 <h3 class="anchored" data-anchor-id="smoothing-techniques">Smoothing Techniques</h3>
+<p>This is a technique used to <strong>address the issue of zero probabilities in N-gram models.</strong></p>
+<p>It assigns a <strong>small non-zero probability to unseen n-grams</strong> to improve the generalization of the model. You “test” these by comparing smoothed probabilities to unsmoothed ones.</p>
 <ul>
-<li><p>This is a technique used to address the issue of zero probabilities in N-gram models. It assigns a small non-zero probability to unseen n-grams to improve the generalization of the model. You “test” these by comparing smoothed probabilities to unsmoothed ones. <br> <br></p></li>
-<li><p><strong>Laplace (Add-One) Smoothing</strong>: A simple smoothing technique that adds one to the count of each n-gram to avoid zero probabilities.</p>
+<li><strong>Laplace (Add-One) Smoothing</strong>: A simple smoothing technique that adds one to the count of each n-gram to avoid zero probabilities.
 <ul>
 <li><strong>Formula</strong>: <span class="math inline">\(P(w_n | w_1, w_2, ..., w_{n-1}) = \frac{(\text{Count(n-gram)} + 1)}{(\text{Count(of previous n-1 words)} + V)}\)</span>
 <ul>
@@ -4248,7 +4236,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 <li><strong>Example</strong>: <span class="math display">\[P(\text{fox} \mid \text{quick brown}) = \frac{\text{Count}(\text{quick brown fox}) + 1}{\text{Count}(\text{quick brown}) + V}\]</span></li>
 </ul></li>
 </ul></li>
-<li><p><strong>Add-k Smoothing</strong>: A generalization of Laplace smoothing that adds a <code>smaller constant k</code> to the count of each n-gram to avoid zero probabilities.</p>
+<li><strong>Add-k Smoothing</strong>: A generalization of Laplace smoothing that adds a <code>smaller constant k</code> to the count of each n-gram to avoid zero probabilities.
 <ul>
 <li><strong>Formula</strong>: <span class="math inline">\(P(w_n | w_1, w_2, ..., w_{n-1}) = \frac{(\text{Count(n-gram)} + k)}{(\text{Count(of previous n-1 words)} + kV)}\)</span>
 <ul>
@@ -4257,18 +4245,18 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 <li><strong>Test</strong>: Tune k and compare probabilities for rare vs. frequent trigrams.</li>
 </ul></li>
 </ul></li>
-<li><p><strong>Good-Turing Smoothing</strong>: A more sophisticated smoothing technique that estimates the probability of unseen n-grams based on the frequency of seen n-grams.</p>
+<li><strong>Good-Turing Smoothing</strong>: A more sophisticated smoothing technique that estimates the probability of unseen n-grams based on the frequency of seen n-grams.
 <ul>
 <li>adjusts the counts of n-grams based on the frequency of n-grams with similar counts.</li>
 <li><strong>Test</strong>: compute adjusted probabilities for low-frequency n-grams and validate against held-out data.</li>
 </ul></li>
-<li><p><strong>Backoff and Interpolation</strong>: A technique that combines n-gram models of different orders to improve the generalization of the model.</p>
+<li><strong>Backoff and Interpolation</strong>: A technique that combines n-gram models of different orders to improve the generalization of the model.
 <ul>
 <li><strong>Backoff</strong>: Uses lower-order n-grams when higher-order n-grams have zero probabilities.</li>
 <li><strong>Interpolation</strong>: Combines probabilities from different n-gram models using linear interpolation.</li>
 <li><strong>Test</strong>: Compare performance of backoff and interpolation on different datasets.</li>
 </ul></li>
-<li><p><strong>Kneser-Ney Smoothing</strong>: A state-of-the-art smoothing technique that estimates the probability of unseen n-grams based on the frequency of n-grams in the context of the n-gram.</p>
+<li><strong>Kneser-Ney Smoothing</strong>: A state-of-the-art smoothing technique that estimates the probability of unseen n-grams based on the frequency of n-grams in the context of the n-gram.
 <ul>
 <li>It considers how often a word appears in a novel context, rather than just how often it appears overall.</li>
 <li><strong>Test</strong>: Compare Kneser-Ney smoothing to other smoothing techniques on large datasets.</li>
@@ -4312,7 +4300,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </ul></li>
 </ul>
 <p><strong>STEP 1: tokenize text and add padding tokens</strong></p>
-<div id="f5c9b016" class="cell" data-execution_count="15">
+<div id="cab40fe3" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;I like NLP. NLP is fun. NLP in python is fun. I like coding in python. NLP is cool.&quot;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> sent_tokenize(text)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>padded_sentences <span class="op">=</span> []</span>
@@ -4334,7 +4322,7 @@ P(\text{The quick brown fox}) &amp;= P(\text{The}) \times P(\text{quick} \mid \t
 </div>
 </div>
 <p><strong>STEP 2: Generate trigrams (and bigrams for MLE calculation)</strong></p>
-<div id="0428cfcb" class="cell" data-execution_count="16">
+<div id="37dcb85f" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>trigrams <span class="op">=</span> []</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sent <span class="kw">in</span> padded_sentences:</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    sent_trigrams <span class="op">=</span> <span class="bu">list</span>(ngrams(sent, <span class="dv">3</span>))</span>
@@ -4380,7 +4368,7 @@ Trigrams:
 </div>
 </div>
 <p><strong>STEP 3: Count unique trigrams and bigrams</strong></p>
-<div id="d76c4971" class="cell" data-execution_count="17">
+<div id="e33ba690" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>trigram_counts <span class="op">=</span> Counter(trigrams)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>bigrams_counts <span class="op">=</span> Counter(bigrams)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>unique_bigrams <span class="op">=</span> <span class="bu">len</span>(bigrams_counts)</span>
@@ -4423,7 +4411,7 @@ Unique Bigrams: 17
 </div>
 </div>
 <p><strong>STEP 4: Calculate trigram probabilities (MLE)</strong></p>
-<div id="496328ee" class="cell" data-execution_count="18">
+<div id="c539391e" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tri_mle <span class="op">=</span> {}</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (w1, w2, w3), count <span class="kw">in</span> trigram_counts.items():</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    tri_mle[(w1, w2, w3)] <span class="op">=</span> <span class="bu">round</span>(count <span class="op">/</span> bigrams_counts[(w1, w2)], <span class="dv">3</span>)</span>
@@ -4463,7 +4451,7 @@ Trigram MLE:
 </div>
 </div>
 <p><strong>(Calculating MLE with Laplace Smoothing)</strong></p>
-<div id="3180311a" class="cell" data-execution_count="19">
+<div id="90735af3" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> <span class="bu">len</span>(trigram_counts)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Laplace smoothing constant</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>tri_mle_laplace <span class="op">=</span> {}</span>
@@ -4506,7 +4494,7 @@ Trigram MLE with Laplace Smoothing:
 </div>
 </div>
 <p><strong>STEP 5: Calculate Perplexity</strong></p>
-<div id="26c1e9e3" class="cell" data-execution_count="20">
+<div id="a6095f1b" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>test_trigrams <span class="op">=</span> trigrams  <span class="co"># Reusing the training trigrams for simplicity</span></span>
@@ -4543,72 +4531,66 @@ Perplexity: 1.288</code></pre>
 </section>
 <section id="example-of-trigram-lm-with-nltk-abc-corpus" class="level3">
 <h3 class="anchored" data-anchor-id="example-of-trigram-lm-with-nltk-abc-corpus">Example of Trigram LM with NLTK ABC Corpus</h3>
-<div id="c44cd877" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="bu">list</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class &#39;type&#39;&gt;</code></pre>
-</div>
-</div>
-<div id="176bc857" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.util <span class="im">import</span> trigrams, bigrams</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> abc</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the ABC corpus</span></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>abc_text <span class="op">=</span> abc.raw(<span class="st">&quot;rural.txt&quot;</span>)</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1 get sentences from corpus</span></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> abc.sents()[<span class="dv">0</span>:<span class="dv">2000</span>]</span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Number of sentences:&quot;</span>, <span class="bu">len</span>(sentences))</span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Tokenize text and add padding tokens</span></span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> []</span>
-<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sentence <span class="kw">in</span> sentences:</span>
-<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    padded_sentence <span class="op">=</span> [<span class="st">&quot;&lt;s&gt;&quot;</span>] <span class="op">+</span> [word.lower() <span class="cf">for</span> word <span class="kw">in</span> sentence] <span class="op">+</span> [<span class="st">&quot;&lt;/s&gt;&quot;</span>]</span>
-<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    tokens.extend(padded_sentence)</span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Example tokens:&quot;</span>, tokens[:<span class="dv">10</span>])</span>
-<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Generate trigrams</span></span>
-<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>trigram_list <span class="op">=</span> <span class="bu">list</span>(trigrams(tokens))</span>
-<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>bigram_list <span class="op">=</span> <span class="bu">list</span>(bigrams(tokens))</span>
-<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Example trigrams:&quot;</span>, trigram_list[:<span class="dv">5</span>])</span>
-<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Example bigrams:&quot;</span>, bigram_list[:<span class="dv">5</span>])</span>
-<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Count unique trigrams</span></span>
-<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>trigram_counts <span class="op">=</span> Counter(trigram_list)</span>
-<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>bigram_counts <span class="op">=</span> Counter(bigram_list)</span>
-<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>unique_trigrams <span class="op">=</span> <span class="bu">len</span>(trigram_counts)</span>
-<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>unique_bigrams <span class="op">=</span> <span class="bu">len</span>(bigram_counts)</span>
-<span id="cb37-33"><a href="#cb37-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Unique Trigrams:&quot;</span>, unique_trigrams)</span>
-<span id="cb37-34"><a href="#cb37-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Unique Bigrams:&quot;</span>, unique_bigrams)</span>
-<span id="cb37-35"><a href="#cb37-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Calculate trigram probabilities (MLE) with Laplace smoothing and k=1</span></span>
-<span id="cb37-37"><a href="#cb37-37" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> <span class="bu">len</span>(trigram_counts)</span>
-<span id="cb37-38"><a href="#cb37-38" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">0.01</span></span>
-<span id="cb37-39"><a href="#cb37-39" aria-hidden="true" tabindex="-1"></a>trigram_mle_laplace <span class="op">=</span> {}</span>
-<span id="cb37-40"><a href="#cb37-40" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (w1, w2, w3), count <span class="kw">in</span> trigram_counts.items():</span>
-<span id="cb37-41"><a href="#cb37-41" aria-hidden="true" tabindex="-1"></a>    trigram_mle_laplace[(w1, w2, w3)] <span class="op">=</span> (count <span class="op">+</span> k) <span class="op">/</span> (bigram_counts[(w1, w2)] <span class="op">+</span> k <span class="op">*</span> V)</span>
-<span id="cb37-42"><a href="#cb37-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-43"><a href="#cb37-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-44"><a href="#cb37-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to predict next word based on conditional probability</span></span>
-<span id="cb37-45"><a href="#cb37-45" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predict_next_word(w1, w2, trigram_mle):</span>
-<span id="cb37-46"><a href="#cb37-46" aria-hidden="true" tabindex="-1"></a>    candidates <span class="op">=</span> {w3: prob <span class="cf">for</span> (x1, x2, w3), prob <span class="kw">in</span> trigram_mle.items() <span class="cf">if</span> x1 <span class="op">==</span> w1 <span class="kw">and</span> x2 <span class="op">==</span> w2}</span>
-<span id="cb37-47"><a href="#cb37-47" aria-hidden="true" tabindex="-1"></a>    predicted <span class="op">=</span> <span class="bu">max</span>(candidates, key<span class="op">=</span>candidates.get) <span class="cf">if</span> candidates <span class="cf">else</span> <span class="va">None</span></span>
-<span id="cb37-48"><a href="#cb37-48" aria-hidden="true" tabindex="-1"></a>    prob <span class="op">=</span> candidates.get(predicted, <span class="fl">0.0</span>) <span class="cf">if</span> predicted <span class="cf">else</span> <span class="fl">0.0</span></span>
-<span id="cb37-49"><a href="#cb37-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> predicted, prob</span>
-<span id="cb37-50"><a href="#cb37-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-51"><a href="#cb37-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-52"><a href="#cb37-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Test prediction</span></span>
-<span id="cb37-53"><a href="#cb37-53" aria-hidden="true" tabindex="-1"></a>w1, w2 <span class="op">=</span> <span class="st">&quot;the&quot;</span>, <span class="st">&quot;prime&quot;</span></span>
-<span id="cb37-54"><a href="#cb37-54" aria-hidden="true" tabindex="-1"></a>predicted_word, probability <span class="op">=</span> predict_next_word(w1, w2, trigram_mle_laplace)</span>
-<span id="cb37-55"><a href="#cb37-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Predicted next word after &#39;</span><span class="sc">{</span>w1<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>w2<span class="sc">}</span><span class="ss">&#39;: </span><span class="sc">{</span>predicted_word<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb37-56"><a href="#cb37-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Probability of the next word occurring: </span><span class="sc">{</span>probability<span class="sc">:.5f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb37-57"><a href="#cb37-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-58"><a href="#cb37-58" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
-<span id="cb37-59"><a href="#cb37-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Execution time: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">:.5f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="609c263e" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.util <span class="im">import</span> trigrams, bigrams</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> abc</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the ABC corpus</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>abc_text <span class="op">=</span> abc.raw(<span class="st">&quot;rural.txt&quot;</span>)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1 get sentences from corpus</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>sentences <span class="op">=</span> abc.sents()[<span class="dv">0</span>:<span class="dv">2000</span>]</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Number of sentences:&quot;</span>, <span class="bu">len</span>(sentences))</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Tokenize text and add padding tokens</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> []</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sentence <span class="kw">in</span> sentences:</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>    padded_sentence <span class="op">=</span> [<span class="st">&quot;&lt;s&gt;&quot;</span>] <span class="op">+</span> [word.lower() <span class="cf">for</span> word <span class="kw">in</span> sentence] <span class="op">+</span> [<span class="st">&quot;&lt;/s&gt;&quot;</span>]</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>    tokens.extend(padded_sentence)</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Example tokens:&quot;</span>, tokens[:<span class="dv">10</span>])</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Generate trigrams</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>trigram_list <span class="op">=</span> <span class="bu">list</span>(trigrams(tokens))</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>bigram_list <span class="op">=</span> <span class="bu">list</span>(bigrams(tokens))</span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Example trigrams:&quot;</span>, trigram_list[:<span class="dv">5</span>])</span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Example bigrams:&quot;</span>, bigram_list[:<span class="dv">5</span>])</span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Count unique trigrams</span></span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>trigram_counts <span class="op">=</span> Counter(trigram_list)</span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>bigram_counts <span class="op">=</span> Counter(bigram_list)</span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>unique_trigrams <span class="op">=</span> <span class="bu">len</span>(trigram_counts)</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>unique_bigrams <span class="op">=</span> <span class="bu">len</span>(bigram_counts)</span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Unique Trigrams:&quot;</span>, unique_trigrams)</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Unique Bigrams:&quot;</span>, unique_bigrams)</span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Calculate trigram probabilities (MLE) with Laplace smoothing and k=1</span></span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> <span class="bu">len</span>(trigram_counts)</span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>trigram_mle_laplace <span class="op">=</span> {}</span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (w1, w2, w3), count <span class="kw">in</span> trigram_counts.items():</span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>    trigram_mle_laplace[(w1, w2, w3)] <span class="op">=</span> (count <span class="op">+</span> k) <span class="op">/</span> (bigram_counts[(w1, w2)] <span class="op">+</span> k <span class="op">*</span> V)</span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to predict next word based on conditional probability</span></span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predict_next_word(w1, w2, trigram_mle):</span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>    candidates <span class="op">=</span> {w3: prob <span class="cf">for</span> (x1, x2, w3), prob <span class="kw">in</span> trigram_mle.items() <span class="cf">if</span> x1 <span class="op">==</span> w1 <span class="kw">and</span> x2 <span class="op">==</span> w2}</span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>    predicted <span class="op">=</span> <span class="bu">max</span>(candidates, key<span class="op">=</span>candidates.get) <span class="cf">if</span> candidates <span class="cf">else</span> <span class="va">None</span></span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a>    prob <span class="op">=</span> candidates.get(predicted, <span class="fl">0.0</span>) <span class="cf">if</span> predicted <span class="cf">else</span> <span class="fl">0.0</span></span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> predicted, prob</span>
+<span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-52"><a href="#cb35-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Test prediction</span></span>
+<span id="cb35-53"><a href="#cb35-53" aria-hidden="true" tabindex="-1"></a>w1, w2 <span class="op">=</span> <span class="st">&quot;the&quot;</span>, <span class="st">&quot;prime&quot;</span></span>
+<span id="cb35-54"><a href="#cb35-54" aria-hidden="true" tabindex="-1"></a>predicted_word, probability <span class="op">=</span> predict_next_word(w1, w2, trigram_mle_laplace)</span>
+<span id="cb35-55"><a href="#cb35-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Predicted next word after &#39;</span><span class="sc">{</span>w1<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>w2<span class="sc">}</span><span class="ss">&#39;: </span><span class="sc">{</span>predicted_word<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb35-56"><a href="#cb35-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Probability of the next word occurring: </span><span class="sc">{</span>probability<span class="sc">:.5f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb35-57"><a href="#cb35-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-58"><a href="#cb35-58" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
+<span id="cb35-59"><a href="#cb35-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Execution time: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">:.5f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of sentences: 2000
 Example tokens: [&#39;&lt;s&gt;&#39;, &#39;pm&#39;, &#39;denies&#39;, &#39;knowledge&#39;, &#39;of&#39;, &#39;awb&#39;, &#39;kickbacks&#39;, &#39;the&#39;, &#39;prime&#39;, &#39;minister&#39;]
@@ -4618,40 +4600,40 @@ Unique Trigrams: 45447
 Unique Bigrams: 30474
 Predicted next word after &#39;the prime&#39;: minister
 Probability of the next word occurring: 0.02978
-Execution time: 0.15287 seconds</code></pre>
+Execution time: 0.13728 seconds</code></pre>
 </div>
 </div>
 </section>
 <section id="example-of-sentence-generation-with-trigram-lm" class="level3">
 <h3 class="anchored" data-anchor-id="example-of-sentence-generation-with-trigram-lm">Example of Sentence Generation with Trigram LM</h3>
-<div id="271a2585" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_sentence(model, max_length):</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    current_bigram <span class="op">=</span> random.choice(<span class="bu">list</span>(model.keys()))  <span class="co"># Pick a random starting bigram</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    get_text <span class="op">=</span> <span class="bu">list</span>(current_bigram)  <span class="co"># Initialize with the two words from the bigram</span></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(max_length <span class="op">-</span> <span class="dv">2</span>):  <span class="co"># Start from the third word</span></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        w_next_prob <span class="op">=</span> model.get(<span class="bu">tuple</span>(get_text[<span class="op">-</span><span class="dv">2</span>:]), {})  <span class="co"># Get trigram probabilities</span></span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> w_next_prob:  <span class="co"># If no next word, break</span></span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>        w_next <span class="op">=</span> random.choices(<span class="bu">list</span>(w_next_prob.keys()), weights<span class="op">=</span><span class="bu">list</span>(w_next_prob.values()))[<span class="dv">0</span>]</span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>        get_text.append(w_next)  <span class="co"># Append next word</span></span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot; &quot;</span>.join(get_text)  <span class="co"># Return generated sentence as a string</span></span>
-<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>generated_text <span class="op">=</span> generate_sentence(trigram_mle_laplace, <span class="dv">15</span>)</span>
-<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Generated sentence: </span><span class="sc">{</span>generated_text<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
-<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Execution time: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">:.5f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="26f39287" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_sentence(model, max_length):</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    current_bigram <span class="op">=</span> random.choice(<span class="bu">list</span>(model.keys()))  <span class="co"># Pick a random starting bigram</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    get_text <span class="op">=</span> <span class="bu">list</span>(current_bigram)  <span class="co"># Initialize with the two words from the bigram</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(max_length <span class="op">-</span> <span class="dv">2</span>):  <span class="co"># Start from the third word</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>        w_next_prob <span class="op">=</span> model.get(<span class="bu">tuple</span>(get_text[<span class="op">-</span><span class="dv">2</span>:]), {})  <span class="co"># Get trigram probabilities</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> w_next_prob:  <span class="co"># If no next word, break</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>        w_next <span class="op">=</span> random.choices(<span class="bu">list</span>(w_next_prob.keys()), weights<span class="op">=</span><span class="bu">list</span>(w_next_prob.values()))[<span class="dv">0</span>]</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>        get_text.append(w_next)  <span class="co"># Append next word</span></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot; &quot;</span>.join(get_text)  <span class="co"># Return generated sentence as a string</span></span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>generated_text <span class="op">=</span> generate_sentence(trigram_mle_laplace, <span class="dv">15</span>)</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Generated sentence: </span><span class="sc">{</span>generated_text<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.time()</span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Execution time: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">:.5f}</span><span class="ss"> seconds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Generated sentence: the code issue
-Execution time: 0.00120 seconds</code></pre>
+<pre><code>Generated sentence: of generic wines
+Execution time: 0.00050 seconds</code></pre>
 </div>
 </div>
 </section>
@@ -4661,15 +4643,26 @@ Execution time: 0.00120 seconds</code></pre>
 <h1>Lecture 4</h1>
 <section id="text-classification" class="level2">
 <h2 class="anchored" data-anchor-id="text-classification">Text Classification</h2>
+<p>Text classification is the process of assigning predefined categories or labels to text documents based on their content.</p>
+<p>It is a <strong>supervised learning task</strong> where a model is trained on labeled data to learn the relationship between the text and its corresponding labels.</p>
+<p>Text classification is used in various applications such as <strong>spam detection, sentiment analysis, topic categorization</strong>, and more.</p>
+<p>The goal of text classification is to build a model that can accurately predict the category of unseen text documents based on their content. The process of text classification involves several steps, including data preprocessing, feature extraction, model training, and evaluation.</p>
+<p>The choice of features and the classification algorithm can significantly impact the performance of the model.</p>
+<p>There are three main types of text classification techniques:</p>
 <ul>
-<li>Text classification is the process of assigning predefined categories or labels to text documents based on their content.</li>
-<li>It is a supervised learning task where a model is trained on labeled data to learn the relationship between the text and its corresponding labels.</li>
-<li>Text classification is used in various applications such as spam detection, sentiment analysis, topic categorization, and more.</li>
-<li>The goal of text classification is to build a model that can accurately predict the category of unseen text documents based on their content.</li>
-<li>The process of text classification involves several steps, including data preprocessing, feature extraction, model training, and evaluation.</li>
-<li>The choice of features and the classification algorithm can significantly impact the performance of the model.</li>
+<li><strong>Supervised Learning</strong>: The model is trained on labeled data, where each document is associated with a predefined category. The model learns to map the input features to the corresponding labels.
+<ul>
+<li>Naive Bayes, Logistic Regression</li>
+</ul></li>
+<li><strong>Unsupervised Learning</strong>: The model is trained on unlabeled data, where the goal is to discover hidden patterns or clusters in the data. The model learns to group similar documents together without any predefined labels.
+<ul>
+<li>Latent Dirichlet Allocation (LDA), K-means clustering</li>
+</ul></li>
+<li><strong>Deep Learning</strong>: The model is trained on large amounts of data using deep neural networks. Deep learning models can automatically learn complex features and representations from the data, making them suitable for text classification tasks.
+<ul>
+<li>Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), Transformers (BERT, GPT-3)</li>
+</ul></li>
 </ul>
-<p>There are three main types of text classification techniques: - <strong>Supervised Learning</strong>: The model is trained on labeled data, where each document is associated with a predefined category. The model learns to map the input features to the corresponding labels. - Naive Bayes, Logistic Regression - <strong>Unsupervised Learning</strong>: The model is trained on unlabeled data, where the goal is to discover hidden patterns or clusters in the data. The model learns to group similar documents together without any predefined labels. - Latent Dirichlet Allocation (LDA), K-means clustering - <strong>Deep Learning</strong>: The model is trained on large amounts of data using deep neural networks. Deep learning models can automatically learn complex features and representations from the data, making them suitable for text classification tasks. - Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), Transformers (BERT, GPT-3)</p>
 </section>
 <section id="bayes-theorem" class="level2">
 <h2 class="anchored" data-anchor-id="bayes-theorem">Bayes Theorem</h2>
@@ -4683,79 +4676,82 @@ Execution time: 0.00120 seconds</code></pre>
 <li>P(H): The prior probability of hypothesis H.</li>
 <li>P(E): The total probability of evidence E.</li>
 </ul></li>
-<li><strong>Naive Assumption</strong>: The naive assumption in Naive Bayes classifiers is that the features are conditionally independent given the class label. This simplifies the computation of the posterior probability.</li>
-<li>The naive assumption allows us to calculate the joint probability of the features given the class label as the product of the individual probabilities of each feature.</li>
-<li>An exmple of the naive assumption is:</li>
-<li><span class="math display">\[P(X_1, X_2, ..., X_n \mid C) = P(X_1 \mid C) \cdot P(X_2 \mid C) \cdot ... \cdot P(X_n \mid C)\]</span></li>
-<li>Where:
-<ul>
-<li>P(X1, X2, …, Xn | C): The joint probability of features X1, X2, …, Xn given class C.</li>
-<li>P(Xi | C): The probability of feature Xi given class C.</li>
-</ul></li>
-<li>The naive assumption is a simplification that allows Naive Bayes classifiers to work well in practice, even when the features are not truly independent.</li>
 </ul>
-<p>Types of Naive Bayes Classifiers: - <strong>Gaussian Naive Bayes</strong>: Assumes that the features follow a Gaussian (normal) distribution. It is suitable for continuous features. - <strong>Multinomial Naive Bayes</strong>: Assumes that the features are counts or frequencies. It is suitable for discrete features, such as word counts in text classification. - <strong>Bernoulli Naive Bayes</strong>: Assumes that the features are binary (0 or 1). It is suitable for binary features, such as presence or absence of words in text classification.</p>
-<p>Implementing Naive Bayes - <strong>Step 1</strong>: Load the dataset, clean and preprocess the text data. - <strong>Step 2</strong>: Split the dataset into training and testing sets. - <strong>Step 3</strong>: Extract features from the text data using techniques such as Bag of Words (BoW) - <strong>Step 4</strong>: Train the Naive Bayes classifier on the training set. - <strong>Step 5</strong>: Evaluate the classifier on the testing set using metrics such as accuracy, precision, recall, and F1-score.</p>
-<div id="88963c7d" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> MultinomialNB</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_20newsgroups</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&quot;english&quot;</span>))</span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> PorterStemmer</span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>stemmer <span class="op">=</span> PorterStemmer()</span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> download</span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> pos_tag</span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> ne_chunk</span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tree <span class="im">import</span> Tree</span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>newsgroups <span class="op">=</span> fetch_20newsgroups(</span>
-<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>    subset<span class="op">=</span><span class="st">&quot;all&quot;</span>, categories<span class="op">=</span>[<span class="st">&quot;alt.atheism&quot;</span>, <span class="st">&quot;sci.space&quot;</span>], remove<span class="op">=</span>(<span class="st">&quot;headers&quot;</span>, <span class="st">&quot;footers&quot;</span>, <span class="st">&quot;quotes&quot;</span>)</span>
-<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&quot;text&quot;</span>: newsgroups.data, <span class="st">&quot;label&quot;</span>: newsgroups.target})</span>
-<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess the text data</span></span>
-<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocess_text(text):</span>
-<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tokenize the text</span></span>
-<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> word_tokenize(text)</span>
-<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove stop words</span></span>
-<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> tokens <span class="cf">if</span> word.lower() <span class="kw">not</span> <span class="kw">in</span> stop_words]</span>
-<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Stem the words</span></span>
-<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [stemmer.stem(word) <span class="cf">for</span> word <span class="kw">in</span> tokens]</span>
-<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot; &quot;</span>.join(tokens)</span>
-<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&quot;text&quot;</span>] <span class="op">=</span> df[<span class="st">&quot;text&quot;</span>].<span class="bu">apply</span>(preprocess_text)</span>
-<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the dataset into training and testing sets</span></span>
-<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
-<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&quot;text&quot;</span>], df[<span class="st">&quot;label&quot;</span>], test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span></span>
-<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pipeline with CountVectorizer and MultinomialNB</span></span>
-<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> make_pipeline(CountVectorizer(), MultinomialNB())</span>
-<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the Naive Bayes classifier</span></span>
-<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a>pipeline.fit(X_train, y_train)</span>
-<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-51"><a href="#cb41-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
-<span id="cb41-52"><a href="#cb41-52" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> pipeline.predict(X_test)</span>
-<span id="cb41-53"><a href="#cb41-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-54"><a href="#cb41-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the classifier</span></span>
-<span id="cb41-55"><a href="#cb41-55" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
-<span id="cb41-56"><a href="#cb41-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb41-57"><a href="#cb41-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-58"><a href="#cb41-58" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Classification Report:&quot;</span>)</span>
-<span id="cb41-59"><a href="#cb41-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred, target_names<span class="op">=</span>newsgroups.target_names))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Naive Assumption</strong>: The naive assumption in Naive Bayes classifiers is that the <strong>features are conditionally independent given the class label</strong>. This simplifies the computation of the posterior probability. - The naive assumption allows us to calculate the joint probability of the features given the class label as the product of the individual probabilities of each feature. - An example of the naive assumption is: - <span class="math display">\[P(X_1, X_2, ..., X_n \mid C) = P(X_1 \mid C) \cdot P(X_2 \mid C) \cdot ... \cdot P(X_n \mid C)\]</span> - Where: - P(X1, X2, …, Xn | C): The joint probability of features X1, X2, …, Xn given class C. - P(Xi | C): The probability of feature Xi given class C. - The naive assumption is a simplification that allows Naive Bayes classifiers to work well in practice, even when the features are not truly independent.</p>
+<p>Types of Naive Bayes Classifiers:</p>
+<ul>
+<li><p><strong>Gaussian Naive Bayes</strong>: Assumes that the features follow a Gaussian <strong>(normal) distribution.</strong> It is suitable for <strong>continuous features.</strong></p></li>
+<li><p><strong>Multinomial Naive Bayes</strong>: Assumes that the features are counts or frequencies. It is suitable for <strong>discrete features, such as word counts in text classification.</strong></p></li>
+<li><p><strong>Bernoulli Naive Bayes</strong>: Assumes that the <strong>features are binary (0 or 1).</strong> It is suitable for binary features, such as <strong>presence or absence of words in text classification.</strong></p></li>
+</ul>
+<p>Implementing Naive Bayes</p>
+<ol type="1">
+<li>Load the dataset, clean and preprocess the text data.</li>
+<li>Split the dataset into training and testing sets.</li>
+<li>Extract features from the text data using techniques such as Bag of Words (BoW)</li>
+<li>Train the Naive Bayes classifier on the training set.</li>
+<li>Evaluate the classifier on the testing set using metrics such as accuracy, precision, recall, and F1-score.</li>
+</ol>
+<div id="a5a718fe" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> MultinomialNB</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_20newsgroups</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">&quot;english&quot;</span>))</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> PorterStemmer</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>stemmer <span class="op">=</span> PorterStemmer()</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> download</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> pos_tag</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> ne_chunk</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tree <span class="im">import</span> Tree</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>newsgroups <span class="op">=</span> fetch_20newsgroups(</span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>    subset<span class="op">=</span><span class="st">&quot;all&quot;</span>, categories<span class="op">=</span>[<span class="st">&quot;alt.atheism&quot;</span>, <span class="st">&quot;sci.space&quot;</span>], remove<span class="op">=</span>(<span class="st">&quot;headers&quot;</span>, <span class="st">&quot;footers&quot;</span>, <span class="st">&quot;quotes&quot;</span>)</span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&quot;text&quot;</span>: newsgroups.data, <span class="st">&quot;label&quot;</span>: newsgroups.target})</span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess the text data</span></span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocess_text(text):</span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tokenize the text</span></span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> word_tokenize(text)</span>
+<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove stop words</span></span>
+<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> tokens <span class="cf">if</span> word.lower() <span class="kw">not</span> <span class="kw">in</span> stop_words]</span>
+<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Stem the words</span></span>
+<span id="cb39-34"><a href="#cb39-34" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [stemmer.stem(word) <span class="cf">for</span> word <span class="kw">in</span> tokens]</span>
+<span id="cb39-35"><a href="#cb39-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot; &quot;</span>.join(tokens)</span>
+<span id="cb39-36"><a href="#cb39-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-37"><a href="#cb39-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-38"><a href="#cb39-38" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&quot;text&quot;</span>] <span class="op">=</span> df[<span class="st">&quot;text&quot;</span>].<span class="bu">apply</span>(preprocess_text)</span>
+<span id="cb39-39"><a href="#cb39-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-40"><a href="#cb39-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the dataset into training and testing sets</span></span>
+<span id="cb39-41"><a href="#cb39-41" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb39-42"><a href="#cb39-42" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&quot;text&quot;</span>], df[<span class="st">&quot;label&quot;</span>], test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span></span>
+<span id="cb39-43"><a href="#cb39-43" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-44"><a href="#cb39-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-45"><a href="#cb39-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pipeline with CountVectorizer and MultinomialNB</span></span>
+<span id="cb39-46"><a href="#cb39-46" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> make_pipeline(CountVectorizer(), MultinomialNB())</span>
+<span id="cb39-47"><a href="#cb39-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-48"><a href="#cb39-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the Naive Bayes classifier</span></span>
+<span id="cb39-49"><a href="#cb39-49" aria-hidden="true" tabindex="-1"></a>pipeline.fit(X_train, y_train)</span>
+<span id="cb39-50"><a href="#cb39-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-51"><a href="#cb39-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
+<span id="cb39-52"><a href="#cb39-52" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> pipeline.predict(X_test)</span>
+<span id="cb39-53"><a href="#cb39-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-54"><a href="#cb39-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the classifier</span></span>
+<span id="cb39-55"><a href="#cb39-55" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb39-56"><a href="#cb39-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb39-57"><a href="#cb39-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-58"><a href="#cb39-58" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Classification Report:&quot;</span>)</span>
+<span id="cb39-59"><a href="#cb39-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred, target_names<span class="op">=</span>newsgroups.target_names))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.9358
 Classification Report:
@@ -4785,13 +4781,13 @@ weighted avg       0.94      0.94      0.94       358
 <li>FN: False Negatives</li>
 </ul></li>
 </ul></li>
-<li><strong>Precision</strong>: The proportion of true positive predictions out of all positive predictions.
+<li><strong>Precision</strong>: The proportion of true positive predictions <strong>out of all positive</strong> predictions.
 <ul>
 <li>Formula: <span class="math inline">\(Precision = \frac{TP}{TP + FP}\)</span></li>
 <li>Indicates how many of the predicted positive instances are actually positive.</li>
 <li>High precision means fewer false positives.</li>
 </ul></li>
-<li><strong>Recall</strong>: The proportion of true positive predictions out of all actual positive instances.
+<li><strong>Recall</strong>: The proportion of true positive predictions <strong>out of all actual positive</strong> instances.
 <ul>
 <li>Formula: <span class="math inline">\(Recall = \frac{TP}{TP + FN}\)</span></li>
 <li>Indicates how many of the actual positive instances were correctly predicted.</li>
@@ -4827,7 +4823,7 @@ weighted avg       0.94      0.94      0.94       358
 </ul></li>
 <li><strong>Class Weights</strong>: Assign higher weights to the minority class during model training. This can be done by using the <code>class_weight</code> parameter in scikit-learn classifiers.
 <ul>
-<li><strong>How it helps</strong>: By assigning higher weights to the minority class, the model is penalized more for misclassifying instances from that class, which encourages it to focus on learning from the minority class.</li>
+<li><strong>How it helps</strong>: By assigning higher weights to the minority class, the <strong>model is penalized more for misclassifying instances from that class</strong>, which encourages it to focus on learning from the minority class.</li>
 </ul></li>
 <li><strong>Ensemble Methods</strong>: Use ensemble methods such as Random Forest or Gradient Boosting, which can handle class imbalance better than individual classifiers.
 <ul>
@@ -4840,33 +4836,9 @@ weighted avg       0.94      0.94      0.94       358
 <h1>Lecture 5</h1>
 <section id="logistic-regression" class="level2">
 <h2 class="anchored" data-anchor-id="logistic-regression">Logistic Regression</h2>
-<ul>
-<li>Logistic regression is a statistical method used for binary classification problems. It models the relationship between a binary dependent variable and one or more independent variables by estimating the probability of the dependent variable being in a particular class.</li>
-<li>It is a type of regression analysis that uses the logistic function to model the probability of a binary outcome.</li>
-<li>Logistic regression is widely used in various fields, including social sciences, healthcare, marketing, and finance, for tasks such as predicting customer churn, disease diagnosis, and credit risk assessment.</li>
-<li>Logistic regression is a linear model that uses the logistic function to map the linear combination of input features to a probability value between 0 and 1.</li>
-<li>The logistic function is defined as:
-<ul>
-<li><span class="math display">\[f(x) = \frac{1}{1 + e^{-x}}\]</span></li>
-<li>Where:
-<ul>
-<li>x: The linear combination of input features and their corresponding weights.</li>
-<li>e: The base of the natural logarithm (approximately 2.71828).</li>
-<li>f(x): The output probability value between 0 and 1.</li>
-<li>This is known as the sigmoid function.</li>
-</ul></li>
-</ul></li>
-<li>The logistic regression model can be represented as:</li>
-<li><span class="math display">\[P(Y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_nX_n)}}\]</span></li>
-<li>Where:
-<ul>
-<li>P(Y=1|X): The probability of the dependent variable Y being equal to 1 given the input features X.</li>
-<li>β0: The intercept term (bias).</li>
-<li>β1, β2, …, βn: The coefficients (weights) for each input feature X1, X2, …, Xn.</li>
-</ul></li>
-<li>The coefficients are learned during the training process using maximum likelihood estimation (MLE), which finds the values of the coefficients that maximize the likelihood of the observed data given the model.</li>
-<li>The bias teram helps the model to fit the data better by allowing it to shift the decision boundary. A bias &lt;0 means the model is more likely to predict class 0, while a bias &gt;0 means the model is more likely to predict class 1.</li>
-</ul>
+<p>Logistic regression is a statistical method used for <strong>binary classification problems.</strong></p>
+<p>It models the relationship between a binary dependent variable and one or more independent variables by estimating the probability of the dependent variable being in a particular class.</p>
+<p>It is a type of regression analysis that uses the logistic function to model the probability of a binary outcome. - Logistic regression is widely used in various fields, including social sciences, healthcare, marketing, and finance, for tasks such as predicting customer churn, disease diagnosis, and credit risk assessment. - Logistic regression is a linear model that uses the logistic function to <strong>map the linear combination of input features to a probability value between 0 and 1.</strong> - The logistic function is defined as: - <span class="math display">\[f(x) = \frac{1}{1 + e^{-x}}\]</span> - Where: - x: The linear combination of input features and their corresponding weights. - e: The base of the natural logarithm (approximately 2.71828). - f(x): The output probability value between 0 and 1. - This is known as the sigmoid function. - The logistic regression model can be represented as: - <span class="math display">\[P(Y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_nX_n)}}\]</span> - Where: - P(Y=1|X): The probability of the dependent variable Y being equal to 1 given the input features X. - β0: The intercept term (bias). - β1, β2, …, βn: The coefficients (weights) for each input feature X1, X2, …, Xn. - The coefficients are learned during the training process using maximum likelihood estimation (MLE), which finds the values of the coefficients that maximize the likelihood of the observed data given the model. - The bias teram helps the model to fit the data better by allowing it to shift the decision boundary. A bias &lt;0 means the model is more likely to predict class 0, while a bias &gt;0 means the model is more likely to predict class 1.</p>
 <p><strong>Log-Odds</strong>:</p>
 <ul>
 <li>The log-odds (or logit) is the logarithm of the odds ratio, which is the ratio of the probability of an event occurring to the probability of it not occurring.</li>
@@ -4880,22 +4852,7 @@ weighted avg       0.94      0.94      0.94       358
 </ul>
 <section id="training-logistic-regression" class="level3">
 <h3 class="anchored" data-anchor-id="training-logistic-regression">Training Logistic Regression</h3>
-<ul>
-<li><strong>Maximum Likelihood Estimation (MLE)</strong> is used to estimate the coefficients of the logistic regression model.
-<ul>
-<li>The MLE finds the values of the coefficients that maximize the likelihood of the observed data given the model.</li>
-</ul></li>
-<li><strong>L2 regularization (Ridge)</strong> is often used to prevent overfitting by adding a penalty term to the loss function.
-<ul>
-<li>The regularization term helps to constrain the coefficients, reducing their variance and improving the model’s generalization to unseen data.</li>
-<li>The choice of regularization strength is crucial, as too much regularization can lead to underfitting, while too little can result in overfitting.</li>
-<li>Cross-validation is commonly used to select the optimal regularization parameter.</li>
-<li>It is important to evaluate the model’s performance on a validation set to ensure that it generalizes well to new data.</li>
-</ul></li>
-<li><strong>L1 regularization (Lasso)</strong> can also be used to perform feature selection by driving some coefficients to zero, effectively removing those features from the model.</li>
-<li><strong>Elastic Net</strong> is a combination of L1 and L2 regularization, allowing for both feature selection and coefficient shrinkage.</li>
-<li><strong>Bayesian logistic regression</strong> is another approach that incorporates prior distributions on the coefficients, allowing for uncertainty quantification and regularization.</li>
-</ul>
+<p><strong>Maximum Likelihood Estimation (MLE)</strong> is used to estimate the coefficients of the logistic regression model. - The MLE finds the values of the coefficients that maximize the likelihood of the observed data given the model. - <strong>L2 regularization (Ridge)</strong> is often used to prevent overfitting by adding a penalty term to the loss function. - The regularization term helps to constrain the coefficients, reducing their variance and improving the model’s generalization to unseen data. - The choice of regularization strength is crucial, as too much regularization can lead to underfitting, while too little can result in overfitting. - Cross-validation is commonly used to select the optimal regularization parameter. - It is important to evaluate the model’s performance on a validation set to ensure that it generalizes well to new data. - <strong>L1 regularization (Lasso)</strong> can also be used to perform feature selection by <strong>driving some coefficients to zero</strong>, effectively removing those features from the model. - <strong>Elastic Net</strong> is a combination of L1 and L2 regularization, allowing for both feature selection and coefficient shrinkage. - <strong>Bayesian logistic regression</strong> is another approach that incorporates prior distributions on the coefficients, allowing for uncertainty quantification and regularization.</p>
 <p>Scikit-Learn’s LogisticRegression</p>
 <ul>
 <li>the most commonly used solver is L2-regularized MLE with the <code>liblinear</code> solver.</li>
@@ -4910,34 +4867,8 @@ weighted avg       0.94      0.94      0.94       358
 </section>
 <section id="bag-of-words-vs.-tf-idf" class="level3">
 <h3 class="anchored" data-anchor-id="bag-of-words-vs.-tf-idf">Bag of Words vs. TF-IDF</h3>
-<ul>
-<li><strong>Bag of Words (BoW)</strong>: A simple representation of text data where each document is represented as a vector of word counts. It ignores the order of words and focuses on the frequency of each word in the document.
-<ul>
-<li>Pros: Simple to implement, easy to interpret, works well for many applications.</li>
-<li>Cons: Ignores word order, can lead to high-dimensional sparse vectors, may not capture semantic meaning.</li>
-</ul></li>
-<li><strong>Term Frequency-Inverse Document Frequency (TF-IDF)</strong>: A more sophisticated representation of text data that considers both the frequency of words in a document and their importance across the entire corpus. It assigns higher weights to words that are frequent in a document but rare in the corpus.</li>
-<li>TF-IDF is calculated as:</li>
-<li><span class="math display">\[\text{TF-IDF}(w, d) = \text{TF}(w, d) \cdot \text{IDF}(w)\]</span>
-<ul>
-<li>TF(w, d): The term frequency of word w in document d.</li>
-<li>IDF(w): The inverse document frequency of word w, calculated as:
-<ul>
-<li><span class="math display">\[\text{IDF}(w) = \log\left(\frac{N}{DF(w)}\right)\]</span></li>
-<li>Where:
-<ul>
-<li>N: The total number of documents in the corpus.</li>
-<li>DF(w): The number of documents containing word w.</li>
-<li>In this context documents is the number of tokens in the corpus.</li>
-</ul></li>
-</ul></li>
-<li>TF-IDF captures the importance of words in a document relative to the entire corpus, making it more effective for tasks such as text classification and information retrieval.</li>
-<li><strong>Pros</strong>: Captures word importance, reduces the impact of common words, better for semantic understanding.</li>
-<li><strong>Cons</strong>: More complex to implement, may still lead to high-dimensional sparse vectors.</li>
-</ul></li>
-<li><strong>Example</strong>: In a corpus of 100 documents, the word “the” appears in 90 documents, while the word “NLP” appears in 10 documents. The TF-IDF score for “the” will be lower than that for “NLP” because “the” is common across many documents, while “NLP” is more specific to certain documents.</li>
-</ul>
-<p>Make table of columns: Feature | BoW | TF-IDF</p>
+<p><strong>Bag of Words (BoW)</strong>: A simple representation of text data where each document is represented as a vector of word counts. It <strong>ignores the order of words</strong> and focuses on the <strong>frequency of each word in the document.</strong> - Pros: Simple to implement, easy to interpret, works well for many applications. - Cons: Ignores word order, can lead to high-dimensional sparse vectors, may not capture semantic meaning. - <strong>Term Frequency-Inverse Document Frequency (TF-IDF)</strong>: A more sophisticated representation of text data that <strong>considers both the frequency of words in a document and their importance across the entire corpus.</strong> It assigns <strong>higher weights to words that are frequent in a document but rare in the corpus.</strong> - TF-IDF is calculated as: - <span class="math display">\[\text{TF-IDF}(w, d) = \text{TF}(w, d) \cdot \text{IDF}(w)\]</span> - TF(w, d): The term frequency of word w in document d. - IDF(w): The inverse document frequency of word w, calculated as: - <span class="math display">\[\text{IDF}(w) = \log\left(\frac{N}{DF(w)}\right)\]</span> - Where: - N: The total number of documents in the corpus. - DF(w): The number of documents containing word w. - In this context documents is the number of tokens in the corpus. - TF-IDF captures the importance of words in a document relative to the entire corpus, making it more effective for tasks such as text classification and information retrieval. - <strong>Pros</strong>: Captures word importance, reduces the impact of common words, better for semantic understanding. - <strong>Cons</strong>: More complex to implement, may still lead to high-dimensional sparse vectors. - <strong>Example</strong>: In a corpus of 100 documents, the word “the” appears in 90 documents, while the word “NLP” appears in 10 documents. The TF-IDF score for “the” will be lower than that for “NLP” because “the” is common across many documents, while “NLP” is more specific to certain documents.</p>
+<p>BoW vs TF-IDF Comparison Table:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -4960,7 +4891,7 @@ weighted avg       0.94      0.94      0.94       358
 <tr class="even">
 <td>Dimensionality</td>
 <td>High-dimensional sparse vectors</td>
-<td>High-dimensional sparse vectors, but weights may reduce freature noise</td>
+<td>High-dimensional sparse vectors, but weights may reduce feature noise</td>
 </tr>
 <tr class="odd">
 <td>Complexity</td>
@@ -4998,20 +4929,20 @@ weighted avg       0.94      0.94      0.94       358
 <section id="lr-model-assumptions" class="level3">
 <h3 class="anchored" data-anchor-id="lr-model-assumptions">LR Model Assumptions</h3>
 <ul>
-<li><strong>Linearity</strong>: The relationship between the independent variables and the log-odds of the dependent variable is linear. This means that a one-unit change in an independent variable will result in a constant change in the log-odds of the dependent variable.</li>
-<li><strong>Independence</strong>: The observations are independent of each other. This means that the outcome of one observation does not influence the outcome of another observation.</li>
-<li><strong>No Multicollinearity</strong>: The independent variables are not highly correlated with each other. This means that the model should not include highly correlated features, as this can lead to unstable coefficient estimates and difficulty in interpreting the results.</li>
-<li><strong>No Outliers</strong>: The model assumes that there are no extreme outliers in the data that could disproportionately influence the results. Outliers can affect the estimates of the coefficients and the overall fit of the model.</li>
+<li><p><strong>Linearity</strong>: The relationship between the independent variables and the log-odds of the dependent variable is linear. This means that a one-unit change in an independent variable will result in a constant change in the log-odds of the dependent variable.</p></li>
+<li><p><strong>Independence</strong>: The observations are independent of each other. This means that the outcome of one observation does not influence the outcome of another observation.</p></li>
+<li><p><strong>No Multicollinearity</strong>: The independent variables are not highly correlated with each other. This means that the model should not include highly correlated features, as this can lead to unstable coefficient estimates and difficulty in interpreting the results.</p></li>
+<li><p><strong>No Outliers</strong>: The model assumes that there are no extreme outliers in the data that could disproportionately influence the results. Outliers can affect the estimates of the coefficients and the overall fit of the model.</p></li>
 </ul>
 </section>
 <section id="lr-limitations" class="level3">
 <h3 class="anchored" data-anchor-id="lr-limitations">LR Limitations</h3>
 <ul>
-<li><strong>Linearity Assumption</strong>: Logistic regression assumes a linear relationship between the independent variables and the log-odds of the dependent variable. This may not hold true for all datasets, leading to poor performance.</li>
-<li><strong>Feature Independence</strong>: Logistic regression assumes that the independent variables are independent of each other. In practice, this assumption may not hold, leading to multicollinearity issues.</li>
-<li><strong>Sensitivity to Outliers</strong>: Logistic regression can be sensitive to outliers, which can disproportionately influence the model’s coefficients and predictions.</li>
-<li><strong>Inability to Capture Complex Relationships</strong>: Logistic regression is a linear model and may not capture complex relationships between features and the target variable. Non-linear relationships may require more advanced models, such as decision trees or neural networks.</li>
-<li>-<strong>Requires Large Sample Size</strong>: Logistic regression requires a sufficient amount of data to produce reliable estimates. Small sample sizes may lead to overfitting and unreliable predictions. Sample size should be at least 10 times the number of features. eg if you have 5 features, you should have at least 50 samples.</li>
+<li><p><strong>Linearity Assumption</strong>: Logistic regression assumes a linear relationship between the independent variables and the log-odds of the dependent variable. This may not hold true for all datasets, leading to poor performance.</p></li>
+<li><p><strong>Feature Independence</strong>: Logistic regression assumes that the independent variables are independent of each other. In practice, this assumption may not hold, leading to multicollinearity issues.</p></li>
+<li><p><strong>Sensitivity to Outliers</strong>: Logistic regression can be sensitive to outliers, which can disproportionately influence the model’s coefficients and predictions.</p></li>
+<li><p><strong>Inability to Capture Complex Relationships</strong>: Logistic regression is a linear model and may not capture complex relationships between features and the target variable. Non-linear relationships may require more advanced models, such as decision trees or neural networks.</p></li>
+<li><p>-<strong>Requires Large Sample Size</strong>: Logistic regression requires a sufficient amount of data to produce reliable estimates. Small sample sizes may lead to overfitting and unreliable predictions. <strong>Sample size should be at least 10 times the number of features</strong>. eg if you have 5 features, you should have at least 50 samples.</p></li>
 </ul>
 </section>
 </section>
@@ -5020,25 +4951,19 @@ weighted avg       0.94      0.94      0.94       358
 <h1>Lecture 6</h1>
 <section id="sentiment-analysis-sa" class="level2">
 <h2 class="anchored" data-anchor-id="sentiment-analysis-sa">Sentiment Analysis (SA)</h2>
-<ul>
-<li>Sentiment analysis is the process of determining the sentiment or opinion expressed in a piece of text, such as positive, negative, or neutral.</li>
-<li>A lexicon
-<ul>
-<li>A lexicon is a collection of words and phrases that are associated with specific sentiments, which can be used to analyze the sentiment of a given text.</li>
-<li>A sentiment lexicon can include words like “happy,” “sad,” “angry,” and “excited,” each associated with a specific sentiment score.</li>
-</ul></li>
-</ul>
+<p>Sentiment analysis is the process of determining the sentiment or opinion expressed in a piece of text, such as positive, negative, or neutral. - A <strong>lexicon</strong> is a <strong>collection of words and phrases that are associated with specific sentiments</strong>, which can be used to analyze the sentiment of a given text. - A sentiment lexicon can include words like “happy,” “sad,” “angry,” and “excited,” each associated with a specific sentiment score.</p>
 <p>Ekman’s Six Basic Emotions are: - Happiness - Sadness - Anger - Fear - Surprise - Disgust</p>
 </section>
 <section id="resources-for-sentiment-lexicons" class="level2">
 <h2 class="anchored" data-anchor-id="resources-for-sentiment-lexicons">Resources for Sentiment Lexicons</h2>
 <ul>
-<li><strong>VADER (Valence Aware Dictionary and sEntiment Reasoner)</strong>: A lexicon specifically designed for sentiment analysis in social media. It provides sentiment scores for words and phrases, along with rules for handling negations and intensifiers.
+<li><strong>VADER (Valence Aware Dictionary and sEntiment Reasoner)</strong>: A lexicon specifically designed for sentiment analysis in <strong>social media.</strong> It provides sentiment scores for words and phrases, along with rules for handling negations and intensifiers.
 <ul>
 <li>VADER is particularly effective for analyzing short texts, such as tweets and product reviews, and is widely used in natural language processing tasks.</li>
 <li>VADER uses a combination of lexical features, syntactic rules, and sentiment intensity scores to determine the sentiment of a given text.</li>
-<li>It is available in the NLTK library and can be easily integrated into Python applications.</li>
-<li>Uses valence score (-1 to 1) to represent the sentiment of a word or phrase.</li>
+<li>VADER <strong>does not require data preprocessing</strong>, such as stemming or lemmatization, making it easy to use.</li>
+<li>It is <strong>available in the NLTK library</strong> and can be easily integrated into Python applications.</li>
+<li>Uses valence score <strong>(-1 to 1)</strong> to represent the sentiment of a word or phrase.</li>
 </ul></li>
 <li><strong>AFINN (Affective Norms for English Words)</strong>: A lexicon that provides affective ratings for English words, including valence, arousal, and dominance scores.
 <ul>
@@ -5057,29 +4982,12 @@ weighted avg       0.94      0.94      0.94       358
 </section>
 <section id="how-to-do-sentiment-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-do-sentiment-analysis">How to do Sentiment Analysis?</h2>
+<p>Two main approaches to sentiment analysis:</p>
+<p><strong>Rule-based</strong>: Uses predefined rules and lexicons to determine sentiment. It relies on linguistic patterns, such as negations, intensifiers, and sentiment-bearing words. - Example: “I love this product!” would be classified as positive based on the presence of the word “love.” - <strong>Pros</strong>: Simple to implement, interpretable results. - <strong>Cons</strong>: Limited flexibility, may not capture complex sentiments or sarcasm. - Scoring in Lexicon-based sentiment analysis: - Prepare a sentiment lexicon with words and their corresponding sentiment scores. Scoring can be binary, where words are classified as positive, negative, or neutral. or categorical, where words are classified into multiple categories (e.g., happy, sad, angry). or scale based, where words are assigned a score on a scale (e.g., -1 to 1). - Text preprocessing:<strong>Clean and preprocess the text data</strong> by removing stop words, punctuation, and special characters. Tokenize the text into words or phrases. - <strong>Match and Score:</strong> For each word in the text, check if it exists in the sentiment lexicon. If it does, retrieve its sentiment score and add it to the overall sentiment score for the text. - Calculate the overall sentiment score by summing the individual word scores. The final sentiment score can be positive, negative, or neutral based on a predefined threshold. - <strong>Example:</strong> If the sentiment score is greater than 0, classify the text as positive; if less than 0, classify it as negative; and if equal to 0, classify it as neutral.</p>
+<p><strong>Machine learning-based</strong>: Uses supervised learning algorithms to train a model on labeled data. It learns to classify text based on features extracted from the text, such as word frequencies or TF-IDF scores. - Uses supervised learning algorithms, such as Naive Bayes, Logistic Regression, Support Vector Machines (SVMs), Neural Networks, to classify text into sentiment categories. - Example: A model trained on positive and negative movie reviews can classify new reviews as positive or negative based on learned patterns.</p>
 <ul>
-<li>Two main approaches to sentiment analysis:</li>
-<li><strong>Rule-based</strong>: Uses predefined rules and lexicons to determine sentiment. It relies on linguistic patterns, such as negations, intensifiers, and sentiment-bearing words.
-<ul>
-<li>Example: “I love this product!” would be classified as positive based on the presence of the word “love.”</li>
-<li>Pros: Simple to implement, interpretable results.</li>
-<li>Cons: Limited flexibility, may not capture complex sentiments or sarcasm.</li>
-</ul></li>
-<li>Scoring in Lexicon-based sentiment analysis:
-<ul>
-<li>Prepare a sentiment lexicon with words and their corresponding sentiment scores. Scoring can be binary, where words are classified as positive, negative, or neutral. or categorical, where words are classified into multiple categories (e.g., happy, sad, angry). or scale based, where words are assigned a score on a scale (e.g., -1 to 1).</li>
-<li>Text preprocessing: Clean and preprocess the text data by removing stop words, punctuation, and special characters. Tokenize the text into words or phrases.</li>
-<li>Match and Score: For each word in the text, check if it exists in the sentiment lexicon. If it does, retrieve its sentiment score and add it to the overall sentiment score for the text.</li>
-<li>Calculate the overall sentiment score by summing the individual word scores. The final sentiment score can be positive, negative, or neutral based on a predefined threshold.</li>
-<li>Example: If the sentiment score is greater than 0, classify the text as positive; if less than 0, classify it as negative; and if equal to 0, classify it as neutral.</li>
-</ul></li>
-<li><strong>Machine learning-based</strong>: Uses supervised learning algorithms to train a model on labeled data. It learns to classify text based on features extracted from the text, such as word frequencies or TF-IDF scores.</li>
-<li>Uses supervised learning algorithms, such as Naive Bayes, Logistic Regression, Support Vector Machines (SVMs), Neural Networks, to classify text into sentiment categories.
-<ul>
-<li>Example: A model trained on positive and negative movie reviews can classify new reviews as positive or negative based on learned patterns.</li>
-<li>Uses deep learning models, such as Recurrent Neural Networks (RNNs) or Transformers, to capture complex relationships in the text data.</li>
-</ul></li>
-<li>Example: A model trained on positive and negative movie reviews can classify new reviews as positive or negative based on learned patterns.
+<li><p>Uses deep learning models, such as <strong>Recurrent Neural Networks (RNNs) or Transformers</strong>, to capture complex relationships in the text data.</p></li>
+<li><p>Example: A model trained on positive and negative movie reviews can classify new reviews as positive or negative based on learned patterns.</p>
 <ul>
 <li>Pros: More flexible, can capture complex sentiments and context.</li>
 <li>Cons: Requires labeled data, may be less interpretable.</li>
@@ -5100,7 +5008,7 @@ weighted avg       0.94      0.94      0.94       358
 </thead>
 <tbody>
 <tr class="odd">
-<td>Approach</td>
+<td>Methodology</td>
 <td>Uses predefined rules and lexicons</td>
 <td>Uses supervised learning algorithms</td>
 </tr>
@@ -5141,34 +5049,468 @@ weighted avg       0.94      0.94      0.94       358
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>Hybrid Approach</strong>: Combines rule-based and machine learning-based methods to leverage the strengths of both approaches. It uses predefined rules for initial sentiment classification and then refines the results using machine learning models.
-<ul>
-<li>Example: A hybrid model may use VADER for initial sentiment scoring and then apply a machine learning model to improve accuracy.</li>
-</ul></li>
-</ul>
+<p><strong>Hybrid Approach</strong>: Combines rule-based and machine learning-based methods to leverage the strengths of both approaches. It uses predefined rules for initial sentiment classification and then refines the results using machine learning models. - Example: A hybrid model may <strong>use VADER for initial sentiment scoring</strong> and then <strong>apply a machine learning model to improve accuracy.</strong></p>
 </section>
 <section id="python-libraries-and-tools-for-sa" class="level2">
 <h2 class="anchored" data-anchor-id="python-libraries-and-tools-for-sa">Python Libraries and Tools for SA</h2>
-<ul>
-<li><strong>NLTK (Natural Language Toolkit)</strong>: A popular library for natural language processing in Python. It provides tools for text preprocessing, tokenization, stemming, and sentiment analysis using <strong>VADER</strong> and <strong>WordNet</strong>.</li>
-<li><strong>TextBlob</strong>: A simple library for processing textual data. It provides a user-friendly API for common natural language processing tasks, including sentiment analysis, part-of-speech tagging, and noun phrase extraction.</li>
-<li><strong>TensorFlow</strong>: An open-source machine learning library developed by Google. It provides tools for building and training deep learning models, including recurrent neural networks (RNNs) and transformers for sentiment analysis. Suited for large-scale applications and production environments.</li>
-<li><strong>PyTorch</strong>: An open-source machine learning library developed by Facebook. It is widely used for deep learning applications and provides a flexible platform for building and training neural networks.</li>
-<li><strong>Hugging Face Transformers</strong>: A library that provides pre-trained models for natural language processing tasks, including sentiment analysis, text generation, and translation. It supports various architectures like BERT, GPT-2, and T5, making it easy to implement state-of-the-art models.</li>
-</ul>
+<p><strong>NLTK (Natural Language Toolkit)</strong>: A popular library for natural language processing in Python. It provides tools for text preprocessing, tokenization, stemming, and sentiment analysis using <strong>VADER</strong> and <strong>WordNet</strong>.</p>
+<p><strong>TextBlob</strong>: A simple library for processing textual data. It provides a user-friendly API for common natural language processing tasks, including sentiment analysis, part-of-speech tagging, and noun phrase extraction.</p>
+<p><strong>TensorFlow</strong>: An open-source machine learning library developed by Google. It provides tools for building and training deep learning models, including recurrent neural networks (RNNs) and transformers for sentiment analysis. Suited for large-scale applications and production environments.</p>
+<p><strong>PyTorch</strong>: An open-source machine learning library developed by Facebook. It is widely used for deep learning applications and provides a flexible platform for building and training neural networks.</p>
+<p><strong>Hugging Face Transformers</strong>: A library that provides pre-trained models for natural language processing tasks, including sentiment analysis, text generation, and translation. It supports various architectures like BERT, GPT-2, and T5, making it easy to implement state-of-the-art models.</p>
 </section>
 <section id="sa-challenges" class="level2">
 <h2 class="anchored" data-anchor-id="sa-challenges">SA Challenges</h2>
+<p>The biggest challenge in lexicon-based sentiment analysis is the <strong>inability to capture context and sarcasm.</strong> Lexicon-based methods rely on predefined sentiment lexicons, which may not account for the nuances of language, such as: - <strong>Contextual Meaning</strong>: Words can have different meanings depending on the context in which they are used. For example, the word “sick” can be positive (e.g., “That movie was sick!”) or negative (e.g., “I feel sick”). Lexicon-based methods may misinterpret such words without considering context.</p>
 <ul>
-<li>Biggest challenges in lexicon-based sentiment analysis?</li>
-<li>The biggest challenge in lexicon-based sentiment analysis is the inability to capture context and sarcasm. Lexicon-based methods rely on predefined sentiment lexicons, which may not account for the nuances of language, such as:</li>
-<li><strong>Contextual Meaning</strong>: Words can have different meanings depending on the context in which they are used. For example, the word “sick” can be positive (e.g., “That movie was sick!”) or negative (e.g., “I feel sick”). Lexicon-based methods may misinterpret such words without considering context.</li>
-<li><strong>Sarcasm and Irony</strong>: Lexicon-based methods may struggle to identify sarcasm or irony, where the intended sentiment is opposite to the literal meaning of the words. For example, “Great job!” can be sarcastic in a negative context.</li>
-<li><strong>Ambiguity</strong>: Some words may have multiple meanings or sentiments, leading to ambiguity in sentiment classification. For example, the word “bark” can refer to the sound a dog makes or the outer covering of a tree.</li>
-<li><strong>Cultural and Domain-Specific Language</strong>: Different cultures and domains may use language differently, leading to variations in sentiment expression. Lexicon-based methods may not generalize well across different contexts.</li>
-<li><strong>Negation Handling</strong>: Lexicon-based methods may struggle to handle negations effectively. For example, “not good” should be classified as negative, but a simple lexicon lookup may misinterpret it as positive.</li>
+<li><p><strong>Sarcasm and Irony</strong>: Lexicon-based methods may struggle to identify sarcasm or irony, where the intended sentiment is opposite to the literal meaning of the words. For example, “Great job!” can be sarcastic in a negative context.</p></li>
+<li><p><strong>Ambiguity</strong>: Some words may have multiple meanings or sentiments, leading to ambiguity in sentiment classification. For example, the word “bark” can refer to the sound a dog makes or the outer covering of a tree.</p></li>
+<li><p><strong>Cultural and Domain-Specific Language</strong>: Different cultures and domains may use language differently, leading to variations in sentiment expression. Lexicon-based methods may not generalize well across different contexts.</p></li>
+<li><p><strong>Negation Handling</strong>: Lexicon-based methods may struggle to handle negations effectively. For example, “not good” should be classified as negative, but a simple lexicon lookup may misinterpret it as positive.</p></li>
 </ul>
+</section>
+</section>
+<section id="lecture-7" class="level1">
+<h1>Lecture 7</h1>
+<section id="topic-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="topic-modeling">Topic Modeling</h2>
+<p>Topic modeling is a <strong>unsupervised</strong> NLP technique used to <strong>discover the underlying topics</strong> in a collection of documents.</p>
+<p>It helps to identify the main themes or topics present in a large corpus of text data without any prior knowledge of the content.</p>
+<p>Goal: Identify clusters of words (topics) that frequently occur together and assign them to documents.</p>
+<p>Uses:</p>
+<ul>
+<li><strong>Document Clustering</strong>: Grouping similar documents based on their content.</li>
+<li><strong>Information Retrieval</strong>: Improving search results by identifying relevant documents based on topics.</li>
+<li><strong>Content Recommendation</strong>: Suggesting related articles or documents based on identified topics.</li>
+<li><strong>Trend Analysis</strong>: Analyzing the evolution of topics over time in a corpus of documents.</li>
+</ul>
+<p>Commonly used algorithms for topic modeling:</p>
+<section id="latent-dirichlet-allocation-lda" class="level3">
+<h3 class="anchored" data-anchor-id="latent-dirichlet-allocation-lda">Latent Dirichlet Allocation (LDA)</h3>
+<p>LDA is a <strong>generative probabilistic model</strong> that assumes: - each document is a mixture of topics - each topic is a mixture of words. (distribution over words, specifically a Dirichlet distribution)</p>
+<p><strong>Latent:</strong> The topics are not directly observed but inferred from the data. (hidden)</p>
+<p><strong>Dirichlet:</strong> A type of probability distribution used to model the distribution of topics in documents and words in topics.</p>
+<p><strong>Allocation:</strong> The process of assigning topics to documents and words to topics.</p>
+<p>Generative Process:</p>
+<ol type="1">
+<li>For each document:
+<ul>
+<li>Choose a distribution over topics (Dirichlet distribution).</li>
+</ul></li>
+<li>For each word in the document:
+<ul>
+<li>Choose a topic from the distribution.</li>
+<li>Choose a word from the chosen topic’s word distribution.</li>
+</ul></li>
+</ol>
+<ul>
+<li>It treats documents as <strong>bag of words</strong></li>
+<li>Assumes that the order of words does not matter (and <strong>ignores semantic context</strong>)</li>
+<li><strong>Relies on nice cleaning</strong> (stop words, stemming, lemmatization)</li>
+<li>Requires that you have an idea about number of topics in advance</li>
+<li>does NOT work well on small documents</li>
+<li>It <strong>maps each document</strong> in a corpus to a set of topics by assigning topics to arrangements of words.</li>
+</ul>
+<p>LDA trades off two goals:</p>
+<ol type="1">
+<li>For each document, it allocates it words to as few topics as possible.</li>
+<li>For each topic, assigns high probability to as few words as possible.</li>
+</ol>
+<p>Trading off these goals finds grounds of tightly co-occurring words that are likely to be related to a topic.</p>
+<section id="hyperparameters-in-lda" class="level4">
+<h4 class="anchored" data-anchor-id="hyperparameters-in-lda">Hyperparameters in LDA:</h4>
+<ul>
+<li><strong>Number of Topics (K)</strong>: The number of topics to be discovered in the corpus. It is a crucial parameter that determines the granularity of the topics.
+<ul>
+<li>In python LDA, it is specified as <code>num_topics</code>.</li>
+</ul></li>
+<li><strong>Alpha (α)</strong>: A hyperparameter that controls the distribution of topics in documents. It determines the sparsity of the topic distribution for each document.
+<ul>
+<li>A higher value of alpha = more topics are assigned to each document.</li>
+<li>In python LDA, it is specified as <code>alpha</code>.</li>
+</ul></li>
+<li><strong>Beta (β)</strong>: A hyperparameter that controls the distribution of words in topics. It determines the sparsity of the word distribution for each topic.
+<ul>
+<li>A higher value of beta = more words are assigned to each topic.</li>
+<li>In python LDA, it is specified as <code>beta</code>.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="gibbs-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="gibbs-sampling">Gibbs Sampling</h2>
+<p>Problem with LDA: Posterior distribution is for exact inference, so we cannot directly compute the probabilities of topics given documents and words. - Put simply: We can’t directly calculate LDA’s “after-seeing-data” probabilities for topics, so we use approximation methods instead.</p>
+<p>Gibbs sampling is a Markov Chain Monte Carlo (MCMC) method used to <strong>approximate the posterior distribution of latent variables in LDA.</strong></p>
+<p>How it Works:</p>
+<ol type="1">
+<li>Initialize the topic assignments for each word in the documents randomly.</li>
+<li><strong>Iteratively sample each word’s topic assignment</strong> based on the current topic assignments of other words in the same document and the overall topic distribution.</li>
+<li>Update the topic assignments until convergence or a specified number of iterations is reached.</li>
+</ol>
+<p>Helps: Estimate the posterior distribution of topics more accurately without requiring exact inference and complex integral calculations.</p>
+</section>
+<section id="top2vec" class="level2">
+<h2 class="anchored" data-anchor-id="top2vec">Top2Vec</h2>
+<p>Goal: Learn topic representations using <strong>document and word embeddings.</strong></p>
+<p>Top2Vec is a more advanced and efficient method for topic modeling that leverages deep learning techniques to capture semantic relationships in the data.</p>
+<p>Does not require number of topics to be known in advance and <strong>does not require pre-processing</strong></p>
+<p>Steps:</p>
+<ol type="1">
+<li><p>Generate joint embeddings of documents and words using a pre-trained model (e.g., Doc2Vec, BERT). (this captures the semantic meaning)</p></li>
+<li><p>Use dimensionality reduction techniques (e.g., UMAP) to reduce the dimensionality of the embeddings.</p></li>
+<li><p>Apply clustering algorithms (e.g., HDBSCAN) to identify dense regions in the embedding space, which correspond to topics.</p></li>
+<li><p>For each cluster, extract the top words that are most representative of the topic based on their proximity to the cluster centroid.</p></li>
+</ol>
+<p>Top2Vec vs LDA – Comparison table</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>LDA</th>
+<th>Top2Vec</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Approach</td>
+<td>Probabilistic generative model (BoW)</td>
+<td>Embedding-based clustering (semantic)</td>
+</tr>
+<tr class="even">
+<td>Preprocessing</td>
+<td>Requires extensive (lemmatization, stop words etc.)</td>
+<td>Minimal pre-processing required</td>
+</tr>
+<tr class="odd">
+<td>Interpretability</td>
+<td>Human-tuned, sometimes less coherent</td>
+<td>More coherent semantic clusters</td>
+</tr>
+<tr class="even">
+<td>Scalability</td>
+<td>Can be slow on large datasets</td>
+<td>More scalable due to efficient pre-trained embeddings</td>
+</tr>
+<tr class="odd">
+<td>Number of Topics</td>
+<td>Requires specifying number of topics</td>
+<td>Automatically determines number of topics via clustering</td>
+</tr>
+</tbody>
+</table>
+<section id="top2vec-hyperparameters" class="level4">
+<h4 class="anchored" data-anchor-id="top2vec-hyperparameters">Top2Vec Hyperparameters:</h4>
+<ul>
+<li><strong>Embedding Model</strong>: The pre-trained model used to generate document and word embeddings (e.g., Doc2Vec, BERT).
+<ul>
+<li>Doc2Vec: Vector size = means each document is represented by a X-dimensional vector.</li>
+<li>Doc2Vec: Window size = means the number of words to consider on either side of the target word.</li>
+</ul></li>
+<li><strong>UMAP Parameters</strong>: Parameters for the UMAP dimensionality reduction algorithm, such as <code>n_neighbors</code> and <code>min_dist</code>, metric for distance calculation (e.g.’cosine’ is the default).</li>
+<li><strong>HDBSCAN Parameters</strong>: Parameters for the HDBSCAN clustering algorithm, such as <code>min_cluster_size</code> and <code>min_samples</code>, metric for distance calculation (e.g., ‘euclidean’ is the default).</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Requires a large amount of data to produce meaningful topics.</li>
+<li>May struggle with very short documents or documents with little content.</li>
+<li>The quality of the topics is highly dependent on the quality of the embeddings.</li>
+<li>Time-consuming for large datasets due to the embedding generation and clustering steps.</li>
+</ul>
+</section>
+<section id="bertopic" class="level4">
+<h4 class="anchored" data-anchor-id="bertopic">BERTopic</h4>
+<p>Similar to Top2Vec but does not calculate centroids (it considers all documents in a cluster as a single topic) and uses BERT embeddings for better semantic understanding.</p>
+<p>Extracts topics using class-based variation of TF-IDF (which is more effective in capturing the context of words within documents).</p>
+<p>As it is transformer-based, it can be costly due to the computational resources required for training and inference.</p>
+</section>
+</section>
+</section>
+<section id="lecture-8" class="level1">
+<h1>Lecture 8</h1>
+<section id="word-meanings" class="level2">
+<h2 class="anchored" data-anchor-id="word-meanings">Word Meanings</h2>
+<p>Two key ideas for defining meaning are by:</p>
+<ol type="1">
+<li>linguistic distribution</li>
+<li>As a point in a multidimensional space.</li>
+</ol>
+<p>This is exemplified by the Term-Document Matrix, where documents are represented as vectors of word counts, and similarity between documents can be observed by comparing these vectors.</p>
+<p>Similarly, words can also be represented as vectors based on their co-occurrence with other words in a “Word-Context Matrix.” (Two words are similar in meaning if their context vectors are similar.)</p>
+<p><strong>Comparing Word Vectors:</strong> The similarity between word vectors can be quantified using mathematical operations like:</p>
+<ul>
+<li>the dot product (inner product)</li>
+<li>vector length (magnitude)</li>
+<li>cosine similarity. (measures the angle between two vectors)</li>
+</ul>
+<p>NOTE: cosine is just a normalized dot product, which is more efficient to compute.</p>
+<section id="word2vec-embeddings" class="level3">
+<h3 class="anchored" data-anchor-id="word2vec-embeddings">Word2Vec Embeddings</h3>
+<p>Learns dense word vectors (embeddings) by predicting if a candidate word is a “neighbor” of a target word, rather than just counting co-occurrences. Uses self-supervised learning to train the model.</p>
+<p>It treats target words and neighboring context words as positive examples, and randomly sampled words as negative examples. Known as skip-gram word prediction method.</p>
+<p>Goal: is to <strong>maximize the similarity of positive word pairs</strong> and <strong>minimize the similarity of negative word pairs.</strong></p>
+<p>This is achieved by <strong>training a classifier using a sigmoid function</strong> to <strong>estimate the probability of a word occurring in a context window.</strong></p>
+<p>It turns out that <strong>dense vectors work better in every NLP</strong> task than sparse vectors.</p>
+<p>Word2Vec embeddings are powerful representations for various NLP tasks like translation and sentiment analysis.</p>
+<p>They can <strong>capture abstract relations</strong> (e.g., male-female, capital-city-of, comparative/superlative) through vector arithmetic, known as the <strong>parallelogram method (which can solve analogies</strong>, eg Man is to King as Woman is to Queen, with both sparse and dense embeddings)</p>
+<p>However, <strong>word2vec embeddings are “static,”</strong> meaning a word’s embedding doesn’t change with context.</p>
+<p>Word2Vec is widely used in various NLP tasks, including:</p>
+<ul>
+<li>Text classification</li>
+<li>Sentiment analysis</li>
+<li>Named entity recognition</li>
+<li>Machine translation</li>
+<li>Information retrieval</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="lecture-9" class="level1">
+<h1>Lecture 9</h1>
+<section id="neural-networks" class="level2">
+<h2 class="anchored" data-anchor-id="neural-networks">Neural Networks</h2>
+<p>Neural networks are a class of machine learning models inspired by the structure and function of the human brain. They consist of interconnected nodes (neurons) organized into layers, which process and learn from data.</p>
+<ul>
+<li><strong>Neurons</strong>: Basic units of a neural network that receive inputs, apply weights and biases, and produce an output.</li>
+<li><strong>Layers</strong>: Neural networks are organized into layers, including:
+<ul>
+<li><strong>Input Layer</strong>: Receives the input data.</li>
+<li><strong>Hidden Layers</strong>: Intermediate layers that process the data and learn complex patterns.</li>
+<li><strong>Output Layer</strong>: Produces the final output of the network.</li>
+</ul></li>
+<li><strong>Activation Functions</strong>: Functions applied to the output of neurons to introduce non-linearity and enable the network to learn complex relationships. Common activation functions include:
+<ul>
+<li><strong>Sigmoid</strong>: used in log reg, Maps input to a value between 0 and 1.</li>
+<li><strong>ReLU (Rectified Linear Unit)</strong>: Outputs the input directly if positive, else zero.</li>
+<li><strong>Tanh</strong>: Maps input to a value between -1 and 1.</li>
+</ul></li>
+<li><strong>Loss Function</strong>: A function that measures the difference between the predicted output and the actual output. The goal of training a neural network is to minimize this loss function. Common loss functions include:
+<ul>
+<li><strong>Mean Squared Error (MSE)</strong>: Used for regression tasks.</li>
+<li><strong>Cross-Entropy Loss</strong>: Used for classification tasks.</li>
+</ul></li>
+</ul>
+<p>Sentences can be highly ambiguous, and neural networks can learn to disambiguate them by capturing complex patterns in the data.</p>
+<p><strong>Lexical ambiguity:</strong> where a word or phrase has multiple meanings or interpretations eg financial bank vs river bank</p>
+<p><strong>Structural ambiguity:</strong> where the structure of a sentence allows for multiple interpretations - eg “I saw the man with the telescope” (Did I see the man who had the telescope, or did I use the telescope to see the man?)</p>
+<section id="xor-problem" class="level3">
+<h3 class="anchored" data-anchor-id="xor-problem">XOR Problem</h3>
+<p>Early neural units (perceptrons) could not solve the XOR problem because perceptrons are linear classifiers and XOR is not a linearly separable function.</p>
+<p>The solution to the XOR problem, and a fundamental concept in neural networks, is the <strong>use of layered networks (MLPs) with hidden layers.</strong> Hidden layers learn to form useful, abstract representations of the input data.</p>
+</section>
+</section>
+<section id="feedforward-nns-mlps" class="level2">
+<h2 class="anchored" data-anchor-id="feedforward-nns-mlps">Feedforward NNs (MLPs)</h2>
+<p>Also called MLPs, is a multilayer network in which the units are connected with no cycles; the outputs from units in each layer are passed to units in the next higher layer, and no outputs are passed back to lower layers.</p>
+<p><strong>Binary logistic regression</strong> can be seen as a <strong>single-layer neural network with a sigmoid output</strong></p>
+<p><strong>Multinomial</strong> logistic regression is a single-layer network with a <strong>softmax output for multiple classes.</strong></p>
+<p>Two-layer networks introduce a hidden layer with an activation function (like ReLU or tanh) before the output layer, multi layer has a series of hidden layers each with activation functions to handle non-linearlity.</p>
+<p>Applying Feedforward Networks to NLP Tasks:</p>
+<ol type="1">
+<li><p>Text Classification (eg <strong>Sentiment Analysis</strong>):</p>
+<ul>
+<li>Input: Text data (e.g., word embeddings or TF-IDF vectors).</li>
+<li>Output: Class labels (e.g., positive, negative).</li>
+<li>Process: Feed the input through the network, apply activation functions, and use a softmax output layer for classification.</li>
+</ul></li>
+</ol>
+<p>A key advantage is the ability to use learned representations (embeddings) instead of hand-engineered features, which improves performance.</p>
+<p>Challenges include handling <strong>variable text lengths</strong> as FFNNs expect fixed-size inputs, which can be addressed by:</p>
+<ul>
+<li>padding</li>
+<li>truncating (cutting off)</li>
+<li>creating single “sentence embeddings.” (create one fixed-size vector that represents the entire sentence.)</li>
+</ul>
+<ol start="2" type="1">
+<li><p>Language Modelling (<strong>Predicting the next word</strong>):</p>
+<ul>
+<li>Neural language models (LMs) aim to calculate the probability of the next word given its history.</li>
+<li>They <strong>outperform traditional N-gram models</strong>, even simple feedforward LMs, by using <strong>word embeddings to generalize based on word similarity.</strong></li>
+<li>For example, if trained on “cat gets fed,” a neural LM can predict “fed” for “dog gets ___” due to the similarity of “cat” and “dog” embeddings. This is often done with a fixed-length sliding window approach.</li>
+</ul></li>
+</ol>
+<p><strong>Training NNs</strong></p>
+<p>Training involves a forward pass (computing the output) and a backward pass (updating weights based on the difference between the estimated output and the true answer, known as the loss function), this is known as <strong>backpropagation.</strong></p>
+<p>It updates the weights in the direction that minimizes the loss function using optimization algorithms like <strong>Stochastic Gradient Descent (SGD)</strong> or its variants (e.g., Adam, RMSprop).</p>
+</section>
+</section>
+<section id="lecture-10" class="level1">
+<h1>Lecture 10</h1>
+<section id="transformers" class="level2">
+<h2 class="anchored" data-anchor-id="transformers">Transformers</h2>
+<p><strong>Problem with Static Embeddings:</strong> Traditional word embeddings (like word2vec) are static, meaning a word’s meaning doesn’t change based on its context.</p>
+<p>For example, the meaning of “it” in “The chicken didn’t cross the road because it was too tired” is ambiguous without knowing what “it” refers to.</p>
+<p><strong>Contextual embeddings</strong> provide a different vector for each word depending on its surrounding words, capturing its context-specific meaning.</p>
+<p><strong>Attention</strong> is a mechanism that helps compute contextual embeddings by selectively integrating information from all neighboring words. It essentially involves a weighted sum of vectors, where words “attend to” other relevant words more strongly. - Result: is that each word’s embedding is unique in different contexts.</p>
+<p><strong>Transformers:</strong> The Transformer architecture is central to modern large language models.</p>
+<p>It leverages self-attention mechanisms to process input sequences in parallel, making it highly efficient for training on large datasets. Transformers consist of an encoder-decoder structure, where the encoder processes the input and the decoder generates the output.</p>
+<ol type="1">
+<li><p><strong>Position Embeddings:</strong> To account for word order, Transformers use position embeddings, which are learned along with word embeddings. Each word’s input to the Transformer is the sum of its word embedding and its position embedding.</p></li>
+<li><p><strong>Language Model Head:</strong> The output of the Transformer goes through a “language modeling head,” which produces “logits” (score vectors) for each possible word in the vocabulary. These logits are then converted into probabilities using a softmax function.</p></li>
+</ol>
+</section>
+<section id="bert" class="level2">
+<h2 class="anchored" data-anchor-id="bert">BERT</h2>
+<p>BERT is an <strong>encoder-only Transformer</strong> designed to produce rich vector representations for each token in an input sequence. It is not a chatbot and is <strong>well-suited for classification tasks like sentiment analysis or spam detection.</strong></p>
+<ol type="1">
+<li><p><strong>Bidirectional Context:</strong> Unlike traditional language models that read text sequentially (left-to-right or right-to-left), BERT reads the entire sequence at once, <strong>allowing it to capture context from both directions.</strong></p></li>
+<li><p><strong>Fine-tuning:</strong> After pre-training on a large corpus, BERT can be fine-tuned on specific tasks (e.g., sentiment analysis, question answering) with minimal task-specific architecture modifications.</p></li>
+</ol>
+<p>BERT is trained using a “bidirectional cloze task” (filling in masked words in a sentence).</p>
+<p>For <strong>classification tasks, BERT adds a special [CLS] token</strong> at the beginning of the sequence, whose embedding represents the <strong>entire sequence (sentence embedding).</strong></p>
+<p>Note: decoder-only models, like GPT, have a different goal: produce new output sequence from input sequence</p>
+</section>
+<section id="llms" class="level2">
+<h2 class="anchored" data-anchor-id="llms">LLMs</h2>
+<p>LLMs are similar to simpler N-gram models in that they assign probabilities to word sequences and generate text by sampling next words.</p>
+<p>But instead of being trained on counts computed from lots of text (like n-gram models) they are <strong>trained by learning to guess</strong> the next word from enormous amounts of text, which allows them to acquire vast language knowledge.</p>
+<p>Many NLP tasks can be reframed as word prediction tasks for LLMs. This is especially true for <strong>decoder-only models</strong> (also called Causal, Autoregressive, or Left-to-right LLMs), which <strong>predict words from left to right.</strong></p>
+<p>Examples of tasks solvable through conditional generation include sentiment analysis, question answering, and summarization.</p>
+</section>
+<section id="decoding-and-sampling-for-llm-generation" class="level2">
+<h2 class="anchored" data-anchor-id="decoding-and-sampling-for-llm-generation">Decoding and Sampling for LLM Generation:</h2>
+<p>The process of choosing words to generate based on the model’s probabilities is called <strong>decoding</strong></p>
+<p>The most common method of decoding is <strong>Sampling</strong>, where the model randomly selects the next word based on its probability distribution. This can lead to more diverse and creative outputs compared to deterministic methods.</p>
+<p>Simple random sampling can lead to repetitive or odd sentences due to the “long tail” of low-probability words.</p>
+<p>Better sampling techniques balance quality (accuracy, coherence) and diversity (creativity):</p>
+<ol type="1">
+<li><strong>Top-k Sampling</strong>: Limits the sampling pool to the top k most probable words, reducing the chance of selecting low-probability words. Then randomly sample a word from within this top k most probable words.
+<ul>
+<li>Problem: k is fixed so may cover very different amounts of probability mass in different situations</li>
+</ul></li>
+<li><strong>Top-p Sampling (Nucleus Sampling)</strong>: Considers the smallest set of words that collectively account for p percent of the total probability mass. This allows for more dynamic selection based on the distribution.
+<ul>
+<li>This addresses the fixed k problem of top-k sampling.</li>
+</ul></li>
+<li><strong>Temperature Scaling</strong>: Reshapes the probability distribution by dividing the logits by a temperature parameter (τ) before softmax
+<ul>
+<li>A <strong>higher</strong> temperature (e.g., 1.0) makes the distribution more uniform (<strong>more diverse outputs</strong>)</li>
+<li>A <strong>lower</strong> temperature (e.g., 0.5) make the distribution “greedy” (<strong>favoring high-probability words</strong>) and thus less creative!</li>
+</ul></li>
+</ol>
+</section>
+<section id="pretraning-llms" class="level2">
+<h2 class="anchored" data-anchor-id="pretraning-llms">Pretraning LLMs</h2>
+<p>The core idea behind LLM performance is pretraining a Transformer model on vast amounts of text</p>
+<p>This is a <strong>self-supervised training algorithm</strong> where the model learns by predicting the next word in a corpus.</p>
+<p>“Self-supervised” because it just uses the next word as the label!</p>
+<p>The <strong>cross-entropy loss function</strong> is used to minimize prediction errors, encouraging the model to assign <strong>high probabilities to the true next word.</strong></p>
+<p>Pretraining data primarily comes from the web (e.g., Common Crawl, C4), along with academic papers, books, and dialogues. This exposure to massive text datasets is what gives LLMs with extensive knowledge.</p>
+</section>
+<section id="working-with-llms" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-llms">Working with LLMs</h2>
+<p>Base Models are the result of pre-training.</p>
+<p><strong>Instruct Models</strong> are base models fine-tuned to follow instructions.</p>
+<p><strong>Chat Models</strong> are further tuned with dialogue data for conversational use.</p>
+<p><strong>Prompt engineering</strong> involves effectively designing prompts to get better results from LLMs.</p>
+<p>LLM Settings that can be controlled include:</p>
+<ul>
+<li>Temperature</li>
+<li>Top P</li>
+<li>Max Length</li>
+<li>Stop Sequences</li>
+<li>Frequency Penalty</li>
+<li>Presence Penalty</li>
+</ul>
+<p>Elements of a Prompt: Prompts typically include</p>
+<ul>
+<li>Instruction</li>
+<li>Context</li>
+<li>Input Data</li>
+<li>Output Indicator</li>
+</ul>
+</section>
+<section id="prompting-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="prompting-techniques">Prompting Techniques</h2>
+<ol type="1">
+<li><strong>Zero-shot prompting</strong>: Directly asking the model to perform a task without any examples.
+<ul>
+<li>Example: “Translate ‘Hello’ to French.”</li>
+</ul></li>
+<li><strong>One-shot prompting</strong>: Providing a single example to guide the model’s response.
+<ul>
+<li>Example: “Translate ‘Hello’ to French. Example: ‘Goodbye’ to Spanish.”</li>
+</ul></li>
+<li><strong>Few-shot prompting</strong>: Providing multiple examples to help the model understand the task better.
+<ul>
+<li>Example: “Translate the following sentences to French: 1. ‘Hello’ -&gt; ‘Bonjour’, 2. ‘Goodbye’ -&gt; ‘Au revoir’. Now translate ‘Thank you’.”</li>
+</ul></li>
+<li><strong>Chain-of-thought prompting</strong>: Encouraging the model to think step-by-step before arriving at the final answer.
+<ul>
+<li>Example: “To solve this math problem, first break it down into smaller steps. What is 2 + 2? Now, what is the result of that addition?”</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="lecture-11" class="level1">
+<h1>Lecture 11</h1>
+<section id="question-answering-qa" class="level2">
+<h2 class="anchored" data-anchor-id="question-answering-qa">Question Answering (QA)</h2>
+<p>Forms of Question Answering (QA) Systems:</p>
+<ol type="1">
+<li><strong>Information Retrieval (IR) QA (Open Domain QA):</strong> These systems find relevant passages from a document collection and then use Machine Reading Comprehension (MRC) to extract an answer directly from the text.
+<ul>
+<li>Deal with <strong>factoid questions</strong> (simple facts with short answers)</li>
+<li>They involve a document collection (e.g., webpages, news articles) from which a query (user’s information need) is used to retrieve relevant documents.</li>
+<li>The basic approach involves <strong>mapping queries and documents to vectors based on unigram word counts</strong> and using <strong>cosine similarity to rank documents</strong>. This is a “bag-of-words” approach.</li>
+<li><strong>TF-IDF (Term Frequency-Inverse Document Frequency):</strong> This weighting scheme assigns higher weight to terms that appear more frequently in a document (tf) but lower weight to terms that appear in many documents (idf), thus prioritizing unique and important terms for scoring document relevance. Documents are scored by the cosine distance between their TF-IDF vector and the query’s TF-IDF vector.</li>
+<li><strong>Inverted Index:</strong> An efficient data structure used in IR that maps terms to the documents (and positions within them) where they appear, allowing for fast retrieval of documents containing specific query terms.</li>
+<li><strong>Evaluation of IR Systems:</strong> Performance is measured using Precision (fraction of returned documents that are relevant) and Recall (fraction of all relevant documents that are returned).</li>
+<li><strong>IR with Dense Vectors:</strong> To overcome the “vocabulary mismatch problem” (where a search for “tragic love story” might not find “star-crossed lovers” due to different phrasing), <strong>dense vectors (embeddings from models like BERT) are used to encode queries and documents.</strong> Document relevance is then scored by comparing these dense embeddings, typically using a dot product.</li>
+<li><strong>Retrieve and Read QA:</strong> This two-stage IR-based QA system first retrieves relevant documents using a retriever and then extracts the answer span from those documents using a neural reading comprehension system (a “reader,” often a BERT-based model). Datasets like Stanford Question Answering Dataset (SQuAD) are used for this, where answers are spans of text from passages. BERT implementation for span-based QA predicts start and end positions of answer spans within a passage.</li>
+<li><strong>Entity Linking (Wikification):</strong> The process of associating a mention in text with a real-world entity, often by linking it to a Wikipedia page.</li>
+</ul></li>
+<li><strong>Knowledge-based QA:</strong> These systems build a <strong>semantic representation of the query</strong> and use it to query a structured database.
+<ul>
+<li>Answers questions by mapping them to a query over a structured database</li>
+<li><strong>Graph-based QA:</strong> Models knowledge as a graph where entities are nodes and relations are edges. It can answer factoid questions from RDF (Resource Description Framework) triples. <em>eg birth-year(Brad Pitt, ?x)</em> Datasets like DBpedia and Freebase (part of Wikidata) are used, with specific question datasets like “Simple Questions”.</li>
+<li><strong>QA by Semantic Parsing:</strong> Maps natural language questions to a logical form (e.g., predicate calculus, SQL) that can be executed against a database. Semantic parsing can be fully supervised (with hand-built logical forms) or weakly supervised (with answers, where the logical form is a latent variable).</li>
+</ul></li>
+<li><strong>LLMs for QA:</strong> LLMs can be used for both IR and knowledge-based QA by leveraging their ability to understand and generate natural language.</li>
+</ol>
+</section>
+<section id="rag" class="level2">
+<h2 class="anchored" data-anchor-id="rag">RAG</h2>
+<p>Retrieval Augmented Generation (RAG): A technique that <strong>combines retrieval and generation.</strong></p>
+<p>When a user asks a question, relevant documents are retrieved (by comparing query and document embeddings), and then a <strong>new prompt is generated by combining these retrieved “chunks” of information with the original user input</strong>.</p>
+<p>This augmented prompt is fed to the LLM to generate a response, reducing hallucinations and providing grounded answers.</p>
+<p>Evaluation of RAG:</p>
+<p>Assesses both the quality of the retrieval (are the right chunks found?) and the generation (is the right text produced?).</p>
+<p>Evaluation can be “with reference” (using human annotations for relevant chunks/answers) or “reference-free” (using LLMs to judge quality, but recall is harder to assess).</p>
+<p><strong>RAGAS is a framework</strong> for automated reference-free evaluation of RAG pipelines, focusing on faithfulness, answer relevance, and context relevance.</p>
+</section>
+<section id="agents" class="level2">
+<h2 class="anchored" data-anchor-id="agents">Agents</h2>
+<p>Agents are autonomous entities that perceive their environment and take actions to achieve specific goals</p>
+<p>An AI agent is defined as a system that uses an LLM to decide the control flow of an application, capable of forming intentions, plans, and implies internal mental states.</p>
+<p>Agents can incorporate multimodality, integrating text, audio, and visual inputs, often by using external tools (e.g., speech2text, image captioning) and modality fusion techniques to create unified vector representations.</p>
+<p>Key components of an agent include:</p>
+<ul>
+<li><strong>Perception:</strong> The ability to gather information from the environment (e.g., user queries, document collections).</li>
+<li><strong>Reasoning:</strong> The capability to process and analyze the gathered information to make decisions.</li>
+<li><strong>Action:</strong> The ability to take actions based on the reasoning process (e.g., retrieving documents, generating responses).</li>
+</ul>
+<p>Agents can be classified into different types based on their functionality:</p>
+<ol type="1">
+<li><strong>Retrieval Agents:</strong> Focus on retrieving relevant information from a knowledge base or document collection.</li>
+<li><strong>Generation Agents:</strong> Specialize in generating natural language responses based on the retrieved information.</li>
+<li><strong>Hybrid Agents:</strong> Combine both retrieval and generation capabilities to provide more comprehensive answers.</li>
+</ol>
+<p>Incorporating agents into QA systems can enhance their performance by enabling more dynamic and context-aware interactions with users.</p>
+</section>
+<section id="evaluating-capabilities-of-llms" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-capabilities-of-llms">Evaluating Capabilities of LLMs</h2>
+<p>LLMs appear to have largely solved formal competence Many challenges remain with functional competence</p>
+<p><strong>Formal linguistic competence</strong> refers to the knowledge of linguistic rules and patterns. LLMs seem to have largely solved this</p>
+<p><strong>Functional linguistic competence</strong> refers to understanding and using language in the world, which involves formal reasoning, world knowledge, situation modeling, and social reasoning.</p>
+<p>There’s a distinction between “good at language -&gt; good at thought” and “bad at thought -&gt; bad at language” fallacies when evaluating LLM capabilities.</p>
+<p>LLMs perform well on linguistic benchmarks (e.g., distinguishing grammatical from ungrammatical sentences)</p>
+<p>However, <strong>challenges</strong> remain with functional competence, particularly in areas like situation modeling (understanding narratives and states of affairs) and <strong>Theory of Mind (understanding other people’s mental states).</strong></p>
 </section>
 </section>
 
