@@ -23,7 +23,7 @@ This repository contains detailed notes, code snippets, and explanations for var
 ## View the HTML Report
 The HTML report for the class notes is deployed on GitHub Pages and can be viewed using the following link:
 
-[View NLP Class Notes](https://maxwellbernard.github.io/Natural-Languag-Processing-Notes/)
+[View NLP Class Notes](https://maxwellbernard.github.io/Natural-Language-Processing-Notes/)
 
 ## Repository Structure
 
